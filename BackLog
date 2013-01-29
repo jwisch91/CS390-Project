@@ -1,10 +1,37 @@
 Completed:
 -Created github accounts
--Created Adobe Cloud account
 -Created github repo
 -Decided the app will be an Andorid app
 
-Currently working on:
--Create interface
--Decide on features
--Decide what needs to be completed by first deadline
+Goals for the first sprit - FEBUARY 22
+-Being able to show proof of concepts for app
+  -Login
+  -Homepage
+  -Name
+  -Logo
+  -Images for UI
+  -Make the app talk to the calender
+  -Add location features
+  -UI
+  -Alarm function (sound bits from us)
+
+Future sprit goals
+  -Implement FB API
+  -Look into actual workout/fitness plans
+  -Achievement System
+  -Weather Checker
+  -Diet plans implementation
+  -Playlist implementation
+  -Alarm while in middle of workouts (motivational warcries)
+  
+Workout Ideas
+  -Train for marathon
+  -Train for 5K
+
+Targetted Users Ideas
+  -Average Lazy User
+  -Atheletes
+    -Runners
+    -Swimmers
+    -Sports
+  -Above average weight user
