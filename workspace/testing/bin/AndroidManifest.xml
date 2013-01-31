@@ -30,6 +30,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.testing.MainActivity" />
         </activity>
+        <activity android:name="com.example.testing.Open_Page"></activity>
     </application>
 
 </manifest>

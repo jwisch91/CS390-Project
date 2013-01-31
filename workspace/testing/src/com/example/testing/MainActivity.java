@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.new_file);
     }
 
     @Override
@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
     	String message = editText.getText().toString();
     	intent.putExtra(EXTRA_MESSAGE, message);
     	startActivity(intent);
+    	
     }
-    
+
 }
