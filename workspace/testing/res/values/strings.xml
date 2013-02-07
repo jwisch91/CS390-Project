@@ -8,8 +8,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_display_message">My Message</string>
-    <string name="button_1">Page 1</string>
-    <string name="button_2">Page 2</string>
+    <string name="button_1">GPS</string>
+    <string name="button_2">Calender</string>
     <string name="button_3">Page 3</string>
     <string name="button_4">Page 4</string>
     <string name="button_5">Page 5</string>

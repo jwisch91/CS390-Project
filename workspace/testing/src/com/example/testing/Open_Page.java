@@ -14,16 +14,28 @@ public class Open_Page extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.new_file);
-	    Button btnNextScreen = (Button) findViewById(R.id.Button05);
+	    Button btnFirstScreen = (Button) findViewById(R.id.Button05);
 	    
         //Listening to button event
-        btnNextScreen.setOnClickListener(new View.OnClickListener() {
+        btnFirstScreen.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View arg0) {
 		        //Starting a new Intent
 		            Intent nextScreen = new Intent(getApplicationContext(), MainActivity.class);
 			    // TODO Auto-generated method stub
 		            startActivity(nextScreen);
+			}
+        });
+        Button btnNextScreen = (Button) findViewById(R.id.Button04);
+	    
+        //Listening to button event
+        btnNextScreen.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent secondScreen = new Intent(getApplicationContext(), Second_Page.class);
+			    // TODO Auto-generated method stub
+		            startActivity(secondScreen);
 			}
         });
 	}

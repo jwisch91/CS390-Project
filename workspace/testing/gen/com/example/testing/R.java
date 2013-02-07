@@ -21,17 +21,20 @@ public final class R {
         public static final int Button05=0x7f070001;
         public static final int button1=0x7f070006;
         public static final int edit_message=0x7f070000;
-        public static final int menu_settings=0x7f070007;
+        public static final int menu_settings=0x7f070008;
+        public static final int progressBar1=0x7f070007;
     }
     public static final class layout {
         public static final int activity_display_message=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int new_file=0x7f030002;
+        public static final int second_page=0x7f030003;
     }
     public static final class menu {
         public static final int activity_display_message=0x7f060000;
         public static final int activity_main=0x7f060001;
         public static final int open_page=0x7f060002;
+        public static final int second_page=0x7f060003;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
