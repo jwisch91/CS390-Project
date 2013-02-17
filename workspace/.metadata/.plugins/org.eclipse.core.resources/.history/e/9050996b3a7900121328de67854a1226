@@ -6,12 +6,11 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="about_us">About us:\n
-        Michael Schaddel\n
-        Ryan McDole\n
-        Brian Haberberger\n
-        Jordan Wisch</string>
+    <string name="hello_world">About us:&#xA;
+        Michael Schaddel&#xA;
+        Jordan Wisch&#xA;
+        Ryan Mcdole&#xA;
+        Brian Haberberger</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="GPS_Button">GPS</string>
     <string name="Calender_Button">Calender</string>

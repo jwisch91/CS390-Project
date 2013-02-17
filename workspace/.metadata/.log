@@ -2147,6 +2147,7 @@ java.lang.ClassCastException: android.widget.Button cannot be cast to android.vi
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.jface 4 0 2013-02-17 17:42:48.140
 !MESSAGE Unhandled event loop exception during blocked modal context.
@@ -2231,3 +2232,83 @@ Caused by: org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
 	... 65 more
+=======
+!SESSION 2013-02-17 13:10:11.845 -----------------------------------------------
+eclipse.buildId=v21.0.1-543035
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/Michael/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/Michael/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-17 13:10:37.225
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:11:06.735
+!MESSAGE new_file.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:11:06.899
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Calender_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:11:06.966
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Button_3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:11:06.978
+!MESSAGE new_file.xml: Couldn't resolve resource @string/GPS_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:14:45.285
+!MESSAGE new_file.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:14:45.347
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Calender_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:14:45.358
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Button_3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:14:45.373
+!MESSAGE new_file.xml: Couldn't resolve resource @string/GPS_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:09.868
+!MESSAGE new_file.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:09.880
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Calender_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:09.890
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Button_3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:09.899
+!MESSAGE new_file.xml: Couldn't resolve resource @string/GPS_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:10.554
+!MESSAGE new_file.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:10.564
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Calender_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:10.571
+!MESSAGE new_file.xml: Couldn't resolve resource @string/Button_3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:15:10.580
+!MESSAGE new_file.xml: Couldn't resolve resource @string/GPS_Button
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:17:38.822
+!MESSAGE third_page.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:17:42.103
+!MESSAGE activity_display_message.xml: Couldn't resolve resource @string/app_name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:17:42.107
+!MESSAGE activity_display_message.xml: Couldn't resolve resource @string/hello_world
+!SESSION 2013-02-17 13:19:22.771eclipse.buildId=v21.0.1-543035
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/Michael/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/Michael/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-17 13:19:35.242
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-02-17 13:49:31.195
+!MESSAGE third_page.xml: Couldn't resolve resource @string/about_us

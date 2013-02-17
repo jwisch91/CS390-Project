@@ -4,12 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <SeekBar
+        android:id="@+id/seekBar1"
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:text="@string/about_us"
-        android:lines="5" 
-        android:gravity="center"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
