@@ -14,24 +14,24 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Button01=0x7f07000d;
-        public static final int Button02=0x7f07000c;
-        public static final int Button03=0x7f07000b;
-        public static final int Button04=0x7f07000a;
-        public static final int Button05=0x7f070009;
-        public static final int address=0x7f070005;
+        public static final int address=0x7f07000f;
         public static final int button1=0x7f07000e;
         public static final int distance=0x7f070008;
-        public static final int label_address=0x7f070004;
+        public static final int label_address=0x7f07000d;
         public static final int label_distance=0x7f070007;
         public static final int label_latlng=0x7f070002;
         public static final int latlng=0x7f070003;
-        public static final int menu_settings=0x7f070011;
-        public static final int progressBar1=0x7f07000f;
+        public static final int menu_settings=0x7f070005;
+        public static final int progressBar1=0x7f070004;
         public static final int provider_both=0x7f070001;
         public static final int provider_fine=0x7f070000;
         public static final int seekBar1=0x7f070010;
         public static final int start_run=0x7f070006;
+        public static final int Button_3=0x7f070002;
+        public static final int Calender_Button=0x7f070001;
+        public static final int GPS_Button=0x7f070003;
+        public static final int edit_message=0x7f070000;
+
     }
     public static final class layout {
         public static final int activity_display_message=0x7f030000;
@@ -49,13 +49,11 @@ public final class R {
     }
     public static final class string {
         public static final int address=0x7f04000e;
+        public static final int Button_3=0x7f04000a;
+        public static final int Calender_Button=0x7f040009;
+        public static final int GPS_Button=0x7f040008;
+        public static final int about_us=0x7f040006;
         public static final int app_name=0x7f040000;
-        public static final int button_1=0x7f040007;
-        public static final int button_2=0x7f040008;
-        public static final int button_3=0x7f040009;
-        public static final int button_4=0x7f04000a;
-        public static final int button_5=0x7f04000b;
-        public static final int button_6=0x7f04000c;
         public static final int button_send=0x7f040003;
         public static final int edit_message=0x7f040002;
         public static final int enable_gps=0x7f04000f;
@@ -67,9 +65,9 @@ public final class R {
         public static final int not_support_gps=0x7f040013;
         public static final int not_support_network=0x7f040014;
         public static final int start_run=0x7f040017;
-        public static final int title_activity_display_message=0x7f040006;
+        public static final int title_activity_display_message=0x7f040007;
         public static final int title_activity_main=0x7f040004;
-        public static final int title_activity_main_activity2=0x7f04000d;
+        public static final int title_activity_main_activity2=0x7f04000b;
         public static final int unknown=0x7f040012;
         public static final int use_both_providers=0x7f040016;
         public static final int use_fine_provider=0x7f040015;

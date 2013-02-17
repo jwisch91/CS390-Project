@@ -14,7 +14,7 @@ public class Open_Page extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.new_file);
-	    Button btnFirstScreen = (Button) findViewById(R.id.Button05);
+	    Button btnFirstScreen = (Button) findViewById(R.id.GPS_Button);
 	    
         //Listening to button event
         btnFirstScreen.setOnClickListener(new View.OnClickListener() {
@@ -26,7 +26,7 @@ public class Open_Page extends Activity {
 		            startActivity(nextScreen);
 			}
         });
-        Button btnSecondScreen = (Button) findViewById(R.id.Button04);
+        Button btnSecondScreen = (Button) findViewById(R.id.Calender_Button);
 	    
         //Listening to button event
         btnSecondScreen.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +38,7 @@ public class Open_Page extends Activity {
 		            startActivity(secondScreen);
 			}
         });
-        Button btnThirdScreen = (Button) findViewById(R.id.Button03);
+        Button btnThirdScreen = (Button) findViewById(R.id.Button_3);
 	    
         //Listening to button event
         btnThirdScreen.setOnClickListener(new View.OnClickListener() {
