@@ -1,21 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
-    
-    <EditText android:id="@+id/edit_message"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+    android:orientation="vertical" >
+    <LinearLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_message" />
+        android:orientation="horizontal" >
+        <Button android:id="@+id/provider_fine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/use_fine_provider"
+            android:minWidth="160sp"
+            android:onClick="useFineProvider" />
 
-	<Button
-        android:layout_width="wrap_content"
+        <Button android:id="@+id/provider_both"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/use_both_providers"
+            android:minWidth="160sp"
+            android:onClick="useCoarseFineProviders" />
+    </LinearLayout>
+    <TextView android:id="@+id/label_latlng"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:onClick="sendMessage" />
-        
-
+        android:textSize="22sp"
+        android:text="@string/latlng" />
+    <TextView android:id="@+id/latlng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+    <TextView android:id="@+id/label_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/address" />
+    <TextView android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
 </LinearLayout>
