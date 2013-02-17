@@ -7,10 +7,10 @@
     <string name="button_send">Send</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
-    <string name="about_us">About us:\n
-        Michael Schaddel\n
-        Ryan McDole\n
-        Brian Haberberger\n
+    <string name="about_us">About us:
+        Michael Schaddel
+        Ryan McDole
+        Brian Haberberger
         Jordan Wisch</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="GPS_Button">GPS</string>
