@@ -47,6 +47,7 @@ import java.util.Locale;
 public class MainActivity extends FragmentActivity {
     private TextView mLatLng;
     private TextView mAddress;
+    private TextView mDistance;
     private Button mFineProviderButton;
     private Button mBothProviderButton;
     private LocationManager mLocationManager;
@@ -54,6 +55,9 @@ public class MainActivity extends FragmentActivity {
     private boolean mGeocoderAvailable;
     private boolean mUseFine;
     private boolean mUseBoth;
+    private boolean mDistanceAdd;
+    private float totalDistance;
+    private Location firstLocation;
 
     // Keys for maintaining UI states after rotation.
     private static final String KEY_FINE = "use_fine";
@@ -61,6 +65,7 @@ public class MainActivity extends FragmentActivity {
     // UI handler codes.
     private static final int UPDATE_ADDRESS = 1;
     private static final int UPDATE_LATLNG = 2;
+    private static final int UPDATE_DISTANCE = 3;
 
     private static final int TEN_SECONDS = 10000;
     private static final int TEN_METERS = 10;
@@ -87,6 +92,7 @@ public class MainActivity extends FragmentActivity {
         }
         mLatLng = (TextView) findViewById(R.id.latlng);
         mAddress = (TextView) findViewById(R.id.address);
+        mDistance = (TextView) findViewById(R.id.distance);
         // Receive location updates from the fine location provider (gps) only.
         mFineProviderButton = (Button) findViewById(R.id.provider_fine);
         // Receive location updates from both the fine (gps) and coarse (network) location
@@ -107,6 +113,9 @@ public class MainActivity extends FragmentActivity {
                     case UPDATE_LATLNG:
                         mLatLng.setText((String) msg.obj);
                         break;
+                    case UPDATE_DISTANCE:
+                    	mDistance.setText((String) msg.obj);
+                    	break;
                 }
             }
         };
@@ -169,10 +178,11 @@ public class MainActivity extends FragmentActivity {
         mLocationManager.removeUpdates(listener);
         mLatLng.setText(R.string.unknown);
         mAddress.setText(R.string.unknown);
+        mDistance.setText(R.string.not_started);
         // Get fine location updates only.
+        
+        
         if (mUseFine) {
-//            mFineProviderButton.setBackgroundResource(R.drawable.button_active);
-//            mBothProviderButton.setBackgroundResource(R.drawable.button_inactive);
             // Request updates from just the fine (gps) provider.
             gpsLocation = requestUpdatesFromProvider(
                     LocationManager.GPS_PROVIDER, R.string.not_support_gps);
@@ -180,8 +190,6 @@ public class MainActivity extends FragmentActivity {
             if (gpsLocation != null) updateUILocation(gpsLocation);
         } else if (mUseBoth) {
             // Get coarse and fine location updates.
-//            mFineProviderButton.setBackgroundResource(R.drawable.button_inactive);
-//            mBothProviderButton.setBackgroundResource(R.drawable.button_active);
             // Request updates from both fine (gps) and coarse (network) providers.
             gpsLocation = requestUpdatesFromProvider(
                     LocationManager.GPS_PROVIDER, R.string.not_support_gps);
@@ -252,6 +260,16 @@ public class MainActivity extends FragmentActivity {
         // Bypass reverse-geocoding only if the Geocoder service is available on the device.
         if (mGeocoderAvailable) doReverseGeocoding(location);
     }
+    
+    private void updateDistance(Location location1, Location location2){
+    	totalDistance += location1.distanceTo(location2);
+    	float localDistance;
+    	localDistance = totalDistance;
+    	
+    	Message.obtain(mHandler, 
+    			UPDATE_DISTANCE, 
+    			localDistance + " m").sendToTarget();
+    }
 
     private final LocationListener listener = new LocationListener() {
 
@@ -259,7 +277,11 @@ public class MainActivity extends FragmentActivity {
         public void onLocationChanged(Location location) {
             // A new location update is received.  Do something useful with it.  Update the UI with
             // the location update.
+        	if (mDistanceAdd)
+        		updateDistance(location, firstLocation);
+        	
             updateUILocation(location);
+            firstLocation = location;
         }
 
         @Override
@@ -389,5 +411,24 @@ public class MainActivity extends FragmentActivity {
                     })
                     .create();
         }
+    }
+
+    public void startDistanceAdder(View v){
+    	mDistanceAdd = true;
+    	totalDistance = 0;
+    	Location gps;
+    	Location both;
+    	gps = mLocationManager.getLastKnownLocation(mLocationManager.GPS_PROVIDER);
+    	both = mLocationManager.getLastKnownLocation(mLocationManager.NETWORK_PROVIDER);
+    	firstLocation = getBetterLocation(gps, both);
+    	
+    	Message.obtain(mHandler,
+                UPDATE_DISTANCE,
+                totalDistance + " m").sendToTarget();    	
+    	
+    }
+    
+    public void stopDistanceAdder(View v){
+    	mDistanceAdd = false;
     }
 }

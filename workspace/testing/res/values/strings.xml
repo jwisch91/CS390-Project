@@ -28,6 +28,8 @@
     <string name="use_fine_provider">Fine-grain provider</string>
     <string name="use_both_providers">Both providers</string>
     <string name="start_run">Start Run!</string>
-    <string name="label_distance">Distance:</string>
+    <string name="distance">Distance:</string>
+    <string name="stop_run">Stop Run!</string>
+    <string name="not_started">--NOT STARTED--</string>
 
 </resources>
