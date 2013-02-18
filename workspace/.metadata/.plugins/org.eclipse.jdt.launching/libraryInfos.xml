@@ -21,7 +21,11 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<<<<<<< HEAD
 <libraryInfo home="C:\Program Files\Java\jre6" version="1.6.0_18">
+=======
+<libraryInfo home="C:\Program Files\Java\jre6" version="1.6.0_29">
+>>>>>>> upstream/master
 <bootpath>
 <entry path="C:\Program Files\Java\jre6\lib\resources.jar"/>
 <entry path="C:\Program Files\Java\jre6\lib\rt.jar"/>
@@ -29,6 +33,10 @@
 <entry path="C:\Program Files\Java\jre6\lib\jsse.jar"/>
 <entry path="C:\Program Files\Java\jre6\lib\jce.jar"/>
 <entry path="C:\Program Files\Java\jre6\lib\charsets.jar"/>
+<<<<<<< HEAD
+=======
+<entry path="C:\Program Files\Java\jre6\lib\modules\jdk.boot.jar"/>
+>>>>>>> upstream/master
 <entry path="C:\Program Files\Java\jre6\classes"/>
 </bootpath>
 <extensionDirs>

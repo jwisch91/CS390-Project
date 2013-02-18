@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.testing.Open_Page"
+            android:name="com.example.testing.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.testing.RegisterActivity"
+                  android:label="Register New Account"></activity>
+        <activity android:name="com.example.testing.Open_Page"></activity>
         <activity android:name="com.example.testing.MainActivity"></activity>
         <activity android:name="com.example.testing.Second_Page"></activity>
         <activity android:name="com.example.testing.Third_Page"></activity>
