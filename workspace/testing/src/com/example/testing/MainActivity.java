@@ -178,7 +178,8 @@ public class MainActivity extends FragmentActivity {
         mLocationManager.removeUpdates(listener);
         mLatLng.setText(R.string.unknown);
         mAddress.setText(R.string.unknown);
-        mDistance.setText(R.string.not_started);
+        if(!mDistanceAdd)
+        	mDistance.setText(R.string.not_started);
         // Get fine location updates only.
         
         
@@ -188,6 +189,7 @@ public class MainActivity extends FragmentActivity {
                     LocationManager.GPS_PROVIDER, R.string.not_support_gps);
             // Update the UI immediately if a location is obtained.
             if (gpsLocation != null) updateUILocation(gpsLocation);
+            else mDistance.setText(R.string.locate_sat);
         } else if (mUseBoth) {
             // Get coarse and fine location updates.
             // Request updates from both fine (gps) and coarse (network) providers.
@@ -414,18 +416,34 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void startDistanceAdder(View v){
+    	if (!(mUseFine || mUseBoth))
+    		mDistance.setText(R.string.select_GPS);    	
+    	else{
     	mDistanceAdd = true;
     	totalDistance = 0;
     	Location gps;
-    	Location both;
-    	gps = mLocationManager.getLastKnownLocation(mLocationManager.GPS_PROVIDER);
-    	both = mLocationManager.getLastKnownLocation(mLocationManager.NETWORK_PROVIDER);
-    	firstLocation = getBetterLocation(gps, both);
+    	Location wifi;
+    	if (mUseFine){
+    		gps = mLocationManager.getLastKnownLocation(mLocationManager.GPS_PROVIDER);
+    		firstLocation = gps;}
+    	else if (mUseBoth){
+    			gps = mLocationManager.getLastKnownLocation(mLocationManager.GPS_PROVIDER);
+    			wifi = mLocationManager.getLastKnownLocation(mLocationManager.NETWORK_PROVIDER);
+    			if (gps != null && wifi != null)
+                    firstLocation = getBetterLocation(gps, wifi);
+                else if (gps != null) 
+                    firstLocation = gps;
+                else if (wifi != null) 
+                    firstLocation = wifi;
+                else
+                	mDistance.setText(R.string.locate_sat);
+            }
     	
-    	Message.obtain(mHandler,
-                UPDATE_DISTANCE,
-                totalDistance + " m").sendToTarget();    	
-    	
+    	if (firstLocation != null)
+    		Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " m").sendToTarget();    	
+    	else
+    		mDistance.setText(R.string.locate_sat);
+    	}
     }
     
     public void stopDistanceAdder(View v){
