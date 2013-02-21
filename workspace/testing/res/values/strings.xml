@@ -32,5 +32,7 @@
     <string name="not_started">--NOT STARTED--</string>
     <string name="link_to_register">Register</string>
     <string name="link_to_login">Login</string>
+    <string name="select_GPS">--SELECT GPS PROVIDER FIRST!--</string>
+    <string name="locate_sat">--LOCATING SATELLITES!--</string>
 
 </resources>

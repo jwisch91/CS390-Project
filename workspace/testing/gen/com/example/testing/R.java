@@ -77,10 +77,12 @@ public final class R {
         public static final int latlng=0x7f04000f;
         public static final int link_to_login=0x7f04001a;
         public static final int link_to_register=0x7f040019;
+        public static final int locate_sat=0x7f04001c;
         public static final int menu_settings=0x7f040001;
         public static final int not_started=0x7f040018;
         public static final int not_support_gps=0x7f040011;
         public static final int not_support_network=0x7f040012;
+        public static final int select_GPS=0x7f04001b;
         public static final int start_run=0x7f040015;
         public static final int stop_run=0x7f040017;
         public static final int title_activity_display_message=0x7f040007;
