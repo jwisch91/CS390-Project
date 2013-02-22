@@ -40,7 +40,7 @@ public class Open_Page extends Activity {
 				timerAlert(view);
 			}
         });
-        Button btnThirdScreen = (Button) findViewById(R.id.Button_3);
+        Button btnThirdScreen = (Button) findViewById(R.id.About_Us);
 	    
         //Listening to button event
         btnThirdScreen.setOnClickListener(new View.OnClickListener() {

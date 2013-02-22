@@ -15,7 +15,7 @@
     <string name="title_activity_display_message">My Message</string>
     <string name="GPS_Button">GPS</string>
     <string name="Calender_Button">Calender</string>
-    <string name="Button_3">About us</string>
+    <string name="About_Us">About us</string>
     <string name="title_activity_main_activity2">MainActivity2</string>   
     <string name="address">Address:</string>
     <string name="enable_gps">Enable GPS</string>
