@@ -1,27 +1,32 @@
+WinFit GitHub
+
 Completed:
 -Created github accounts
 -Created github repo
 -Decided the app will be an Andorid app
+-Login Page
+-Homepage
+-Name
+-Logo
+-Location features
+-Baic UI
+-Alarm function
 
-Goals for the first sprit - FEBUARY 22
--Being able to show proof of concepts for app
+Goals for the second sprint - FEBUARY 22
   -Login (one set login/password for testing)
-  -Homepage
-  -Name
-  -Logo
-  -Images for UI
   -Make the app talk to the calender
-  -Add location features
   -UI
-  -Alarm function (sound bits from us)
+  -Basic layout for workout
+  -User prompts
+  -Weather Checker
+  -Playlist implementation
+  -Settings
 
-Future sprit goals
+Future sprint goals
   -Implement FB API
   -Look into actual workout/fitness plans
   -Achievement System
-  -Weather Checker
   -Diet plans implementation
-  -Playlist implementation
   -Alarm while in middle of workouts (motivational warcries)
   
 Workout Ideas
@@ -35,8 +40,3 @@ Targetted Users Ideas
     -Swimmers
     -Sports
   -Above average weight user
-
-Name Ideas
-  -WinFit
-  -FitWin
-  -FitNasty
