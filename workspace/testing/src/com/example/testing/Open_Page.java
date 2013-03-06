@@ -52,6 +52,18 @@ public class Open_Page extends Activity {
 		            startActivity(thirdScreen);
 			}
         });
+        Button btnFourthScreen = (Button) findViewById(R.id.Workout_Button);
+	    
+        //Listening to button event
+        btnFourthScreen.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent thirdScreen = new Intent(getApplicationContext(), Select_workout.class);
+			    // TODO Auto-generated method stub
+		            startActivity(thirdScreen);
+			}
+        });
 	}
 	public void timerAlert(View view) {
 		Toast.makeText(this, "Preparing Alarm...", Toast.LENGTH_LONG).show();

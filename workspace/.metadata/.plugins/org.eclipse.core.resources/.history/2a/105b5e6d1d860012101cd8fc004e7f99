@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/Lose_Weight_Button"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:text="Lose Weight" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="Choose Workout Type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/Muscle_Building_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignLeft="@+id/Lose_Weight_Button"
+        android:layout_alignRight="@+id/Lose_Weight_Button"
+        android:layout_marginBottom="17dp"
+        android:text="Muscle Building" />
+
+    <Button
+        android:id="@+id/Mixed_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Muscle_Building_Button"
+        android:layout_alignRight="@+id/Muscle_Building_Button"
+        android:layout_centerVertical="true"
+        android:text="Mixed" />
+    
+</RelativeLayout>
