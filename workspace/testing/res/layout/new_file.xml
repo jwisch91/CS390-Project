@@ -44,27 +44,36 @@
              />
 
          <Button
+             android:id="@+id/GPS_Button"
+             android:layout_width="200dip"
+             android:layout_height="wrap_content"
+             android:layout_above="@+id/About_Us"
+             android:layout_alignLeft="@+id/Calender_Button"
+             android:layout_marginBottom="76dp"
+             android:padding="10dip"
+             android:text="GPS"
+             android:textSize="25dip" />
+
+         <Button
              android:id="@+id/Calender_Button"
              android:layout_width="200dip"
              android:layout_height="wrap_content"
-             android:layout_below="@+id/header"
              android:layout_centerHorizontal="true"
-             android:layout_marginTop="30dp"
+             android:layout_centerVertical="true"
              android:padding="10dip"
              android:text="Alarm"
              android:textSize="25dip" />
 
          <Button
-             android:id="@+id/GPS_Button"
+             android:id="@+id/Workout_Button"
              android:layout_width="200dip"
              android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_below="@+id/Calender_Button"
-             android:layout_marginTop="30dp"
+             android:layout_alignLeft="@+id/Calender_Button"
+             android:layout_below="@+id/header"
+             android:layout_marginTop="16dp"
              android:padding="10dip"
-             android:text="GPS" 
-             android:textSize="25dip"
-             />
+             android:text="Create Workout"
+             android:textSize="25dip" />
 
 </RelativeLayout>
 
