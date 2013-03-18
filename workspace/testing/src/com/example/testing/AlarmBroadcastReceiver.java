@@ -12,7 +12,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		 Toast.makeText(context, "ALARM!", Toast.LENGTH_LONG).show();
+		 Toast.makeText(context, "You have a workout event!", Toast.LENGTH_LONG).show();
 			Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 			Ringtone r = RingtoneManager.getRingtone(context, notification);
 			r.play();
