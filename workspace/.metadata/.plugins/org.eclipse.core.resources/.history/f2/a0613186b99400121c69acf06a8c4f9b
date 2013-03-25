@@ -148,12 +148,8 @@ public class Select_Workout_Days extends Activity{
 		final Calendar objCalendar = Calendar.getInstance();
 		objCalendar.set(Calendar.YEAR, objCalendar.get(Calendar.YEAR)); 
 		objCalendar.set(Calendar.MONTH, objCalendar.get(Calendar.MONTH));
-		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH)); //sets it up starting this week.  Gives users time to prepare
+		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH) + 60*60*24*7); //sets it up starting the next week.  Gives users time to prepare
 		objCalendar.set(Calendar.HOUR_OF_DAY, 10); //10 AM is when the all day reminder starts
-		objCalendar.set(Calendar.MINUTE, 0);
-		objCalendar.set(Calendar.SECOND, 0);
-		objCalendar.set(Calendar.MILLISECOND, 0);
-		
 		
 		submit.setOnClickListener(new OnClickListener() {
 			 
@@ -162,7 +158,7 @@ public class Select_Workout_Days extends Activity{
 		             
 				  if (mon.isChecked()){
 						objCalendar.set(Calendar.DAY_OF_WEEK, 1); // Monday of the next week 
-					
+					}
 							if(com.example.testing.Select_workout.loseWeight == true){
 								// calendar stuff
 								calIntent.putExtra(Events.TITLE, "Workout"); 
@@ -172,7 +168,7 @@ public class Select_Workout_Days extends Activity{
 						        calIntent.putExtra(Events.ALL_DAY, "allDayFlag"); //Heres the all day event thing.  This can always be changed.
 						        calIntent.putExtra(Events.VISIBLE, 1);
 						        calIntent.putExtra(Events.HAS_ALARM, 1);
-						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO"); // every monday for the next 12 weeks
+						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=12;WKST=SU;BYDAY=MO"); // every monday for the next 12 weeks
 						        startActivity(calIntent);
 								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent); // Alarm is set for start time of event
 								//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
@@ -188,7 +184,7 @@ public class Select_Workout_Days extends Activity{
 						        calIntent.putExtra(Events.ALL_DAY, "allDayFlag"); //Heres the all day event thing.  This can always be changed.
 						        calIntent.putExtra(Events.VISIBLE, 1);
 						        calIntent.putExtra(Events.HAS_ALARM, 1);
-						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO"); // every monday for the next 12 weeks
+						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=12;WKST=SU;BYDAY=MO"); // every monday for the next 12 weeks
 						        startActivity(calIntent);
 								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);	
 								//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
@@ -204,18 +200,20 @@ public class Select_Workout_Days extends Activity{
 						        calIntent.putExtra(Events.ALL_DAY, "allDayFlag"); //Heres the all day event thing.  This can always be changed.
 						        calIntent.putExtra(Events.VISIBLE, 1);
 						        calIntent.putExtra(Events.HAS_ALARM, 1);
-						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=3;WKST=SU;BYDAY=MO"); // every monday for the next 3 weeks
+						        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=12;WKST=SU;BYDAY=MO"); // every monday for the next 12 weeks
 						        startActivity(calIntent);
 								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);
 								//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
 						        //startActivity(thirdScreen);
 							}
-							// may need an else here in case none of them happen
-				  }
+							else{
+								//ERROR
+							}
 					
 					
 					
-					/*if (tues.isChecked()){
+					
+					if (tues.isChecked()){
 						if(com.example.testing.Select_workout.loseWeight == true){
 							
 							}
@@ -309,8 +307,9 @@ public class Select_Workout_Days extends Activity{
 						}
 						else{
 						//ERROR
-						} */
+						}
 					}
+				}
 		 
 			  });
 	}

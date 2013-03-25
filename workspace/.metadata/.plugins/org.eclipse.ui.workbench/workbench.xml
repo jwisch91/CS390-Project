@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="1366" y="19">
+<window height="768" maximized="true" width="1024" x="14" y="148">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="250"/>
@@ -42,17 +42,13 @@
 <part id="4"/>
 <part id="5"/>
 <part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
-<part id="10"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Open_Page.java" partName="Open_Page.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Open_Page.java" title="Open_Page.java" tooltip="testing/src/com/example/testing/Open_Page.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Open_Page.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2356" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1608" selectionTopPixel="325"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="testing Manifest" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/AndroidManifest.xml" title="testing Manifest" tooltip="testing/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/AndroidManifest.xml"/>
@@ -60,36 +56,20 @@
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="select_workout.xml" partName="select_workout.xml" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/res/layout/select_workout.xml" title="select_workout.xml" tooltip="testing/res/layout/select_workout.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/res/layout/select_workout.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_workout.java" partName="Select_workout.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Select_workout.java" title="Select_workout.java" tooltip="testing/src/com/example/testing/Select_workout.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_workout.java" partName="Select_workout.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Select_workout.java" title="Select_workout.java" tooltip="testing/src/com/example/testing/Select_workout.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Select_workout.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="3" selectionOffset="315" selectionTopPixel="21"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1999" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_Workout_Days.java" partName="Select_Workout_Days.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Select_Workout_Days.java" title="Select_Workout_Days.java" tooltip="testing/src/com/example/testing/Select_Workout_Days.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_Workout_Days.java" partName="Select_Workout_Days.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Select_Workout_Days.java" title="Select_Workout_Days.java" tooltip="testing/src/com/example/testing/Select_Workout_Days.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="920" selectionTopPixel="26"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5279" selectionTopPixel="0"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="select_workout_days.xml" partName="select_workout_days.xml" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/res/layout/select_workout_days.xml" title="select_workout_days.xml" tooltip="testing/res/layout/select_workout_days.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/res/layout/select_workout_days.xml"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CalendarBroadcasReceiver.java" partName="CalendarBroadcasReceiver.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/CalendarBroadcasReceiver.java" title="CalendarBroadcasReceiver.java" tooltip="testing/src/com/example/testing/CalendarBroadcasReceiver.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/CalendarBroadcasReceiver.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="138" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RegisterActivity.java" partName="RegisterActivity.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/RegisterActivity.java" title="RegisterActivity.java" tooltip="testing/src/com/example/testing/RegisterActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/RegisterActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Second_Page.java" partName="Second_Page.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Second_Page.java" title="Second_Page.java" tooltip="testing/src/com/example/testing/Second_Page.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Second_Page.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Third_Page.java" partName="Third_Page.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/Third_Page.java" title="Third_Page.java" tooltip="testing/src/com/example/testing/Third_Page.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Third_Page.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlarmBroadcastReceiver.java" partName="AlarmBroadcastReceiver.java" path="C:/Users/Grace/Desktop/Random/Documents/GitHub/CS390-Project/workspace/testing/src/com/example/testing/AlarmBroadcastReceiver.java" title="AlarmBroadcastReceiver.java" tooltip="testing/src/com/example/testing/AlarmBroadcastReceiver.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/AlarmBroadcastReceiver.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="457" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -111,17 +91,23 @@
 </filters>
 <expanded>
 <element path="/testing"/>
+<element path="/testing/src"/>
+<element path="/testing/src/com"/>
+<element path="/testing/src/com/example"/>
+<element path="/testing/src/com/example/testing"/>
 </expanded>
+<selection>
+<element path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
+</selection>
 </viewState>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" partName="Network Statistics"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="210" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="210" org.eclipse.ui.ide.resourceField="156" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -266,12 +252,12 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
-<view id="org.eclipse.ui.views.ResourceNavigator"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -296,7 +282,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@10ccdd4" ratio="0.1749409" ratioLeft="222" ratioRight="1047" relationship="2" relative="left">
-<folder appearance="2" expanded="2">
+<folder appearance="2" expanded="0">
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -336,138 +322,157 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/select_workout_days.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_workout.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/select_workout.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Open_Page.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/CalendarBroadcasReceiver.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/RegisterActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Second_Page.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Third_Page.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/select_workout.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/select_workout_days.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/AlarmBroadcastReceiver.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_workout.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Open_Page.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/testing/AndroidManifest.xml"/>
 </editors>
-<item historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
-</item>
 <item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="223" y="19"/>
+<position/>
 </item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="223" y="19"/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="CalendarBroadcasReceiver.java" index="5">
-<position info="not_deleted" x="416" y="0"/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="223" y="19"/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="513" y="0"/>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="305" y="0"/>
 </item>
 <item historyLabel="Select_Workout_Days.java" index="1">
 <position/>
 </item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="924" y="0"/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="592" y="0"/>
-</item>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Open_Page.java" index="4">
-<position info="not_deleted" x="2356" y="0"/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
-</item>
-<item historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="1098" y="0"/>
 </item>
 <item historyLabel="select_workout.xml" index="3"/>
-<item historyLabel="select_workout_days.xml" index="0"/>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="1098" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="1411" y="0"/>
+</item>
 <item historyLabel="select_workout.xml" index="3"/>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="select_workout.xml" index="3"/>
-<item historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
-</item>
-<item historyLabel="select_workout.xml" index="3"/>
-<item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
-</item>
-<item historyLabel="select_workout_days.xml" index="0"/>
-<item historyLabel="Open_Page.java" index="4">
-<position info="not_deleted" x="2356" y="0"/>
-</item>
-<item historyLabel="RegisterActivity.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Second_Page.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="1999" y="0"/>
 </item>
 <item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
+<position/>
 </item>
-<item historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
-</item>
-<item historyLabel="Third_Page.java" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AlarmBroadcastReceiver.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CalendarBroadcasReceiver.java" index="5">
-<position info="not_deleted" x="416" y="0"/>
-</item>
-<item historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
+<item historyLabel="select_workout_days.xml" index="4"/>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
 </item>
 <item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
-</item>
-<item historyLabel="CalendarBroadcasReceiver.java" index="5">
-<position info="not_deleted" x="138" y="0"/>
+<position info="not_deleted" x="4491" y="0"/>
 </item>
 <item historyLabel="Select_Workout_Days.java" index="1">
-<position info="not_deleted" x="920" y="0"/>
+<position info="not_deleted" x="5014" y="0"/>
 </item>
-<item active="true" historyLabel="Select_workout.java" index="2">
-<position info="not_deleted" x="929" y="0"/>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="Open_Page.java" index="2">
+<position info="not_deleted" x="2400" y="406"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="Open_Page.java" index="2">
+<position info="not_deleted" x="2928" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="Select_workout.java" index="0">
+<position info="not_deleted" x="1999" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="AlarmBroadcastReceiver.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Open_Page.java" index="2">
+<position info="not_deleted" x="2928" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position/>
+</item>
+<item historyLabel="AlarmBroadcastReceiver.java" index="5">
+<position info="not_deleted" x="457" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="10472" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5273" y="11"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="4661" y="5"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5454" y="9"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5167" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="6235" y="7"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="4353" y="5"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="10406" y="0"/>
+</item>
+<item historyLabel="Open_Page.java" index="2">
+<position info="not_deleted" x="1703" y="161"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="8698" y="0"/>
+</item>
+<item historyLabel="AlarmBroadcastReceiver.java" index="5">
+<position info="not_deleted" x="457" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="8698" y="0"/>
+</item>
+<item historyLabel="Select_workout.java" index="6">
+<position info="not_deleted" x="1999" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="4377" y="0"/>
+</item>
+<item historyLabel="Open_Page.java" index="7">
+<position/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="3650" y="0"/>
+</item>
+<item historyLabel="Open_Page.java" index="7">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="3650" y="0"/>
+</item>
+<item historyLabel="testing Manifest" index="8"/>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="3650" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5216" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5122" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5125" y="0"/>
+</item>
+<item active="true" historyLabel="Select_Workout_Days.java" index="1">
+<position info="not_deleted" x="5216" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -477,9 +482,7 @@
 <trimLayout>
 <trimArea IMemento.internal.id="16384">
 <trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@10ccdd4"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>

@@ -40,11 +40,8 @@ public class Open_Page extends Activity {
         //Listening to button event
         btnSecondScreen.setOnClickListener(new View.OnClickListener() {
 
-        	public void onClick(View arg0) {
-		        //Starting a new Intent
-		            Intent thirdScreen = new Intent(getApplicationContext(), Third_Page.class);
-			    // TODO Auto-generated method stub
-		            startActivity(thirdScreen);
+			public void onClick(View view) {
+				timerAlert(view);
 			}
         });
         Button btnThirdScreen = (Button) findViewById(R.id.About_Us);
@@ -72,10 +69,7 @@ public class Open_Page extends Activity {
 			}
         });
 	}
-	
-}
-	
-	/*public void timerAlert(View view) {
+		public void timerAlert(View view) {
 			Toast.makeText(this, "Preparing Alarms...", Toast.LENGTH_LONG).show();
 			Intent timerIntent = new Intent(this, AlarmBroadcastReceiver.class);
 			PendingIntent pIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0 , timerIntent, 0);
@@ -114,4 +108,4 @@ public class Open_Page extends Activity {
 	        // knowing what those values are going to be.  
 		}
 	}
-*/
+

@@ -148,12 +148,8 @@ public class Select_Workout_Days extends Activity{
 		final Calendar objCalendar = Calendar.getInstance();
 		objCalendar.set(Calendar.YEAR, objCalendar.get(Calendar.YEAR)); 
 		objCalendar.set(Calendar.MONTH, objCalendar.get(Calendar.MONTH));
-		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH)); //sets it up starting this week.  Gives users time to prepare
+		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH)); //sets it up starting the next week.  Gives users time to prepare
 		objCalendar.set(Calendar.HOUR_OF_DAY, 10); //10 AM is when the all day reminder starts
-		objCalendar.set(Calendar.MINUTE, 0);
-		objCalendar.set(Calendar.SECOND, 0);
-		objCalendar.set(Calendar.MILLISECOND, 0);
-		
 		
 		submit.setOnClickListener(new OnClickListener() {
 			 
