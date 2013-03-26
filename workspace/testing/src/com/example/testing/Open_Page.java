@@ -1,9 +1,13 @@
 package com.example.testing;
 
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.provider.CalendarContract.Events;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -36,8 +40,11 @@ public class Open_Page extends Activity {
         //Listening to button event
         btnSecondScreen.setOnClickListener(new View.OnClickListener() {
 
-			public void onClick(View view) {
-				timerAlert(view);
+        	public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent thirdScreen = new Intent(getApplicationContext(), Third_Page.class);
+			    // TODO Auto-generated method stub
+		            startActivity(thirdScreen);
 			}
         });
         Button btnThirdScreen = (Button) findViewById(R.id.About_Us);
@@ -65,13 +72,46 @@ public class Open_Page extends Activity {
 			}
         });
 	}
-	public void timerAlert(View view) {
-		Toast.makeText(this, "Preparing Alarm...", Toast.LENGTH_LONG).show();
-		Intent timerIntent = new Intent(this, AlarmBroadcastReceiver.class);
-		PendingIntent pIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0 , timerIntent, 0);
-		AlarmManager myAlarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-		myAlarm.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 3000, pIntent);
-		
-	}
+	
 }
+	
+	/*public void timerAlert(View view) {
+			Toast.makeText(this, "Preparing Alarms...", Toast.LENGTH_LONG).show();
+			Intent timerIntent = new Intent(this, AlarmBroadcastReceiver.class);
+			PendingIntent pIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0 , timerIntent, 0);
+			AlarmManager myAlarm = (AlarmManager) getSystemService(ALARM_SERVICE);
+			myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);
+			
+			// thank you http://stackoverflow.com/questions/4700285/android-how-to-set-an-alarm-to-a-specific-date
+			
+		}
+		
+		public void calEvent(View view){
+			Toast.makeText(this, "Events being added to calendar", Toast.LENGTH_LONG).show();
+			Calendar beginCal = Calendar.getInstance(); //Current cal settings.  This should be known from the Alarm already though
+	        beginCal.set(year, mnth, day, hrs, min); // This should also be info passed from the calendar in the alarm
+	        long startTime = beginCal.getTimeInMillis(); // This also
 
+	        Calendar endCal = Calendar.getInstance(); // and this
+	        endCal.set(year, mnth, day, hrs, min); // this may have to be manually set
+	        long endTime = endCal.getTimeInMillis();     
+
+	        Intent intent = new Intent(Intent.ACTION_INSERT);
+	        intent.setType("vnd.android.cursor.item/event");
+	        intent.putExtra(Events.TITLE, "Title"); 
+	        intent.putExtra(Events.DESCRIPTION, "RUNNNNNN");
+	        intent.putExtra(Events.EVENT_LOCATION, "Dark side of the moon");     
+	        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
+	        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endCal.getTimeInMillis());
+	        intent.putExtra(Events.ALL_DAY, "allDayFlag"); //Heres the all day event thing.  This can always be changed.
+	        intent.putExtra(Events.STATUS, 1);
+	        intent.putExtra(Events.VISIBLE, 0);
+	        intent.putExtra(Events.HAS_ALARM, 1);
+	        startActivity(intent);
+	        
+	        // I didnt quite make this working condition yet.  I didn't because I notice that both the little methods will be using
+	        //the same information for setting calendar events and alarms, so I'm going to wait until we have a concrete way of
+	        // knowing what those values are going to be.  
+		}
+	}
+*/
