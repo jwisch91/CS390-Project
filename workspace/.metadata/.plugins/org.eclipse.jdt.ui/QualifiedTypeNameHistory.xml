@@ -9,4 +9,14 @@
 <fullyQualifiedTypeName name="android.media.Ringtone"/>
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
 <fullyQualifiedTypeName name="android.app.AlarmManager"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="android.provider.CalendarContract.Events"/>
+<fullyQualifiedTypeName name="android.provider.CalendarContract"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.view.Menu"/>
+<fullyQualifiedTypeName name="com.example.testing.R.id"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="com.example.testing.Select_workout"/>
 </qualifiedTypeNameHistroy>

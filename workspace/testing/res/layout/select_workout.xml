@@ -22,6 +22,7 @@
         android:layout_alignRight="@+id/Lose_Weight_Button"
         android:layout_marginBottom="18dp"
         android:text="Muscle Building" />
+    
 
     <Button
         android:id="@+id/Lose_Weight_Button"

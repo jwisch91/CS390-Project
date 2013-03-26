@@ -10,11 +10,15 @@
 			<item value="com.android.ide.eclipse.wizards.category"/>
 		</list>
 	</section>
+<<<<<<< HEAD
 	<section name="InstallationDialogSettings">
 		<item value="702" key="DIALOG_WIDTH"/>
 		<item value="-145" key="DIALOG_Y_ORIGIN"/>
 		<item value="-16" key="DIALOG_X_ORIGIN"/>
 		<item value="652" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+=======
+	<section name="ImportExportAction">
+>>>>>>> upstream/master
 	</section>
 </section>
