@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testing"
     android:versionCode="1"
-    android:versionName="1.0" >
-	
+    android:versionName="1.0" 
+	android:windowSoftInputMode="stateHidden">
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
@@ -18,7 +18,6 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:windowSoftInputMode="stateHidden"
             android:name="com.example.testing.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
