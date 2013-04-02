@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Open_Page extends Activity {
@@ -21,6 +24,12 @@ public class Open_Page extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.new_file);
+	    
+	    TextView Welcome = (TextView)findViewById(R.id.Welcome);
+	    SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+	    String name = prefs.getString("userName", "Guest");
+	    Welcome.setText("Welcome " + name+"!");
+	    
 	    Button btnFirstScreen = (Button) findViewById(R.id.GPS_Button);
 	    
         //Listening to button event
@@ -72,7 +81,6 @@ public class Open_Page extends Activity {
 			}
         });
 	}
-	
 }
 	
 	/*public void timerAlert(View view) {

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+ 	android:layout_height="fill_parent"
+    android:layout_weight="0.80"
+    android:background="#ffffff" >
+    	
+    	 <!--  Header  Starts-->
+        <LinearLayout android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip">
+                <!-- Logo Start-->
+                <ImageView 
+                    android:layout_width="fill_parent"
+                	android:layout_height="wrap_content"
+               	 	android:layout_gravity="center"
+                	android:src="@drawable/logo" />
+                <!-- Logo Ends -->
+        </LinearLayout>
+        <!--  Header Ends -->
+        
+        <TextView
+            SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+            String name = prefs.getString(userName, "Guest")
+            android:id="@+id/Welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="30dip" />
+
+         <Button
+             android:id="@+id/About_Us"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:text="About Us" 
+          	 android:padding="10dip"
+             android:layout_alignParentBottom="true"
+             android:textSize="25dip"
+             />
+         
+         <Button
+             android:id="@+id/Clear"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:text="Clear" 
+          	 android:padding="10dip"
+             android:layout_alignParentBottom="true"
+             android:textSize="25dip"
+             />
+         
+         <Button
+             android:id="@+id/Settings"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:text="Settings" 
+          	 android:padding="10dip"
+             android:layout_alignParentBottom="true"
+             android:textSize="25dip"
+             />
+
+         <Button
+             android:id="@+id/Workout_Button"
+             android:layout_width="200dip"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/Calender_Button"
+             android:layout_below="@+id/Welcome"
+             android:layout_marginTop="10dip"
+             android:layout_marginBottom="10dip"
+             android:padding="10dip"
+             android:text="Create Workout"
+             android:textSize="25dip" />
+         
+         <Button
+             android:id="@+id/Calender_Button"
+             android:layout_width="200dip"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/Workout_Button"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="10dip"
+             android:layout_marginBottom="10dip"
+             android:padding="10dip"
+             android:text="Alarm"
+             android:textSize="25dip" />
+         
+         <Button
+             android:id="@+id/GPS_Button"
+             android:layout_width="200dip"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/Calender_Button"
+             android:layout_alignLeft="@+id/Calender_Button"
+             android:layout_marginTop="10dip"
+             android:layout_marginBottom="10dip"
+             android:padding="10dip"
+             android:text="GPS"
+             android:textSize="25dip" />
+         
+         
+
+
+</RelativeLayout>
+

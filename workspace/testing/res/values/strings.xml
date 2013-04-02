@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">testing</string>
+    <string name="app_name">WinFit</string>
     <string name="menu_settings">Settings</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
@@ -38,5 +38,7 @@
     <string name="Lose_Weight_Button">Lose Weight</string>
     <string name="Muscle_Building_Button">Muscle Building</string>
     <string name="Mixed_Button">Mixed</string>
+    <color name="red">#FF0000</color>
+    <string name="Clear">Clear</string>
 
 </resources>
