@@ -17,18 +17,23 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
+        
+	    <activity android:name="com.example.testing.Initiator">
+	        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+	    </activity>
+	    
+	    
         <activity
             android:windowSoftInputMode="stateHidden"
             android:name="com.example.testing.LoginActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
         </activity>
-        <activity android:name="com.example.testing.RegisterActivity"
-                  android:label="Register New Account"></activity>
+        
+        
         <activity android:name="com.example.testing.Open_Page"></activity>
         <activity android:name="com.example.testing.Select_workout"></activity>
         <activity android:name="com.example.testing.Select_Workout_Days"></activity>

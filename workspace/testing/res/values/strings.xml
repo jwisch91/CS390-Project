@@ -38,5 +38,7 @@
     <string name="Lose_Weight_Button">Lose Weight</string>
     <string name="Muscle_Building_Button">Muscle Building</string>
     <string name="Mixed_Button">Mixed</string>
+    <color name="red">#FF0000</color>
+    <string name="Clear">Clear</string>
 
 </resources>
