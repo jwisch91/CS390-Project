@@ -71,7 +71,7 @@ public class Open_Page extends Activity {
 
 			public void onClick(View arg0) {
 		        //Starting a new Intent
-		            Intent settingsScreen = new Intent(getApplicationContext(), Settings.class);
+		            Intent settingsScreen = new Intent(getApplicationContext(), Second_Page.class);
 			    // TODO Auto-generated method stub
 		            startActivity(settingsScreen);
 			}
