@@ -113,4 +113,16 @@
 		            android:onClick="onRadioAnnounceClicked" />
 		    </RadioGroup>
 	</LinearLayout>
+	<TextView
+            
+            android:id="@+id/Debug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Debug"
+            android:textColor="#ffffff"
+            android:textSize="30dip" />
 </LinearLayout>
