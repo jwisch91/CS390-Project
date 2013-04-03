@@ -1,0 +1,43 @@
+package com.example.testing;
+ 
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+ 
+
+public class LoginActivity extends Activity {
+    @Override
+    
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // setting default screen to login.xml
+        setContentView(R.layout.login);
+        
+        TextView openPage = (TextView) findViewById(R.id.btnLogin);
+        
+        openPage.setOnClickListener(new View.OnClickListener() {
+		
+        
+        
+			@Override
+			public void onClick(View v) {
+				EditText nameText = (EditText)findViewById(R.id.Name);
+		        String name = nameText.getText().toString();
+		        EditText weightText = (EditText)findViewById(R.id.Weight);
+		        String weight = weightText.getText().toString();
+		        
+				// Switching to Open Page
+				Intent i = new Intent(getApplicationContext(), Open_Page.class);
+				
+				if (!name.isEmpty())
+					if (!weight.)
+				startActivity(i);
+				
+			}
+		});
+    }
+}

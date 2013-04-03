@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">testing</string>
+    <string name="app_name">WinFit</string>
     <string name="menu_settings">Settings</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
@@ -44,5 +44,6 @@
     <string name="location_provider">Location Provider: </string>
     <string name="fine_grain">GPS (Fine)</string>
     <string name="coarse_grain">WiFi (Coarse)</string>
-
+    <color name="red">#FF0000</color>
+    <string name="Clear">Clear</string>
 </resources>

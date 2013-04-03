@@ -19,15 +19,17 @@ Goals for the second sprint - APRIL 5th
   -Basic layout for workout
   -User prompts
   -Weather Checker
-  -Playlist implementation
   -Settings
+
+Goals for the third sprint - 
+  -Playlist implementation
+  -Achievement System
+  -Alarm while in middle of workouts (motivational warcries)
+  -Diet plans implementation
 
 Future sprint goals
   -Implement FB API
   -Look into actual workout/fitness plans
-  -Achievement System
-  -Diet plans implementation
-  -Alarm while in middle of workouts (motivational warcries)
   
 Workout Ideas
   -Train for marathon

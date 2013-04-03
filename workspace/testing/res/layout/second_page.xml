@@ -86,7 +86,7 @@
 	        android:text="BRIAN USE THIS"
 	        android:textSize="22sp" />
 	    	    <RadioGroup
-		        android:id="@+id/radioGroup2"
+		        android:id="@+id/radioGroup3"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content" >
 		
@@ -96,14 +96,21 @@
 		            android:layout_height="wrap_content"
 		            android:checked="true"
 		            android:text="Notification"
-		        	android:onClick="onRadioNotifyClicked" />
+		        	android:onClick="onRadioAnnounceClicked" />
 		
 		        <RadioButton
 		            android:id="@+id/UseAlarm"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:text="Alarm"
-		            android:onClick="onRadioAlarmClicked" />
+		            android:onClick="onRadioAnnounceClicked" />
+		        
+		        <RadioButton
+		            android:id="@+id/UseBothNotes"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Both"
+		            android:onClick="onRadioAnnounceClicked" />
 		    </RadioGroup>
 	</LinearLayout>
 </LinearLayout>
