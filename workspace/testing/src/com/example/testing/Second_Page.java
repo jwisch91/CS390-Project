@@ -26,16 +26,36 @@ public class Second_Page extends Activity{
         Intent i = getIntent();
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
         
+        RadioButton btnEnglish = (RadioButton)findViewById(R.id.radioEnglish);
+        RadioButton btnMetric = (RadioButton)findViewById(R.id.radioMetric);
+        RadioButton btnFine = (RadioButton)findViewById(R.id.radioFineGrain);
+        RadioButton btnCoarse = (RadioButton)findViewById(R.id.radioCoarseGrain);
+        RadioButton btnNotification = (RadioButton)findViewById(R.id.UseNotification);
+        RadioButton btnAlarm = (RadioButton)findViewById(R.id.UseAlarm);
+        RadioButton btnBoth = (RadioButton)findViewById(R.id.UseBothNotes);
+        
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);
         alarm = prefs.getBoolean("Use Alarm", false);
         notification = prefs.getBoolean("Use Notification", true);
         
-        TextView Debug = (TextView)findViewById(R.id.Debug);
-	    Debug.setText(measure + ", " + grain + ", " + alarm + ", " + notification);
+        if (measure)
+        	btnEnglish.setChecked(true);
+        else
+        	btnMetric.setChecked(true);
         
-//        Editor edit = prefs.edit();
-//        edit.commit();
+        if (grain)
+        	btnFine.setChecked(true);
+        else
+        	btnCoarse.setChecked(true);
+        
+        if ((alarm) && (notification))
+        	btnBoth.setChecked(true);
+        else if (notification)
+        	btnNotification.setChecked(true);
+        else
+        	btnAlarm.setChecked(true);
+        
     }
 
     @Override
