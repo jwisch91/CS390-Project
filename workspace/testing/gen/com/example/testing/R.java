@@ -24,26 +24,25 @@ public final class R {
         public static final int About_Us=0x7f08000f;
         public static final int Calender_Button=0x7f080013;
         public static final int Clear=0x7f080010;
-        public static final int Debug=0x7f080022;
-        public static final int Friday=0x7f080029;
+        public static final int Friday=0x7f080028;
         public static final int GPS_Button=0x7f080014;
         public static final int Location=0x7f080019;
-        public static final int Lose_Weight_Button=0x7f080025;
+        public static final int Lose_Weight_Button=0x7f080024;
         public static final int Measure=0x7f080015;
-        public static final int Mixed_Button=0x7f080026;
-        public static final int Monday=0x7f08002b;
-        public static final int Muscle_Building_Button=0x7f080024;
+        public static final int Mixed_Button=0x7f080025;
+        public static final int Monday=0x7f08002a;
+        public static final int Muscle_Building_Button=0x7f080023;
         public static final int Name=0x7f08000b;
-        public static final int Saturday=0x7f08002c;
+        public static final int Saturday=0x7f08002b;
         public static final int Settings=0x7f080011;
-        public static final int SubmitDays=0x7f08002e;
-        public static final int Sunday=0x7f08002d;
-        public static final int Thursday=0x7f080027;
-        public static final int Tuesday=0x7f08002a;
+        public static final int SubmitDays=0x7f08002d;
+        public static final int Sunday=0x7f08002c;
+        public static final int Thursday=0x7f080026;
+        public static final int Tuesday=0x7f080029;
         public static final int UseAlarm=0x7f080020;
         public static final int UseBothNotes=0x7f080021;
         public static final int UseNotification=0x7f08001f;
-        public static final int Wednesday=0x7f080028;
+        public static final int Wednesday=0x7f080027;
         public static final int Weight=0x7f08000c;
         public static final int Welcome=0x7f08000e;
         public static final int Workout_Button=0x7f080012;
@@ -55,7 +54,7 @@ public final class R {
         public static final int label_distance=0x7f080008;
         public static final int label_latlng=0x7f080002;
         public static final int latlng=0x7f080003;
-        public static final int menu_settings=0x7f08002f;
+        public static final int menu_settings=0x7f08002e;
         public static final int message=0x7f08001d;
         public static final int provider_both=0x7f080001;
         public static final int provider_fine=0x7f080000;
@@ -68,7 +67,7 @@ public final class R {
         public static final int radioMetric=0x7f080018;
         public static final int start_run=0x7f080006;
         public static final int stop_run=0x7f080007;
-        public static final int textView1=0x7f080023;
+        public static final int textView1=0x7f080022;
     }
     public static final class layout {
         public static final int activity_display_message=0x7f030000;
