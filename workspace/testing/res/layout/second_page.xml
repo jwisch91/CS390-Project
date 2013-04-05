@@ -83,31 +83,33 @@
 	        android:layout_height="wrap_content"
 	        android:text="BRIAN USE THIS"
 	        android:textSize="22sp" />
-	    	    <RadioGroup
-		        android:id="@+id/radioGroup3"
+	    	    <LinearLayout
+	    	    xmlns:android="http://schemas.android.com/apk/res/android"
 		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" >
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
 		
-		        <RadioButton
-		            android:id="@+id/UseNotification"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-	            	android:text="Notification"
-		        	android:onClick="onRadioAnnounceClicked" />
-		
-		        <RadioButton
+		        <CheckBox
 		            android:id="@+id/UseAlarm"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Alarm"
-		            android:onClick="onRadioAnnounceClicked" />
-		        
-		        <RadioButton
-		            android:id="@+id/UseBothNotes"
+	            	android:text="Alarm"
+		        	android:onClick="onAnnounceChecked" />
+		
+		        <CheckBox
+		            android:id="@+id/UseCalendar"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Both"
-		            android:onClick="onRadioAnnounceClicked" />
-		    </RadioGroup>
+		            android:text="Calendar"
+		            android:onClick="onAnnounceChecked" />
+		        
+		        <CheckBox
+		            android:id="@+id/UseNotification"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Notification"
+		            android:onClick="onAnnounceChecked" />
+		        </LinearLayout>
+		    
 	</LinearLayout>
 </LinearLayout>
