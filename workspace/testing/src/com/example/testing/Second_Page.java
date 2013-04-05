@@ -8,7 +8,8 @@ import android.content.SharedPreferences.Editor;
 import android.view.Menu;
 import android.view.View;
 import android.widget.RadioButton;
-//import android.preference.*;
+import android.widget.CheckBox;
+import android.preference.*;
 import android.widget.TextView;
 
 
@@ -18,6 +19,7 @@ public class Second_Page extends Activity{
 	public boolean measure;
 	public boolean grain;
 	public boolean alarm;
+	public boolean calendar;
 	public boolean notification;
 	
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,14 @@ public class Second_Page extends Activity{
         RadioButton btnMetric = (RadioButton)findViewById(R.id.radioMetric);
         RadioButton btnFine = (RadioButton)findViewById(R.id.radioFineGrain);
         RadioButton btnCoarse = (RadioButton)findViewById(R.id.radioCoarseGrain);
-        RadioButton btnNotification = (RadioButton)findViewById(R.id.UseNotification);
-        RadioButton btnAlarm = (RadioButton)findViewById(R.id.UseAlarm);
-        RadioButton btnBoth = (RadioButton)findViewById(R.id.UseBothNotes);
+        CheckBox boxAlarm = (CheckBox)findViewById(R.id.UseAlarm);
+        CheckBox boxCalendar = (CheckBox)findViewById(R.id.UseCalendar);
+        CheckBox boxNotification = (CheckBox)findViewById(R.id.UseNotification);
         
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);
         alarm = prefs.getBoolean("Use Alarm", false);
+        calendar = prefs.getBoolean("Use Calendar", true);
         notification = prefs.getBoolean("Use Notification", true);
         
         if (measure)
@@ -49,12 +52,12 @@ public class Second_Page extends Activity{
         else
         	btnCoarse.setChecked(true);
         
-        if ((alarm) && (notification))
-        	btnBoth.setChecked(true);
-        else if (notification)
-        	btnNotification.setChecked(true);
-        else
-        	btnAlarm.setChecked(true);
+        if (alarm)
+        	boxAlarm.setChecked(true);
+        if (calendar)
+        	boxCalendar.setChecked(true);
+        if (notification)
+        	boxNotification.setChecked(true);
         
     }
 
@@ -108,36 +111,30 @@ public void onRadioGrainClicked(View view) {
 	    }
 	}
 
-public void onRadioAnnounceClicked(View view) {
+public void onAnnounceChecked(View view) {
     // Is the button now checked?
-    boolean checked = ((RadioButton) view).isChecked();
+    boolean checked = ((CheckBox) view).isChecked();
     
     // Check which radio button was clicked
     switch(view.getId()) {
         case R.id.UseAlarm:
-            if (checked){
+            if (checked)
             	alarm = true;
-            	notification = false;
-//            	edit.putBoolean("Use Alarm", true);
-//            	edit.putBoolean("Use Notification", false);
-            }
-            break;
-        case R.id.UseNotification:
-            if (checked){
+            else
             	alarm = false;
-            	notification = true;
-//            	edit.putBoolean("Use Alarm", false);
-//            	edit.putBoolean("Use Notification", true);
-            }
             break;
-        case R.id.UseBothNotes:
-        	if (checked){
-        		alarm = true;
-        		notification = true;
-//            	edit.putBoolean("Use Alarm", true);
-//            	edit.putBoolean("Use Notification", true);
-        	}
-        		
+        case R.id.UseCalendar:
+        	if (checked)
+        		calendar = true;
+        	else
+            	calendar = false;
+        	break;
+        case R.id.UseNotification:
+            if (checked)
+            	notification = true;
+            else
+            	notification = false;
+            break;        		
 	    }
 	}
 
@@ -150,6 +147,7 @@ protected void onStop() {
     edit.putBoolean("English", measure);
     edit.putBoolean("Grain", grain);
     edit.putBoolean("Use Alarm", alarm);
+    edit.putBoolean("Use Calendar", calendar);
     edit.putBoolean("Use Notification", notification);
     edit.commit();
 
