@@ -38,7 +38,12 @@
     <string name="Lose_Weight_Button">Lose Weight</string>
     <string name="Muscle_Building_Button">Muscle Building</string>
     <string name="Mixed_Button">Mixed</string>
+    <string name="Measurement">Measurement: </string>
+    <string name="English">English</string>
+    <string name="Metric">Metric</string>
+    <string name="location_provider">Location Provider: </string>
+    <string name="fine_grain">GPS (Fine)</string>
+    <string name="coarse_grain">WiFi (Coarse)</string>
     <color name="red">#FF0000</color>
     <string name="Clear">Clear</string>
-
 </resources>

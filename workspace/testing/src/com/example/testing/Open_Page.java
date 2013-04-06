@@ -80,6 +80,19 @@ public class Open_Page extends Activity {
 		            startActivity(thirdScreen);
 			}
         });
+        Button btnSettings = (Button) findViewById(R.id.Settings);
+	    
+        //Listening to button event
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent settingsScreen = new Intent(getApplicationContext(), Second_Page.class);
+			    // TODO Auto-generated method stub
+		            startActivity(settingsScreen);
+			}
+        });
+
 	}
 }
 	
