@@ -14,8 +14,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 	int notifyID = 0; // A required notification parameter.
 	@Override
 	public void onReceive(Context context, Intent intent) { 
-		// If we were to make multiple notifications, notifyID can be incremented and we would have unique IDs.  Remeber: this stuff only
-		// happens when the intent is received.  The intent is only received at the time specified by objCalendar (from Select_Workout_Days.java)
+		// If we were to make multiple notifications, notifyID can be incremented and we would have unique IDs. 	
 		
 			//start alarm make
 			Uri notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

@@ -256,7 +256,7 @@ public class Select_Workout_Days extends Activity{
 					}
 		 
 			  });
-		Uri uri = cr.insert(Events.CONTENT_URI, values);// Actually load the values into the calendar through the content resolver.  This gives the error that made me put that thing about ICS above.
+		Uri uri = cr.insert(Events.CONTENT_URI, values);// Actually load the values into the calendar.  This gives the error that made me put that thing about ICS above.
 		long useThisId = Long.parseLong(uri.getLastPathSegment()); // officially gives us the Id for this event.
 		// we can then put other stuff for this event down here if we want it.  Otherwise, this is good as is. 
 	}

@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.media.RingtoneManager"/>
-<fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="android.media.Ringtone"/>
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
 <fullyQualifiedTypeName name="android.app.AlarmManager"/>
@@ -16,7 +15,11 @@
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.view.Menu"/>
 <fullyQualifiedTypeName name="com.example.testing.R.id"/>
-<fullyQualifiedTypeName name="android.content.ContentValues"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="com.example.testing.Select_workout"/>
+<fullyQualifiedTypeName name="android.app.NotificationManager"/>
+<fullyQualifiedTypeName name="android.support.v4.app.NotificationCompat"/>
+<fullyQualifiedTypeName name="android.content.ContentResolver"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
 </qualifiedTypeNameHistroy>
