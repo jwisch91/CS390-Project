@@ -75,10 +75,8 @@
              android:layout_alignLeft="@+id/Calender_Button"
              android:layout_alignRight="@+id/Calender_Button"
              android:layout_below="@+id/Welcome"
-             android:background="@drawable/blue"
-             android:padding="10dip" 
-             android:text="Create Workout"
-             android:textSize="25dip" />
+             android:padding="10dip"
+             android:background="@drawable/workout" />
          
          <Button
              android:id="@+id/Calender_Button"
@@ -88,21 +86,24 @@
              android:layout_centerHorizontal="true"
              android:layout_marginTop="10dip"
              android:layout_marginBottom="10dip"
-             android:background="@drawable/blue"
-             android:padding="10dip" 
+             android:padding="10dip"
              android:text="Alarm"
              android:textSize="25dip" />
-
+         
          <Button
              android:id="@+id/GPS_Button"
              android:layout_width="200dip"
              android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/Calender_Button"
              android:layout_below="@+id/Calender_Button"
-             android:background="@drawable/blue"
+             android:layout_alignLeft="@+id/Calender_Button"
+             android:layout_marginTop="10dip"
+             android:layout_marginBottom="10dip"
              android:padding="10dip"
              android:text="GPS"
              android:textSize="25dip" />
+         
+         
+
 
 </RelativeLayout>
 
