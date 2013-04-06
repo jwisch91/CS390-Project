@@ -23,7 +23,7 @@ public class Open_Page extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.new_file);
+	    setContentView(R.layout.main_menu);
 	    
 	    TextView Welcome = (TextView)findViewById(R.id.Welcome);
 	    SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
