@@ -3,7 +3,6 @@ package com.example.testing;
 import java.util.Calendar;
 
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -12,11 +11,9 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,11 +29,10 @@ public class Select_Workout_Days extends Activity{
         
         
         addListenerOnSubmit(); //Listener for what to do with the days selected
-        
+        	
     }
 	
 	
-	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH) // Ok this will only work with any version after Ice Cream Sandwich
 	public void addListenerOnSubmit(){
 		// same thing with as with the checkbox listener, except I have the button here. 
 		mon = (CheckBox) findViewById(R.id.Monday);
@@ -48,14 +44,13 @@ public class Select_Workout_Days extends Activity{
 		sun = (CheckBox) findViewById(R.id.Sunday);
 		Button submit = (Button) findViewById(R.id.SubmitDays);
 		
-		//Toast.makeText(this, "Preparing Alarms and Calendar...", Toast.LENGTH_LONG).show();
-		
 		// OK we're not using Intents for this
 		final long calId=0;// necessary to ID the calendar.  we will always use the same one, so this is global
-	    final int allDayBaby = 1; //Im not commenting this.
+	    final int allDayBaby = 1; //Im not commenting this...
 	    final ContentResolver cr = getContentResolver();
 	    final ContentValues values = new ContentValues();
 		
+		Toast.makeText(this, "Preparing Alarms and Calendar...", Toast.LENGTH_LONG).show();
 		
 
 		Intent timerIntent = new Intent(this, AlarmBroadcastReceiver.class);
@@ -64,13 +59,11 @@ public class Select_Workout_Days extends Activity{
 		
 		
 		final Calendar objCalendar = Calendar.getInstance();
-		
 		objCalendar.set(Calendar.YEAR, objCalendar.get(Calendar.YEAR)); 
 		objCalendar.set(Calendar.MONTH, objCalendar.get(Calendar.MONTH));
 		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH)); //sets it up starting this week.  Gives users time to prepare
-		objCalendar.set(Calendar.DAY_OF_WEEK, objCalendar.get(Calendar.DAY_OF_WEEK));
-		objCalendar.set(Calendar.HOUR_OF_DAY, 21); //10 AM is when the all day reminder starts
-		objCalendar.set(Calendar.MINUTE, 38);
+		objCalendar.set(Calendar.HOUR_OF_DAY, 10); //10 AM is when the all day reminder starts
+		objCalendar.set(Calendar.MINUTE, 0);
 		objCalendar.set(Calendar.SECOND, 0);
 		objCalendar.set(Calendar.MILLISECOND, 0);
 		
@@ -87,38 +80,31 @@ public class Select_Workout_Days extends Activity{
 			  public void onClick(View v) {
 		             
 				  if (mon.isChecked()){
-						//objCalendar.set(Calendar.DAY_OF_WEEK, 2); // Monday is the day we mess with here
+						objCalendar.set(Calendar.DAY_OF_WEEK, 2); // Monday is the day we mess with here
 					
 							if(com.example.testing.Select_workout.loseWeight == true){
 								// calendar stuff
 							     values.put(Events.TITLE, "Run a mile!");
 							     values.put(Events.DESCRIPTION, "Run a mile!");
 							     values.put(Events.CALENDAR_ID, calId);
-							    // values.put(Events.DTSTART, ); These three must be set for this to work.  Dumb dumb dumb dumb dumb.
-							    // values.put(Events.EVENT_TIMEZONE, );
-							    // values.put(Events.DURATION, "America/" );
 							     values.put(Events.ALL_DAY, allDayBaby);
 							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							    // values.put(Events.VISIBLE, 1); // no timing conflict allowed
 							     
 								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent); // Alarm is set for start time of event
+								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent); // Alarm is set for start time of event
 							
 							}
 							
 							else if (com.example.testing.Select_workout.gainMuscle == true){
 								
 								// calendar stuff
-							     values.put(Events.TITLE, "Run a mile!");
-							     values.put(Events.DESCRIPTION, "Run a mile!");
+							     values.put(Events.TITLE, "Lift Weights!");
+							     values.put(Events.DESCRIPTION, "You are trying to gain muscle.");
 							     values.put(Events.CALENDAR_ID, calId);
 							     values.put(Events.ALL_DAY, allDayBaby);
 							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							//     values.put(Events.VISIBLE, 1); // no timing conflict allowed
 								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);	
+								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);	
 								//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
 						        //startActivity(thirdScreen);
 							}
@@ -126,15 +112,13 @@ public class Select_Workout_Days extends Activity{
 							else if (com.example.testing.Select_workout.both == true){
 								// calendar stuff
 								// calendar stuff
-							     values.put(Events.TITLE, "Run a mile!");
-							     values.put(Events.DESCRIPTION, "Run a mile!");
+							     values.put(Events.TITLE, "Run a mile while curling small weights!");
+							     values.put(Events.DESCRIPTION, "You are an overachiever trying to gain muscle and lose weight.");
 							     values.put(Events.CALENDAR_ID, calId);
 							     values.put(Events.ALL_DAY, allDayBaby);
 							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							   //  values.put(Events.VISIBLE, 1); // no timing conflict allowed
 								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);
+								myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);
 							
 							}
 							// may need an else here in case none of them happen
@@ -151,41 +135,37 @@ public class Select_Workout_Days extends Activity{
 						     values.put(Events.DESCRIPTION, "Run a mile!");
 						     values.put(Events.CALENDAR_ID, calId);
 						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						  //   values.put(Events.VISIBLE, 1); // no timing conflict allowed
+						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=TU");
+						     
 							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent); // Alarm is set for start time of event
+							myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent); // Alarm is set for start time of event
 						
 						}
 						
 						else if (com.example.testing.Select_workout.gainMuscle == true){
 							
 							// calendar stuff
-						     values.put(Events.TITLE, "Run a mile!");
-						     values.put(Events.DESCRIPTION, "Run a mile!");
+						     values.put(Events.TITLE, "Lift Weights!");
+						     values.put(Events.DESCRIPTION, "You are trying to gain muscle.");
 						     values.put(Events.CALENDAR_ID, calId);
 						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						//     values.put(Events.VISIBLE, 1); // no timing conflict allowed
+						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=TU");
 							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);	
-						
+							myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);	
+							//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
+					        //startActivity(thirdScreen);
 						}
 						
 						else if (com.example.testing.Select_workout.both == true){
 							// calendar stuff
 							// calendar stuff
-						     values.put(Events.TITLE, "Run a mile!");
-						     values.put(Events.DESCRIPTION, "Run a mile!");
+						     values.put(Events.TITLE, "Run a mile while curling small weights!");
+						     values.put(Events.DESCRIPTION, "You are an overachiever trying to gain muscle and lose weight.");
 						     values.put(Events.CALENDAR_ID, calId);
 						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						   //  values.put(Events.VISIBLE, 1); // no timing conflict allowed
+						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=TU");
 							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);
+							myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), pIntent);
 						
 						}
 						// may need an else here in case none of them happen
@@ -270,14 +250,11 @@ public class Select_Workout_Days extends Activity{
 						else{
 						//ERROR
 						} */
-				
-				cr.insert(Events.CONTENT_URI, values); // Actually load the values into the calendar through the content resolver.  This gives the error that made me put that thing about ICS above.
-				//	Log.v("++++test", applyUri.toString());
 					}
 		 
 			  });
-
-		//	long useThisId = Long.parseLong(uri.getLastPathSegment()); // officially gives us the Id for this event.
+		Uri uri = cr.insert(Events.CONTENT_URI, values);// Actually load the values into the calendar.
+		long useThisId = Long.parseLong(uri.getLastPathSegment()); // officially gives us the Id for this event.
 		// we can then put other stuff for this event down here if we want it.  Otherwise, this is good as is. 
 	}
 		
@@ -288,7 +265,5 @@ public class Select_Workout_Days extends Activity{
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.select_workout_days, menu);
         return true;
-        
 			}
-    
 }
