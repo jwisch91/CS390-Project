@@ -24,7 +24,7 @@ public class Second_Page extends Activity{
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_page);
+        setContentView(R.layout.settings);
         Intent i = getIntent();
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
         
