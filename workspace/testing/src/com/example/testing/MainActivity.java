@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -33,6 +34,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
+import android.preference.*;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -43,13 +45,15 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends FragmentActivity {
     private TextView mLatLng;
     private TextView mAddress;
     private TextView mDistance;
-    private Button mFineProviderButton;
-    private Button mBothProviderButton;
+//    private Button mFineProviderButton;
+//    private Button mBothProviderButton;
     private LocationManager mLocationManager;
     private Handler mHandler;
     private boolean mGeocoderAvailable;
@@ -58,6 +62,18 @@ public class MainActivity extends FragmentActivity {
     private boolean mDistanceAdd;
     private float totalDistance;
     private Location firstLocation;
+    
+    private long start;
+    private long elapsed;
+    private Handler timeHandler = new Handler();
+    
+    private long secs = 0L;
+    private long mins = 0L;
+    private long hrs = 0L;
+    
+    private String seconds;
+    private String minutes;
+    private String hours;
 
     // Keys for maintaining UI states after rotation.
     private static final String KEY_FINE = "use_fine";
@@ -70,6 +86,11 @@ public class MainActivity extends FragmentActivity {
     private static final int TEN_SECONDS = 10000;
     private static final int TEN_METERS = 10;
     private static final int TWO_MINUTES = 1000 * 60 * 2;
+    
+    private static final int Refresh = 100;
+    
+    private boolean stopped = false;
+    private boolean UseEnglish;
 
     /**
      * This sample demonstrates how to incorporate location based services in your app and
@@ -81,23 +102,34 @@ public class MainActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        ((TextView)findViewById(R.id.timer)).setText("00:00:00");
+        
+        SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
 
-        // Restore apps state (if exists) after rotation.
+/**        // Restore apps state (if exists) after rotation.
         if (savedInstanceState != null) {
             mUseFine = savedInstanceState.getBoolean(KEY_FINE);
             mUseBoth = savedInstanceState.getBoolean(KEY_BOTH);
         } else {
-            mUseFine = false;
+            mUseFine = true;
             mUseBoth = false;
         }
+        
+*/
+        mUseFine = prefs.getBoolean("Grain", true);
+        mUseBoth = !mUseFine;
+        
+        UseEnglish = prefs.getBoolean("English", true);
+        
         mLatLng = (TextView) findViewById(R.id.latlng);
         mAddress = (TextView) findViewById(R.id.address);
         mDistance = (TextView) findViewById(R.id.distance);
         // Receive location updates from the fine location provider (gps) only.
-        mFineProviderButton = (Button) findViewById(R.id.provider_fine);
+//        mFineProviderButton = (Button) findViewById(R.id.provider_fine);
         // Receive location updates from both the fine (gps) and coarse (network) location
         // providers.
-        mBothProviderButton = (Button) findViewById(R.id.provider_both);
+//        mBothProviderButton = (Button) findViewById(R.id.provider_both);
 
         // The isPresent() helper method is only available on Gingerbread or above.
         mGeocoderAvailable =
@@ -121,6 +153,7 @@ public class MainActivity extends FragmentActivity {
         };
         // Get a reference to the LocationManager object.
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        
     }
 
     // Restores UI states after rotation.
@@ -155,6 +188,8 @@ public class MainActivity extends FragmentActivity {
             // call enableLocationSettings()
             new EnableGpsDialogFragment().show(getSupportFragmentManager(), "enableGpsDialog");
         }
+        
+        setup();
     }
 
     // Method to launch Settings
@@ -233,7 +268,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     // Callback method for the "fine provider" button.
-    public void useFineProvider(View v) {
+/**    public void useFineProvider(View v) {
         mUseFine = true;
         mUseBoth = false;
         setup();
@@ -245,6 +280,8 @@ public class MainActivity extends FragmentActivity {
         mUseBoth = true;
         setup();
     }
+    
+*/
 
     private void doReverseGeocoding(Location location) {
         // Since the geocoding API is synchronous and may take a while.  You don't want to lock
@@ -268,9 +305,19 @@ public class MainActivity extends FragmentActivity {
     	float localDistance;
     	localDistance = totalDistance;
     	
-    	Message.obtain(mHandler, 
+/**    	Message.obtain(mHandler, 
     			UPDATE_DISTANCE, 
     			localDistance + " m").sendToTarget();
+*/
+    	if(UseEnglish){
+			totalDistance = totalDistance/1609;
+			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " miles").sendToTarget();
+		}
+		else{
+			totalDistance = totalDistance/1000;
+			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " km").sendToTarget();
+		}
+    	
     }
 
     private final LocationListener listener = new LocationListener() {
@@ -439,14 +486,79 @@ public class MainActivity extends FragmentActivity {
                 	mDistance.setText(R.string.locate_sat);
             }
     	
-    	if (firstLocation != null)
-    		Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " m").sendToTarget();    	
+    	if (firstLocation != null){
+    		if(UseEnglish){
+    			totalDistance = totalDistance/1609;
+    			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " miles").sendToTarget();
+    		}
+    		else{
+    			totalDistance = totalDistance/1000;
+    			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " km").sendToTarget();
+    		}
+    	}
     	else
     		mDistance.setText(R.string.locate_sat);
+    	
+    	ClickTimerStart(v);
+    	
+    	
     	}
     }
     
     public void stopDistanceAdder(View v){
     	mDistanceAdd = false;
+    	
+    	ClickTimerStop(v);
     }
-}
+    
+    private void updateTimer (float time){
+    	secs = (long)(time/1000);
+    	mins = (long)(time/60000);
+    	hrs = (long)(time/3600000);
+    	
+    	secs = secs % 60;
+    	seconds = String.valueOf(secs);
+    	if(secs < 10)
+    		seconds = "0" + seconds;
+    	
+    	mins = mins % 60;
+    	minutes = String.valueOf(mins);
+    	if (mins <10)
+    		minutes = "0"+minutes;
+    	
+    	hours = String.valueOf(hrs);
+    	if(hrs < 10)
+    		hours = "0" + hours;
+    	
+    	((TextView)findViewById(R.id.timer)).setText(hours + ":" + minutes + ":" + seconds);
+    	
+    }
+    
+    
+    private Runnable startTimer = new Runnable(){
+    	public void run() {
+    		elapsed = System.currentTimeMillis() - start;
+    		updateTimer(elapsed);
+    		timeHandler.postDelayed(this, Refresh);
+    	}
+    };
+    
+    public void ClickTimerStart (View view){
+/**    	if(stopped)
+    		start = System.currentTimeMillis() - elapsed;
+    	else
+    	*/
+    		start = System.currentTimeMillis();
+    	
+    	timeHandler.removeCallbacks(startTimer);
+    	timeHandler.postDelayed(startTimer, 0);
+    
+    	}
+    
+    public void ClickTimerStop (View view){
+    	timeHandler.removeCallbacks(startTimer);
+    	stopped = true;
+    }
+    
+    }
+
