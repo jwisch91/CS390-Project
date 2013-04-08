@@ -28,6 +28,7 @@ public final class R {
         public static final int About_Us=0x7f08000f;
         public static final int Calender_Button=0x7f080013;
         public static final int Clear=0x7f080010;
+        public static final int ClearPrefs=0x7f08002d;
         public static final int Friday=0x7f08001b;
         public static final int GPS_Button=0x7f080014;
         public static final int Location=0x7f080025;
@@ -58,7 +59,7 @@ public final class R {
         public static final int label_distance=0x7f080008;
         public static final int label_latlng=0x7f080002;
         public static final int latlng=0x7f080003;
-        public static final int menu_settings=0x7f08002d;
+        public static final int menu_settings=0x7f08002e;
         public static final int message=0x7f080029;
         public static final int provider_both=0x7f080001;
         public static final int provider_fine=0x7f080000;
