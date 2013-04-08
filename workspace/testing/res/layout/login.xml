@@ -75,6 +75,7 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="10dip"
                 android:singleLine="true"
+                android:inputType="number"
                 android:hint="Don't worry we won't judge ;)"
                 android:textColorHint="#707070"
                 />
