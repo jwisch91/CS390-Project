@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.CheckBox;
 import android.preference.*;
@@ -35,6 +36,22 @@ public class Second_Page extends Activity{
         CheckBox boxAlarm = (CheckBox)findViewById(R.id.UseAlarm);
         CheckBox boxCalendar = (CheckBox)findViewById(R.id.UseCalendar);
         CheckBox boxNotification = (CheckBox)findViewById(R.id.UseNotification);
+        
+        Button btnSecondScreen = (Button) findViewById(R.id.ClearPrefs);
+
+      //Listening to button event;
+
+      //Listening to button event
+      btnSecondScreen.setOnClickListener(new View.OnClickListener() {
+
+      	public void onClick(View arg0) {
+      		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+      	    Editor edit = prefs.edit();  
+            edit.clear();
+            Intent nextScreen = new Intent(getApplicationContext(), LoginActivity.class);
+	        startActivity(nextScreen);
+      	}
+      });
         
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);
@@ -137,6 +154,8 @@ public void onAnnounceChecked(View view) {
             break;        		
 	    }
 	}
+
+
 
 protected void onStop() {
     super.onStop();  // Always call the superclass method first
