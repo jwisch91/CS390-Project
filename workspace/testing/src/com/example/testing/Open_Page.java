@@ -42,20 +42,7 @@ public class Open_Page extends Activity {
 		            startActivity(nextScreen);
 			}
         });
-        Button btnSecondScreen = (Button) findViewById(R.id.Calender_Button);
-	    
-        //Listening to button event;
-	    
-        //Listening to button event
-        btnSecondScreen.setOnClickListener(new View.OnClickListener() {
-
-        	public void onClick(View arg0) {
-		        //Starting a new Intent
-		            Intent thirdScreen = new Intent(getApplicationContext(), Third_Page.class);
-			    // TODO Auto-generated method stub
-		            startActivity(thirdScreen);
-			}
-        });
+        
         Button btnThirdScreen = (Button) findViewById(R.id.About_Us);
 	    
         //Listening to button event

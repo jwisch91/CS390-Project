@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testing"
+    android:versionCode="1"
+    android:versionName="1.0" >
+	
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+   
+	<application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        
+	    <activity android:name="com.example.testing.Initiator">
+	        
+	    </activity>
+	    
+	    
+        <activity
+            android:windowSoftInputMode="stateHidden"
+            android:name="com.example.testing.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name="com.example.testing.Open_Page"></activity>
+        <activity android:name="com.example.testing.Select_workout"></activity>
+        <activity android:name="com.example.testing.Select_Workout_Days"></activity>
+        <activity android:name="com.example.testing.MainActivity"></activity>
+        <activity android:name="com.example.testing.Second_Page"></activity>
+        <activity android:name="com.example.testing.AlarmBroadcastReceiver"></activity>
+        <receiver android:name="com.example.testing.AlarmBroadcastReceiver"></receiver>
+        <activity android:name="com.example.testing.Third_Page"></activity>
+        <activity
+            android:name="com.example.testing.DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.example.testing.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.testing.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

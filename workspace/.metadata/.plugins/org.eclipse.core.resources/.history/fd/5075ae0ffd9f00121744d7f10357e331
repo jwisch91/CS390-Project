@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    
+	    <TextView
+	        android:id="@+id/Measure"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/Measurement"
+	        android:textSize="22sp" />
+	
+	    <RadioGroup
+	        android:id="@+id/radioGroup1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <RadioButton
+	            android:id="@+id/radioEnglish"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/English"
+	            android:onClick="onRadioMeasureClicked" />
+	
+	        <RadioButton
+	            android:id="@+id/radioMetric"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/Metric"
+	            android:onClick="onRadioMeasureClicked" />
+	    </RadioGroup>
+	</LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    
+	    <TextView
+	        android:id="@+id/Location"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/location_provider"
+	        android:textSize="22sp" />
+	    	    <RadioGroup
+		        android:id="@+id/radioGroup2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+		
+		        <RadioButton
+		            android:id="@+id/radioFineGrain"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/fine_grain"
+		        	android:onClick="onRadioGrainClicked" />
+		
+		        <RadioButton
+		            android:id="@+id/radioCoarseGrain"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/coarse_grain"
+		            android:onClick="onRadioGrainClicked" />
+		    </RadioGroup>
+	</LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    
+	    <TextView
+	        android:id="@+id/message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="BRIAN USE THIS"
+	        android:textSize="22sp" />
+	    	    <LinearLayout
+	    	    xmlns:android="http://schemas.android.com/apk/res/android"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+		
+		        <CheckBox
+		            android:id="@+id/UseAlarm"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:text="Alarm"
+		        	android:onClick="onAnnounceChecked" />
+		
+		        <CheckBox
+		            android:id="@+id/UseCalendar"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Calendar"
+		            android:onClick="onAnnounceChecked" />
+		        
+		        <CheckBox
+		            android:id="@+id/UseNotification"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Notification"
+		            android:onClick="onAnnounceChecked" />
+		        </LinearLayout>
+		    
+	</LinearLayout>
+	<Button
+             android:id="@+id/ClearPrefs"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:text="Clear User Preferences" 
+          	 android:padding="10dip"
+             android:layout_alignParentBottom="true"
+             android:textSize="25dip"
+             />
+</LinearLayout>
