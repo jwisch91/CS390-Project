@@ -50,27 +50,27 @@ public final class R {
         public static final int Weight=0x7f08000c;
         public static final int Welcome=0x7f08000e;
         public static final int Workout_Button=0x7f080012;
-        public static final int address=0x7f080005;
+        public static final int address=0x7f080003;
         public static final int btnLogin=0x7f08000d;
-        public static final int distance=0x7f080009;
+        public static final int distance=0x7f080007;
         public static final int header=0x7f08000a;
-        public static final int label_address=0x7f080004;
-        public static final int label_distance=0x7f080008;
-        public static final int label_latlng=0x7f080002;
-        public static final int latlng=0x7f080003;
+        public static final int label_address=0x7f080002;
+        public static final int label_distance=0x7f080006;
+        public static final int label_latlng=0x7f080000;
+        public static final int latlng=0x7f080001;
         public static final int menu_settings=0x7f08002d;
         public static final int message=0x7f080028;
-        public static final int provider_both=0x7f080001;
-        public static final int provider_fine=0x7f080000;
         public static final int radioCoarseGrain=0x7f080027;
         public static final int radioEnglish=0x7f080022;
         public static final int radioFineGrain=0x7f080026;
         public static final int radioGroup1=0x7f080021;
         public static final int radioGroup2=0x7f080025;
         public static final int radioMetric=0x7f080023;
-        public static final int start_run=0x7f080006;
-        public static final int stop_run=0x7f080007;
+        public static final int start_run=0x7f080004;
+        public static final int stop_run=0x7f080005;
         public static final int textView1=0x7f080014;
+        public static final int time=0x7f080008;
+        public static final int timer=0x7f080009;
     }
     public static final class layout {
         public static final int about_us=0x7f030000;
