@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
 
     <CheckBox
         android:id="@+id/Thursday"
@@ -10,7 +11,8 @@
         android:layout_alignLeft="@+id/Wednesday"
         android:layout_below="@+id/Wednesday"
         android:layout_marginTop="20dp"
-        android:text="Thursday" />
+        android:text="Thursday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Friday"
@@ -19,7 +21,8 @@
         android:layout_alignLeft="@+id/Thursday"
         android:layout_below="@+id/Thursday"
         android:layout_marginTop="20dp"
-        android:text="Friday" />
+        android:text="Friday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Wednesday"
@@ -28,7 +31,8 @@
         android:layout_alignLeft="@+id/Tuesday"
         android:layout_below="@+id/Tuesday"
         android:layout_marginTop="20dp"
-        android:text="Wednesday" />
+        android:text="Wednesday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Tuesday"
@@ -37,7 +41,8 @@
         android:layout_alignLeft="@+id/Monday"
         android:layout_below="@+id/Monday"
         android:layout_marginTop="20dp"
-        android:text="Tuesday" />
+        android:text="Tuesday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Monday"
@@ -46,7 +51,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:text="Monday" />
+        android:text="Monday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Saturday"
@@ -55,7 +61,8 @@
         android:layout_alignLeft="@+id/Friday"
         android:layout_below="@+id/Friday"
         android:layout_marginTop="20dp"
-        android:text="Saturday" />
+        android:text="Saturday"
+        android:textColor="#000000" />
 
     <CheckBox
         android:id="@+id/Sunday"
@@ -64,7 +71,8 @@
         android:layout_alignLeft="@+id/Saturday"
         android:layout_below="@+id/Saturday"
         android:layout_marginTop="20dp"
-        android:text="Sunday" />
+        android:text="Sunday"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textView1"
@@ -74,7 +82,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Choose days you want to work out"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
     
      <Button
         android:id="@+id/SubmitDays"
@@ -83,7 +92,8 @@
         android:layout_alignLeft="@+id/Sunday"
         android:layout_below="@+id/Sunday"
         android:layout_marginTop="20dp"
-        android:text="Submit" />
+        android:text="Submit"
+        android:textColor="#000000" />
 
     
 </RelativeLayout>

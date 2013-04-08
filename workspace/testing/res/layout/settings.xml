@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#ffffff" >
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,7 +16,8 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/Measurement"
-	        android:textSize="22sp" />
+	        android:textSize="22sp"
+	        android:textColor="#000000" />
 	
 	    <RadioGroup
 	        android:id="@+id/radioGroup1"
@@ -27,14 +29,16 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/English"
-	            android:onClick="onRadioMeasureClicked" />
+	            android:onClick="onRadioMeasureClicked"
+	            android:textColor="#000000" />
 	
 	        <RadioButton
 	            android:id="@+id/radioMetric"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/Metric"
-	            android:onClick="onRadioMeasureClicked" />
+	            android:onClick="onRadioMeasureClicked"
+	            android:textColor="#000000" />
 	    </RadioGroup>
 	</LinearLayout>
 
@@ -49,7 +53,8 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/location_provider"
-	        android:textSize="22sp" />
+	        android:textSize="22sp"
+	        android:textColor="#000000" />
 	    	    <RadioGroup
 		        android:id="@+id/radioGroup2"
 		        android:layout_width="wrap_content"
@@ -60,14 +65,16 @@
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:text="@string/fine_grain"
-		        	android:onClick="onRadioGrainClicked" />
+		        	android:onClick="onRadioGrainClicked"
+		        	android:textColor="#000000" />
 		
 		        <RadioButton
 		            android:id="@+id/radioCoarseGrain"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:text="@string/coarse_grain"
-		            android:onClick="onRadioGrainClicked" />
+		            android:onClick="onRadioGrainClicked"
+		            android:textColor="#000000" />
 		    </RadioGroup>
 	</LinearLayout>
 
@@ -81,8 +88,9 @@
 	        android:id="@+id/message"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="BRIAN USE THIS"
-	        android:textSize="22sp" />
+	        android:text="Messaging Medium"
+	        android:textSize="22sp"
+	        android:textColor="#000000" />
 	    	    <LinearLayout
 	    	    xmlns:android="http://schemas.android.com/apk/res/android"
 		        android:layout_width="wrap_content"
@@ -94,21 +102,24 @@
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 	            	android:text="Alarm"
-		        	android:onClick="onAnnounceChecked" />
+		        	android:onClick="onAnnounceChecked"
+		        	android:textColor="#000000" />
 		
 		        <CheckBox
 		            android:id="@+id/UseCalendar"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:text="Calendar"
-		            android:onClick="onAnnounceChecked" />
+		            android:onClick="onAnnounceChecked"
+		            android:textColor="#000000" />
 		        
 		        <CheckBox
 		            android:id="@+id/UseNotification"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:text="Notification"
-		            android:onClick="onAnnounceChecked" />
+		            android:onClick="onAnnounceChecked"
+		            android:textColor="#000000" />
 		        </LinearLayout>
 		    
 	</LinearLayout>
