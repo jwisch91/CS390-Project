@@ -7,16 +7,10 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +20,11 @@ import android.widget.Toast;
 
 public class Select_Workout_Days extends Activity{
 		private CheckBox mon, tues, wed, thurs, fri, sat, sun; //Variables for the checkboxes
+	    private String REPEATDAYS= "BYDAY=";
+
+	    private final long BETADAYDELAY = 8300;// The delay we want for beta day.  This should be 6 seconds or so.  
+ 
+	    
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_workout_days);
@@ -48,34 +47,35 @@ public class Select_Workout_Days extends Activity{
 		sun = (CheckBox) findViewById(R.id.Sunday);
 		Button submit = (Button) findViewById(R.id.SubmitDays);
 		
-		//Toast.makeText(this, "Preparing Alarms and Calendar...", Toast.LENGTH_LONG).show();
-		
-		// OK we're not using Intents for this
-		final long calId=0;// necessary to ID the calendar.  we will always use the same one, so this is global
-	    final int allDayBaby = 1; //Im not commenting this.
-	    final ContentResolver cr = getContentResolver();
-	    final ContentValues values = new ContentValues();
 		
 		
-
 		Intent timerIntent = new Intent(this, AlarmBroadcastReceiver.class);
 		final PendingIntent pIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0 , timerIntent, 0);
 		final AlarmManager myAlarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-		
+		final Intent calIntent = new Intent(Intent.ACTION_INSERT);
+		calIntent.setType("vnd.android.cursor.item/event");
 		
 		final Calendar objCalendar = Calendar.getInstance();
+		final int thisYear = objCalendar.get(Calendar.YEAR);
+		final int thisMonth = objCalendar.get(Calendar.MONTH);
+		final int thisWeek = objCalendar.get(Calendar.WEEK_OF_MONTH);
+		final int today = objCalendar.get(Calendar.DAY_OF_WEEK);
+		final int thisHour = objCalendar.get(Calendar.HOUR_OF_DAY);
+		final int thisMinute = objCalendar.get(Calendar.MINUTE);
+		final int thisSecond = objCalendar.get(Calendar.SECOND);
 		
-		objCalendar.set(Calendar.YEAR, objCalendar.get(Calendar.YEAR)); 
-		objCalendar.set(Calendar.MONTH, objCalendar.get(Calendar.MONTH));
-		objCalendar.set(Calendar.WEEK_OF_MONTH, objCalendar.get(Calendar.WEEK_OF_MONTH)); //sets it up starting this week.  Gives users time to prepare
-		objCalendar.set(Calendar.DAY_OF_WEEK, objCalendar.get(Calendar.DAY_OF_WEEK));
-		objCalendar.set(Calendar.HOUR_OF_DAY, 21); //10 AM is when the all day reminder starts
-		objCalendar.set(Calendar.MINUTE, 38);
-		objCalendar.set(Calendar.SECOND, 0);
-		objCalendar.set(Calendar.MILLISECOND, 0);
+		objCalendar.set(Calendar.YEAR, thisYear); 
+		objCalendar.set(Calendar.MONTH, thisMonth);
+		objCalendar.set(Calendar.WEEK_OF_MONTH, thisWeek); 
+		objCalendar.set(Calendar.DAY_OF_WEEK, today);
+		objCalendar.set(Calendar.HOUR_OF_DAY, thisHour); 
+		objCalendar.set(Calendar.MINUTE, thisMinute); 
+		objCalendar.set(Calendar.SECOND, thisSecond);
+		//objCalendar.set(Calendar.MILLISECOND, 0);
 		
 		
 		submit.setOnClickListener(new OnClickListener() {
+			
 			/*
 			This is a little trippy.  Basically, you create an alarm intent based on the days you pick.  This alarm is a notification noise
 			and it is set to go off on the day at 10AM for any checkbox that was selected.  When that broadcast is recieved, it now knows
@@ -87,202 +87,80 @@ public class Select_Workout_Days extends Activity{
 			  public void onClick(View v) {
 		             
 				  if (mon.isChecked()){
-						//objCalendar.set(Calendar.DAY_OF_WEEK, 2); // Monday is the day we mess with here
-					
-							if(com.example.testing.Select_workout.loseWeight == true){
-								// calendar stuff
-							     values.put(Events.TITLE, "Run a mile!");
-							     values.put(Events.DESCRIPTION, "Run a mile!");
-							     values.put(Events.CALENDAR_ID, calId);
-							    // values.put(Events.DTSTART, ); These three must be set for this to work.  Dumb dumb dumb dumb dumb.
-							    // values.put(Events.EVENT_TIMEZONE, );
-							    // values.put(Events.DURATION, "America/" );
-							     values.put(Events.ALL_DAY, allDayBaby);
-							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							    // values.put(Events.VISIBLE, 1); // no timing conflict allowed
-							     
-								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent); // Alarm is set for start time of event
-							
-							}
-							
-							else if (com.example.testing.Select_workout.gainMuscle == true){
-								
-								// calendar stuff
-							     values.put(Events.TITLE, "Run a mile!");
-							     values.put(Events.DESCRIPTION, "Run a mile!");
-							     values.put(Events.CALENDAR_ID, calId);
-							     values.put(Events.ALL_DAY, allDayBaby);
-							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							//     values.put(Events.VISIBLE, 1); // no timing conflict allowed
-								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);	
-								//Intent nextScreen = new Intent(getApplicationContext(), Third_Page.class);
-						        //startActivity(thirdScreen);
-							}
-							
-							else if (com.example.testing.Select_workout.both == true){
-								// calendar stuff
-								// calendar stuff
-							     values.put(Events.TITLE, "Run a mile!");
-							     values.put(Events.DESCRIPTION, "Run a mile!");
-							     values.put(Events.CALENDAR_ID, calId);
-							     values.put(Events.ALL_DAY, allDayBaby);
-							     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-							     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-							   //  values.put(Events.VISIBLE, 1); // no timing conflict allowed
-								//
-								myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);
-							
-							}
-							// may need an else here in case none of them happen
+					  	REPEATDAYS = REPEATDAYS + "MO";
+					  	// probably have to set the alarm to know that it is suppose to go off on Mondays at 10AM here. Should also do Alarm.setRepeat(...)
 				  }
-					
-					
-					
-					if (tues.isChecked()){
-						objCalendar.set(Calendar.DAY_OF_WEEK, 3); // Monday is the day we mess with here
+				  if (tues.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "TU";
+				  }
+				  if (wed.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "WE";
+				  }
+				  if (thurs.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "TH";
+				  }
+				  if (fri.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "FR";
+				  }
+				  if (sat.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "SA";
+				  }
+				  if (sun.isChecked()){
+					  	REPEATDAYS = REPEATDAYS + "SU";
+				  }
+				  
+				  if(com.example.testing.Select_workout.loseWeight == true){
+					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    startActivity(settingsScreen);
+					  calIntent.putExtra(Events.TITLE, "Run Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent); // for some reason we can't ge the calendar to pop up now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
 						
-						if(com.example.testing.Select_workout.loseWeight == true){
-							// calendar stuff
-						     values.put(Events.TITLE, "Run a mile!");
-						     values.put(Events.DESCRIPTION, "Run a mile!");
-						     values.put(Events.CALENDAR_ID, calId);
-						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						  //   values.put(Events.VISIBLE, 1); // no timing conflict allowed
-							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent); // Alarm is set for start time of event
+		
+					  
+				  }
+				  else if (com.example.testing.Select_workout.gainMuscle == true){
+					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    startActivity(settingsScreen);
+					  calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent);// for some reason we get an error b/c of the manifest with this right now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
 						
-						}
+					  
+				  }
+				  else if (com.example.testing.Select_workout.both == true){
+					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    startActivity(settingsScreen);
+					  calIntent.putExtra(Events.TITLE, "Special Run Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent);// for some reason we get an error b/c of the manifest with this right now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
 						
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-							
-							// calendar stuff
-						     values.put(Events.TITLE, "Run a mile!");
-						     values.put(Events.DESCRIPTION, "Run a mile!");
-						     values.put(Events.CALENDAR_ID, calId);
-						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						//     values.put(Events.VISIBLE, 1); // no timing conflict allowed
-							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);	
-						
-						}
-						
-						else if (com.example.testing.Select_workout.both == true){
-							// calendar stuff
-							// calendar stuff
-						     values.put(Events.TITLE, "Run a mile!");
-						     values.put(Events.DESCRIPTION, "Run a mile!");
-						     values.put(Events.CALENDAR_ID, calId);
-						     values.put(Events.ALL_DAY, allDayBaby);
-						     values.put(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;BYDAY=MO");
-						     values.put(Events.STATUS, 0); // Tentative.  1 = Confirmed.
-						   //  values.put(Events.VISIBLE, 1); // no timing conflict allowed
-							//
-							myAlarm.set(AlarmManager.RTC_WAKEUP, (objCalendar.getTimeInMillis()), pIntent);
-						
-						}
-						// may need an else here in case none of them happen
-			  }
-					/*
-					if (wed.isChecked()){
-						if(com.example.testing.Select_workout.loseWeight == true){
-							
-						}
-					
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-						
-						}
-					
-						else if (com.example.testing.Select_workout.both == true){
-						
-						}
-						else{
-						//ERROR
-						}
-					}
-					if (thurs.isChecked()){
-						if(com.example.testing.Select_workout.loseWeight == true){
-							
-						}
-					
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-						
-						}
-					
-						else if (com.example.testing.Select_workout.both == true){
-						
-						}
-						else{
-						//ERROR
-						}
-					}
-					if (fri.isChecked()){
-						if(com.example.testing.Select_workout.loseWeight == true){
-							
-						}
-					
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-						
-						}
-					
-						else if (com.example.testing.Select_workout.both == true){
-						
-						}
-						else{
-						//ERROR
-						}
-					}
-					if (sat.isChecked()){
-						if(com.example.testing.Select_workout.loseWeight == true){
-							
-						}
-					
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-						
-						}
-					
-						else if (com.example.testing.Select_workout.both == true){
-						
-						}
-						else{
-						//ERROR
-						}
-					}
-					if (sun.isChecked()){
-						if(com.example.testing.Select_workout.loseWeight == true){
-							
-						}
-					
-						else if (com.example.testing.Select_workout.gainMuscle == true){
-						
-						}
-					
-						else if (com.example.testing.Select_workout.both == true){
-						
-						}
-						else{
-						//ERROR
-						} */
+					  
+				  }
+				  else{
+					  //ERROR we should never get here without some type of workout being selected. 
+				  }
 				
-				cr.insert(Events.CONTENT_URI, values); // Actually load the values into the calendar through the content resolver.  This gives the error that made me put that thing about ICS above.
-				//	Log.v("++++test", applyUri.toString());
-					}
-		 
+				
+				}
+
 			  });
 
-		//	long useThisId = Long.parseLong(uri.getLastPathSegment()); // officially gives us the Id for this event.
-		// we can then put other stuff for this event down here if we want it.  Otherwise, this is good as is. 
 	}
 		
 
-		
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
