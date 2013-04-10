@@ -11,21 +11,18 @@ Completed:
 -Location features
 -Baic UI
 -Alarm function
-
-Goals for the second sprint - APRIL 5th
-  -Login (one set login/password for testing)
-  -Make the app talk to the calender
-  -UI
-  -Basic layout for workout
-  -User prompts
-  -Weather Checker
-  -Settings
+-Login 
+-Make the app talk to the calender
+-Basic layout for workout
+-Settings
 
 Goals for the third sprint - 
+  -UI
+  -User prompts
+  -Weather Checker
   -Playlist implementation
   -Achievement System
   -Alarm while in middle of workouts (motivational warcries)
-  -Diet plans implementation
 
 Future sprint goals
   -Implement FB API
