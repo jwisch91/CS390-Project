@@ -18,14 +18,19 @@ Completed:
 
 Goals for the third sprint - 
   -UI
+    -create workout(goes away after you create workout)
+    -view workout(shows up after you create workout)
+    -progress button
+  -Settings
+    -button to clear current workout and create workout shows up again
+  -Calendar
+    -fix errors when selecting more than one day to workout
   -User prompts
+    -ask user for weight
   -Weather Checker
-  -Playlist implementation
+    -enter zip code or city and takes you to weather.com
   -Achievement System
-  -Alarm while in middle of workouts (motivational warcries)
-
-Future sprint goals
-  -Implement FB API
+    -shows what workouts you have completed
   -Look into actual workout/fitness plans
   
 Workout Ideas
