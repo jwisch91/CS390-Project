@@ -3,7 +3,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:fillViewport="true">
+  android:fillViewport="true"
+  android:id="@+id/Main_menu">
 
 <RelativeLayout
     android:layout_width="fill_parent"
@@ -45,36 +46,6 @@
         android:textSize="30dip" />
 
     <Button
-        android:id="@+id/About_Us"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:padding="10dip"
-        android:text="About Us"
-        android:textSize="25dip" />
-
-    <Button
-        android:id="@+id/Clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:padding="10dip"
-        android:text="Clear"
-        android:textSize="25dip" />
-
-    <Button
-        android:id="@+id/Settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:padding="10dip"
-        android:text="Settings"
-        android:textSize="25dip" />
-
-    <Button
         android:id="@+id/Workout_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,6 +67,32 @@
         android:background="@drawable/blue"
         android:padding="10dip"
         android:text="GPS"
+        android:textSize="25dip" />
+
+    <Button
+        android:id="@+id/Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="Settings"
+        android:textSize="25dip" />
+
+    <Button
+        android:id="@+id/About_Us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Settings"
+        android:layout_alignBottom="@+id/Settings"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="About Us"
         android:textSize="25dip" />
 
 </RelativeLayout>

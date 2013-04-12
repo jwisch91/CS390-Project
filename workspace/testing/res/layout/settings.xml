@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff" >
+    android:background="#ffffff"
+    android:id="@+id/Settings_page" >
+    
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
     
 	    <TextView
 	        android:id="@+id/Measure"
@@ -18,35 +20,36 @@
 	        android:text="@string/Measurement"
 	        android:textSize="22sp"
 	        android:textColor="#000000" />
-	
+
 	    <RadioGroup
 	        android:id="@+id/radioGroup1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" >
-	
+
 	        <RadioButton
 	            android:id="@+id/radioEnglish"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="@string/English"
 	            android:onClick="onRadioMeasureClicked"
+	            android:text="@string/English"
 	            android:textColor="#000000" />
-	
+
 	        <RadioButton
 	            android:id="@+id/radioMetric"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:text="@string/Metric"
 	            android:onClick="onRadioMeasureClicked"
+	            android:text="@string/Metric"
 	            android:textColor="#000000" />
 	    </RadioGroup>
+
 	</LinearLayout>
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
     
 	    <TextView
 	        android:id="@+id/Location"
@@ -82,7 +85,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
     
 	    <TextView
 	        android:id="@+id/message"
@@ -123,14 +126,14 @@
 		        </LinearLayout>
 		    
 	</LinearLayout>
-	<Button
-             android:id="@+id/ClearPrefs"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center"
-             android:text="Clear User Preferences" 
-          	 android:padding="10dip"
-             android:layout_alignParentBottom="true"
-             android:textSize="15dip"
-             />
+
+    <Button
+        android:id="@+id/Reregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="Reregister"
+        android:textSize="22sp" />
+
 </LinearLayout>

@@ -59,8 +59,9 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="10dip"
                 android:singleLine="true"
-                android:hint="Whats your name fool?"
+                android:hint="Please enter your name here."
                 android:textColorHint="#707070"
+                android:inputType="textPersonName" 
           		/>
          
           <!--  Weight Label -->
@@ -76,7 +77,7 @@
                 android:layout_marginBottom="10dip"
                 android:singleLine="true"
                 android:inputType="number"
-                android:hint="Don't worry we won't judge ;)"
+                android:hint="Please enter your weight here."
                 android:textColorHint="#707070"
                 />
           

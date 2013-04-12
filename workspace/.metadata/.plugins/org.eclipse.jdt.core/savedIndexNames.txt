@@ -1,4 +1,2 @@
-INDEX VERSION 1.126+/Users/its_admin/Desktop/CS390-Project/workspace/.metadata/.plugins/org.eclipse.jdt.core
-1918097432.index
-2997528243.index
-820718315.index
+INDEX VERSION 1.126+C:\Users\Ryan\Documents\GitHub\CS390-Project\workspace\.metadata\.plugins\org.eclipse.jdt.core
+305446040.index

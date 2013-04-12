@@ -21,11 +21,11 @@ public class Initiator extends Activity {
        Editor edit = prefs.edit();
        edit.commit();
        if (firstTime == true){
-    	   Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+    	   Intent i = new Intent(getApplicationContext(), Login.class);
     	   startActivity(i);
        }
        if (firstTime == false){
-    	   Intent i = new Intent(getApplicationContext(), Open_Page.class);
+    	   Intent i = new Intent(getApplicationContext(), Main_Menu.class);
     	   startActivity(i);
        }
     }

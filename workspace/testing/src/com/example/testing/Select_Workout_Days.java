@@ -110,7 +110,7 @@ public class Select_Workout_Days extends Activity{
 				  }
 				  
 				  if(com.example.testing.Select_workout.loseWeight == true){
-					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Run Today"); 
 				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
@@ -124,7 +124,7 @@ public class Select_Workout_Days extends Activity{
 					  
 				  }
 				  else if (com.example.testing.Select_workout.gainMuscle == true){
-					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
 				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
@@ -137,7 +137,7 @@ public class Select_Workout_Days extends Activity{
 					  
 				  }
 				  else if (com.example.testing.Select_workout.both == true){
-					    Intent settingsScreen = new Intent(getApplicationContext(), Open_Page.class);
+					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Special Run Today"); 
 				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
