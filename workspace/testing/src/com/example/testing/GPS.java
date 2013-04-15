@@ -202,7 +202,7 @@ public class GPS extends FragmentActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mLocationManager.removeUpdates(listener);
+        //mLocationManager.removeUpdates(listener);
     }
 
     // Set up fine and/or coarse location providers depending on whether the fine provider or

@@ -66,7 +66,7 @@
         android:layout_marginTop="21dp"
         android:background="@drawable/blue"
         android:padding="10dip"
-        android:text="GPS"
+        android:text="Run Buddy"
         android:textSize="25dip" />
 
     <Button
