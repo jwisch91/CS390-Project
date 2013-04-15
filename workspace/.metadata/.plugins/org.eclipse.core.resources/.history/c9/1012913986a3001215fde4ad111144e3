@@ -215,5 +215,5 @@ protected void onStop() {
     edit.putBoolean("Use Notification", notification);
     edit.commit();
 
-	}
+}
 }

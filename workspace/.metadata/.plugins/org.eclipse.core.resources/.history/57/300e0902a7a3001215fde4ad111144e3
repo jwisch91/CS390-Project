@@ -66,7 +66,7 @@
         android:layout_marginTop="21dp"
         android:background="@drawable/blue"
         android:padding="10dip"
-        android:text="Run Buddy"
+        android:text="GPS"
         android:textSize="25dip" />
 
     <Button
@@ -84,10 +84,10 @@
 
     <Button
         android:id="@+id/About_Us"
-      	android:layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
+        android:layout_alignBaseline="@+id/Settings"
+        android:layout_alignBottom="@+id/Settings"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
         android:background="@drawable/blue"
