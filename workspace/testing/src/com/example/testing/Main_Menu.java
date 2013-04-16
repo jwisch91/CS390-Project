@@ -5,6 +5,7 @@ import java.util.Calendar;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
@@ -99,6 +100,17 @@ public class Main_Menu extends Activity {
 		            Intent settingsScreen = new Intent(getApplicationContext(), Settings.class);
 			    // TODO Auto-generated method stub
 		            startActivity(settingsScreen);
+			}
+        });
+        Button btnWeather = (Button) findViewById(R.id.Weather);
+	    
+        //Listening to button event
+        btnWeather.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+				Uri uri = Uri.parse("http://www.weather.com/");
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
 			}
         });
 
