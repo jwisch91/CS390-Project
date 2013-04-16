@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:fillViewport="true"
+  android:id="@+id/GPS_page">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="0.80"
+    android:background="#ffffff" >
+
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -91,11 +105,20 @@
         android:textSize="28sp" 
         android:textColor="#000000" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
+</LinearLayout>
+
+<CheckBox
+        android:id="@+id/Treadmill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="CheckBox" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:padding="10dip"
+        android:text="Treadmill"
+        android:onClick="onTreadmillChecked"
+        android:textSize="25dip" />
 
-</LinearLayout>
+</RelativeLayout>
+</ScrollView>

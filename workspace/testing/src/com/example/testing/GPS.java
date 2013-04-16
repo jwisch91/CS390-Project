@@ -41,6 +41,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.CheckBox;
 
 import java.io.IOException;
 import java.util.List;
@@ -91,6 +92,8 @@ public class GPS extends FragmentActivity {
     
     private boolean stopped = false;
     private boolean UseEnglish;
+    
+    private boolean treadmill = false;
 
     /**
      * This sample demonstrates how to incorporate location based services in your app and
@@ -167,7 +170,7 @@ public class GPS extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setup();
+        setup();	/** ---	IS THIS MY PROBLEM? onStart() vs. setup()?	---	*/
     }
 
     @Override
@@ -202,7 +205,8 @@ public class GPS extends FragmentActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //mLocationManager.removeUpdates(listener);
+        if (!mDistanceAdd)
+        	mLocationManager.removeUpdates(listener);
     }
 
     // Set up fine and/or coarse location providers depending on whether the fine provider or
@@ -466,6 +470,8 @@ public class GPS extends FragmentActivity {
     	if (!(mUseFine || mUseBoth))
     		mDistance.setText(R.string.select_GPS);    	
     	else{
+    		if (!treadmill){
+    			
     	mDistanceAdd = true;
     	totalDistance = 0;
     	Location gps;
@@ -498,6 +504,10 @@ public class GPS extends FragmentActivity {
     	}
     	else
     		mDistance.setText(R.string.locate_sat);
+    	
+    		}
+    	else
+    		mDistance.setText("--TREADMILL MODE--");
     	
     	ClickTimerStart(v);
     	
@@ -559,6 +569,24 @@ public class GPS extends FragmentActivity {
     	timeHandler.removeCallbacks(startTimer);
     	stopped = true;
     }
+    
+    public void onTreadmillChecked(View view) {
+        // Is the button now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+        
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.Treadmill:
+                if (checked){
+                	treadmill = true;
+                	mDistance.setText("--TREADMILL MODE--");
+                }
+                else
+                	treadmill = false;
+                break;
+        }
+    }
+
     
     }
 
