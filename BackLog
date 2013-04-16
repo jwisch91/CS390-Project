@@ -25,6 +25,9 @@ Goals for the third sprint -
     -button to clear current workout and create workout shows up again
   -Calendar
     -fix errors when selecting more than one day to workout
+  -Notifications
+    -add notifications
+    -click notifications go to app
   -User prompts
     -ask user for weight
   -Weather Checker
