@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/Zip_Code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:maxLength="5"
+        android:layout_marginTop="182dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/Weather_Submit"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Zip_Code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Zip_Code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="87dp"
+        android:text="Enter a zip code:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
