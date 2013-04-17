@@ -22,7 +22,7 @@
     tools:context=".GPS" 
 	android:background="#ffffff" >
 
-
+<!-- 
     <TextView
         android:id="@+id/label_latlng"
         android:layout_width="match_parent"
@@ -52,28 +52,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp" 
         android:textColor="#000000" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/start_run"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="160sp"
-            android:onClick="startDistanceAdder"
-            android:text="@string/start_run" />
-
-        <Button
-            android:id="@+id/stop_run"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="160sp"
-            android:onClick="stopDistanceAdder"
-            android:text="@string/stop_run" />
-    </LinearLayout>
+-->
 
     <TextView
         android:id="@+id/label_distance"
@@ -104,6 +83,30 @@
         android:layout_height="wrap_content"
         android:textSize="28sp" 
         android:textColor="#000000" />
+    
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/start_run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="160sp"
+            android:onClick="startDistanceAdder"
+            android:text="@string/start_run" />
+
+        <Button
+            android:id="@+id/stop_run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="160sp"
+            android:onClick="stopDistanceAdder"
+            android:text="@string/stop_run" />
+    </LinearLayout>
+    
+    
 
 </LinearLayout>
 
@@ -112,13 +115,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
-        android:padding="10dip"
+        android:paddingBottom="10dip"
+        android:paddingLeft="45dip"
         android:text="Treadmill"
         android:onClick="onTreadmillChecked"
         android:textSize="25dip" />
+
+<ImageButton 
+    	android:id="@+id/TreadmillButton" 
+    	android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/treadmillbutton"
+        android:onClick="onTreadmillPress"/>
+
+<ImageButton 
+    	android:id="@+id/NoTreadmillButton" 
+    	android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/notreadmillbutton"
+        android:visibility="gone"
+        android:onClick="onTreadmillPress"/>
+
 
 </RelativeLayout>
 </ScrollView>

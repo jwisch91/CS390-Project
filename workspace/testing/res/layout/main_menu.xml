@@ -57,22 +57,6 @@
         android:textSize="25dip" />
 
     <Button
-<<<<<<< HEAD
-        android:id="@+id/GPS_Button"
-        android:layout_width="200dip"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Workout_Button"
-        android:layout_alignRight="@+id/Workout_Button"
-        android:layout_below="@+id/Workout_Button"
-        android:layout_marginTop="21dp"
-        android:background="@drawable/blue"
-        android:padding="10dip"
-        android:text="Run Buddy"
-        android:textSize="25dip" />
-
-    <Button
-=======
->>>>>>> upstream/master
         android:id="@+id/Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
