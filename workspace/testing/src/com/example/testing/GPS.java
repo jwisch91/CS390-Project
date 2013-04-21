@@ -53,11 +53,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GPS extends Activity {
-//    private TextView mLatLng;
-//    private TextView mAddress;
     private TextView mDistance;
-//    private Button mFineProviderButton;
-//    private Button mBothProviderButton;
     private LocationManager mLocationManager;
     private Handler mHandler;
     private boolean mGeocoderAvailable;
@@ -129,14 +125,7 @@ public class GPS extends Activity {
         
         UseEnglish = prefs.getBoolean("English", true);
         
-        //mLatLng = (TextView) findViewById(R.id.latlng);
-        //mAddress = (TextView) findViewById(R.id.address);
         mDistance = (TextView) findViewById(R.id.distance);
-        // Receive location updates from the fine location provider (gps) only.
-//        mFineProviderButton = (Button) findViewById(R.id.provider_fine);
-        // Receive location updates from both the fine (gps) and coarse (network) location
-        // providers.
-//        mBothProviderButton = (Button) findViewById(R.id.provider_both);
 
         // The isPresent() helper method is only available on Gingerbread or above.
         mGeocoderAvailable =
@@ -146,14 +135,6 @@ public class GPS extends Activity {
         mHandler = new Handler() {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
-/**
-                     	case UPDATE_ADDRESS:
-                        mAddress.setText((String) msg.obj);
-                        break;
-                    case UPDATE_LATLNG:
-                        mLatLng.setText((String) msg.obj);
-                        break;
-*/
                     case UPDATE_DISTANCE:
                     	mDistance.setText((String) msg.obj);
                     	break;
@@ -224,8 +205,6 @@ public class GPS extends Activity {
         Location gpsLocation = null;
         Location networkLocation = null;
         mLocationManager.removeUpdates(listener);
-        //mLatLng.setText(R.string.unknown);
-        //mAddress.setText(R.string.unknown);
         if(!mDistanceAdd)
         	mDistance.setText(R.string.not_started);
         // Get fine location updates only.
@@ -279,49 +258,11 @@ public class GPS extends Activity {
         }
         return location;
     }
-
-    // Callback method for the "fine provider" button.
-/**    public void useFineProvider(View v) {
-        mUseFine = true;
-        mUseBoth = false;
-        setup();
-    }
-
-    // Callback method for the "both providers" button.
-    public void useCoarseFineProviders(View v) {
-        mUseFine = false;
-        mUseBoth = true;
-        setup();
-    }
     
-
-
-    private void doReverseGeocoding(Location location) {
-        // Since the geocoding API is synchronous and may take a while.  You don't want to lock
-        // up the UI thread.  Invoking reverse geocoding in an AsyncTask.
-        (new ReverseGeocodingTask(this)).execute(new Location[] {location});
-    }
-
-/**    private void updateUILocation(Location location) {
-        // We're sending the update to a handler which then updates the UI with the new
-        // location.
-        Message.obtain(mHandler,
-                UPDATE_LATLNG,
-                location.getLatitude() + ", " + location.getLongitude()).sendToTarget();
-
-        // Bypass reverse-geocoding only if the Geocoder service is available on the device.
-        if (mGeocoderAvailable) doReverseGeocoding(location);
-    }
-*/    
     private void updateDistance(Location location1, Location location2){
     	totalDistance += location1.distanceTo(location2);
     	float localDistance;
     	localDistance = totalDistance;
-    	
-/**    	Message.obtain(mHandler, 
-    			UPDATE_DISTANCE, 
-    			localDistance + " m").sendToTarget();
-*/
 
     	if(UseEnglish){
 			totalDistance = totalDistance/1609;
@@ -573,7 +514,7 @@ public class GPS extends Activity {
     };
     
     public void ClickTimerStart (View view){
-/**    	if(stopped)
+/**    	if(stopped)			//Might use if implement Pause button
     		start = System.currentTimeMillis() - elapsed;
     	else
     	*/
