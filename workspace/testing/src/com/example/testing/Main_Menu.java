@@ -27,15 +27,6 @@ import android.widget.Toast;
 public class Main_Menu extends Activity {
 	public static final String PREFS_NAME = "winFitPref";
 	
-	PopupWindow popUp;
-    LinearLayout layout;
-    TextView tv;
-    LayoutParams params;
-    LinearLayout mainLayout;
-    Button but;
-    boolean click = true;
-
-	
 	/** Called when the activity is first created. */
 	@Override
 	public void onBackPressed() {
@@ -85,7 +76,7 @@ public class Main_Menu extends Activity {
 
 			public void onClick(View arg0) {
 		        //Starting a new Intent
-		            Intent thirdScreen = new Intent(getApplicationContext(), Select_workout.class);
+		            Intent thirdScreen = new Intent(getApplicationContext(), Select_Workout.class);
 			    // TODO Auto-generated method stub
 		            startActivity(thirdScreen);
 			}

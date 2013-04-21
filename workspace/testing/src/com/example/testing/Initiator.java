@@ -18,8 +18,13 @@ public class Initiator extends Activity {
        // Restore preferences
        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
        boolean firstTime = prefs.getBoolean("firstTime", true);
+       boolean workoutInProgress = prefs.getBoolean("workoutInProgress", false);
        Editor edit = prefs.edit();
        edit.commit();
+       if (workoutInProgress == true){
+    	   Intent i = new Intent(getApplicationContext(), Main_Menu_2.class);
+    	   startActivity(i);
+       }
        if (firstTime == true){
     	   Intent i = new Intent(getApplicationContext(), Login.class);
     	   startActivity(i);
@@ -28,5 +33,5 @@ public class Initiator extends Activity {
     	   Intent i = new Intent(getApplicationContext(), Main_Menu.class);
     	   startActivity(i);
        }
-    }
+   }
 }

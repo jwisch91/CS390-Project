@@ -14,6 +14,8 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -52,6 +54,7 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -88,6 +91,7 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -139,6 +143,20 @@
         android:background="@drawable/blue"
         android:padding="10dip"
         android:text="Reregister"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="14dp"
+        android:textSize="22sp" />
+    
+    <Button
+        android:id="@+id/Clear_Workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="Clear Workout Plan"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
         android:textSize="22sp" />
 
 </LinearLayout>
