@@ -537,36 +537,8 @@ public class GPS extends Activity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
       super.onConfigurationChanged(newConfig);
-      setContentView(R.layout.gps_page);
-      
-      SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
-
-      mUseFine = prefs.getBoolean("Grain", true);
-      mUseBoth = !mUseFine;
-      
-      UseEnglish = prefs.getBoolean("English", true);
-      
-      mDistance = (TextView) findViewById(R.id.distance);
-
-
-      // Handler for updating text fields on the UI like the lat/long and address.
-      mHandler = new Handler() {
-          public void handleMessage(Message msg) {
-              switch (msg.what) {
-              		case UPDATE_DISTANCE:
-                  	mDistance.setText((String) msg.obj);
-                  	break;
-              }
-          }
-      };
-      // Get a reference to the LocationManager object.
-      mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-              
-      setup();
-      
-  
-    }
-
+    };
+    
     
     private void updateTimer (float time){
     	secs = (long)(time/1000);
