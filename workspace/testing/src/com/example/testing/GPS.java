@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -35,12 +36,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
 import android.preference.*;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
+//import android.support.v4.app.DialogFragment;
+//import android.support.v4.app.FragmentActivity;
+import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 
 import java.io.IOException;
 import java.util.List;
@@ -48,12 +52,8 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GPS extends FragmentActivity {
-    private TextView mLatLng;
-    private TextView mAddress;
+public class GPS extends Activity {
     private TextView mDistance;
-//    private Button mFineProviderButton;
-//    private Button mBothProviderButton;
     private LocationManager mLocationManager;
     private Handler mHandler;
     private boolean mGeocoderAvailable;
@@ -91,6 +91,9 @@ public class GPS extends FragmentActivity {
     
     private boolean stopped = false;
     private boolean UseEnglish;
+    
+    private boolean treadmill = false;
+    
 
     /**
      * This sample demonstrates how to incorporate location based services in your app and
@@ -122,14 +125,7 @@ public class GPS extends FragmentActivity {
         
         UseEnglish = prefs.getBoolean("English", true);
         
-        mLatLng = (TextView) findViewById(R.id.latlng);
-        mAddress = (TextView) findViewById(R.id.address);
         mDistance = (TextView) findViewById(R.id.distance);
-        // Receive location updates from the fine location provider (gps) only.
-//        mFineProviderButton = (Button) findViewById(R.id.provider_fine);
-        // Receive location updates from both the fine (gps) and coarse (network) location
-        // providers.
-//        mBothProviderButton = (Button) findViewById(R.id.provider_both);
 
         // The isPresent() helper method is only available on Gingerbread or above.
         mGeocoderAvailable =
@@ -139,12 +135,6 @@ public class GPS extends FragmentActivity {
         mHandler = new Handler() {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
-                    case UPDATE_ADDRESS:
-                        mAddress.setText((String) msg.obj);
-                        break;
-                    case UPDATE_LATLNG:
-                        mLatLng.setText((String) msg.obj);
-                        break;
                     case UPDATE_DISTANCE:
                     	mDistance.setText((String) msg.obj);
                     	break;
@@ -154,6 +144,7 @@ public class GPS extends FragmentActivity {
         // Get a reference to the LocationManager object.
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         
+        setup();
     }
 
     // Restores UI states after rotation.
@@ -167,7 +158,7 @@ public class GPS extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setup();
+        setup();	/** ---	IS THIS MY PROBLEM? onStart() vs. setup()?	---	*/
     }
 
     @Override
@@ -182,12 +173,14 @@ public class GPS extends FragmentActivity {
                 (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         final boolean gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-        if (!gpsEnabled) {
+/**        if (!gpsEnabled) {
             // Build an alert dialog here that requests that the user enable
             // the location services, then when the user clicks the "OK" button,
             // call enableLocationSettings()
             new EnableGpsDialogFragment().show(getSupportFragmentManager(), "enableGpsDialog");
-        }
+        }	
+        
+        */
         
         setup();
     }
@@ -202,7 +195,8 @@ public class GPS extends FragmentActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mLocationManager.removeUpdates(listener);
+        if (!mDistanceAdd)
+        	mLocationManager.removeUpdates(listener);
     }
 
     // Set up fine and/or coarse location providers depending on whether the fine provider or
@@ -211,8 +205,6 @@ public class GPS extends FragmentActivity {
         Location gpsLocation = null;
         Location networkLocation = null;
         mLocationManager.removeUpdates(listener);
-        mLatLng.setText(R.string.unknown);
-        mAddress.setText(R.string.unknown);
         if(!mDistanceAdd)
         	mDistance.setText(R.string.not_started);
         // Get fine location updates only.
@@ -223,8 +215,8 @@ public class GPS extends FragmentActivity {
             gpsLocation = requestUpdatesFromProvider(
                     LocationManager.GPS_PROVIDER, R.string.not_support_gps);
             // Update the UI immediately if a location is obtained.
-            if (gpsLocation != null) updateUILocation(gpsLocation);
-            else mDistance.setText(R.string.locate_sat);
+            //if (gpsLocation != null) updateUILocation(gpsLocation);
+            //else mDistance.setText(R.string.locate_sat);
         } else if (mUseBoth) {
             // Get coarse and fine location updates.
             // Request updates from both fine (gps) and coarse (network) providers.
@@ -236,11 +228,11 @@ public class GPS extends FragmentActivity {
             // If both providers return last known locations, compare the two and use the better
             // one to update the UI.  If only one provider returns a location, use it.
             if (gpsLocation != null && networkLocation != null) {
-                updateUILocation(getBetterLocation(gpsLocation, networkLocation));
+                //updateUILocation(getBetterLocation(gpsLocation, networkLocation));
             } else if (gpsLocation != null) {
-                updateUILocation(gpsLocation);
+                //updateUILocation(gpsLocation);
             } else if (networkLocation != null) {
-                updateUILocation(networkLocation);
+                //updateUILocation(networkLocation);
             }
         }
     }
@@ -266,56 +258,19 @@ public class GPS extends FragmentActivity {
         }
         return location;
     }
-
-    // Callback method for the "fine provider" button.
-/**    public void useFineProvider(View v) {
-        mUseFine = true;
-        mUseBoth = false;
-        setup();
-    }
-
-    // Callback method for the "both providers" button.
-    public void useCoarseFineProviders(View v) {
-        mUseFine = false;
-        mUseBoth = true;
-        setup();
-    }
-    
-*/
-
-    private void doReverseGeocoding(Location location) {
-        // Since the geocoding API is synchronous and may take a while.  You don't want to lock
-        // up the UI thread.  Invoking reverse geocoding in an AsyncTask.
-        (new ReverseGeocodingTask(this)).execute(new Location[] {location});
-    }
-
-    private void updateUILocation(Location location) {
-        // We're sending the update to a handler which then updates the UI with the new
-        // location.
-        Message.obtain(mHandler,
-                UPDATE_LATLNG,
-                location.getLatitude() + ", " + location.getLongitude()).sendToTarget();
-
-        // Bypass reverse-geocoding only if the Geocoder service is available on the device.
-        if (mGeocoderAvailable) doReverseGeocoding(location);
-    }
     
     private void updateDistance(Location location1, Location location2){
     	totalDistance += location1.distanceTo(location2);
     	float localDistance;
     	localDistance = totalDistance;
-    	
-/**    	Message.obtain(mHandler, 
-    			UPDATE_DISTANCE, 
-    			localDistance + " m").sendToTarget();
-*/
+
     	if(UseEnglish){
 			totalDistance = totalDistance/1609;
-			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " miles").sendToTarget();
+			Message.obtain(mHandler,UPDATE_DISTANCE, String.format("%.2f", totalDistance) + " miles").sendToTarget();
 		}
 		else{
 			totalDistance = totalDistance/1000;
-			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " km").sendToTarget();
+			Message.obtain(mHandler,UPDATE_DISTANCE, String.format("%.2f", totalDistance) + " km").sendToTarget();
 		}
     	
     }
@@ -329,7 +284,7 @@ public class GPS extends FragmentActivity {
         	if (mDistanceAdd)
         		updateDistance(location, firstLocation);
         	
-            updateUILocation(location);
+            //updateUILocation(location);
             firstLocation = location;
         }
 
@@ -445,6 +400,7 @@ public class GPS extends FragmentActivity {
     /**
      * Dialog to prompt users to enable GPS on the device.
      */
+    /**
     private class EnableGpsDialogFragment extends DialogFragment {
 
         @Override
@@ -461,11 +417,14 @@ public class GPS extends FragmentActivity {
                     .create();
         }
     }
+	*/
 
     public void startDistanceAdder(View v){
     	if (!(mUseFine || mUseBoth))
     		mDistance.setText(R.string.select_GPS);    	
     	else{
+    		if (!treadmill){
+    			
     	mDistanceAdd = true;
     	totalDistance = 0;
     	Location gps;
@@ -499,6 +458,10 @@ public class GPS extends FragmentActivity {
     	else
     		mDistance.setText(R.string.locate_sat);
     	
+    		}
+    	else
+    		mDistance.setText("--TREADMILL MODE--");
+    	
     	ClickTimerStart(v);
     	
     	
@@ -510,6 +473,13 @@ public class GPS extends FragmentActivity {
     	
     	ClickTimerStop(v);
     }
+ 
+    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+      super.onConfigurationChanged(newConfig);
+    };
+    
     
     private void updateTimer (float time){
     	secs = (long)(time/1000);
@@ -544,7 +514,7 @@ public class GPS extends FragmentActivity {
     };
     
     public void ClickTimerStart (View view){
-/**    	if(stopped)
+/**    	if(stopped)			//Might use if implement Pause button
     		start = System.currentTimeMillis() - elapsed;
     	else
     	*/
@@ -559,6 +529,42 @@ public class GPS extends FragmentActivity {
     	timeHandler.removeCallbacks(startTimer);
     	stopped = true;
     }
+    
+    public void onTreadmillPress(View view) {
+    	View TreadmillOn = findViewById(R.id.TreadmillButton);
+		View TreadmillOff = findViewById(R.id.NoTreadmillButton);
+		
+    	if (!treadmill){
+    		TreadmillOn.setVisibility(View.GONE);
+    		TreadmillOff.setVisibility(View.VISIBLE);
+    		mDistance.setText("--TREADMILL MODE--");
+    	}
+    	else{
+    		TreadmillOn.setVisibility(View.VISIBLE);
+    		TreadmillOff.setVisibility(View.GONE);    		
+    	}
+    	treadmill = (!treadmill);
+    }
+    
+    public void onTreadmillChecked(View view) {
+        // Is the button now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+        
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.Treadmill:
+                if (checked){
+                	treadmill = true;
+                	mDistance.setText("--TREADMILL MODE--");
+                }
+                else{
+                	treadmill = false;
+                	mDistance.setText(R.string.not_started);
+                }
+                break;
+        }
+    }
+
     
     }
 

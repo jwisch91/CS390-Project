@@ -43,7 +43,10 @@
              <data android:mimeType="vnd.android.cursor.item/event"/>
         </activity>
 
-        <activity android:name="com.example.testing.GPS"></activity>
+        <activity android:name="com.example.testing.GPS"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="nosensor">
+        </activity>
         <activity android:name="com.example.testing.Settings"></activity>
         <activity android:name="com.example.testing.AlarmBroadcastReceiver"></activity>
         <receiver android:name="com.example.testing.AlarmBroadcastReceiver"></receiver>
