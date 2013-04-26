@@ -41,17 +41,6 @@ public class Main_Menu extends Activity {
 	    
 	    TextView Welcome = (TextView)findViewById(R.id.Welcome);
 	    SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-	    
-	    boolean weightUpdated = prefs.getBoolean("weightUpdated", false);
-	    Calendar rightNow = Calendar.getInstance();
-	    if (rightNow.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY){
-	       if (weightUpdated == false){
-	    	   //popup
-	    	   
-	    	   weightUpdated = true;
-	       }
-	    }
-	    
 	    String name = prefs.getString("userName", "Guest");
 	    Welcome.setText("Welcome " + name+"!");
 	    
