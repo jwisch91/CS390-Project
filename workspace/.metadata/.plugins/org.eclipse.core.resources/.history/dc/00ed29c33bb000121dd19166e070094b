@@ -10,13 +10,12 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.widget.Toast;
 
 /*
  * Anytime the repeat alarm intends to go off, all of this code runs.  This is how I get the 
  * notifications and noises to play together.  It is seperate from the calendar.  If we want
  * to try to change this to only go off on the days you are supposed to workout, a little more
- * research and work will need to be done.  
+ * research and work will need to be done.
  */
 
 public class AlarmBroadcastReceiver extends BroadcastReceiver {
@@ -41,29 +40,26 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 			notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 			r = RingtoneManager.getRingtone(context, notifyNoise);
 		}
-	
-		
 			
 			//end alarm make
 		
 			
 			// start notification make
-		if (com.example.testing.Settings.notification =  true){
 			NotificationCompat.Builder notificationBuild =
 			        new NotificationCompat.Builder(context)
 			        .setSmallIcon(R.drawable.icon)
 			        .setContentTitle("UHHHHH...I WORK OUT")
 			        .setContentText("Check to see if you have a workout today!")
 			        .setAutoCancel(true)
-					.setLights(-16776961/*blue*/, 250, 350)
+					.setLights(-16776961, 250, 350)
 					.setSound(notifyNoise)
 					.setVibrate(vpattern)
 					.setContentIntent(openAPP);
 			NotificationManager notifyUser = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 			// end notification make
+			r.play(); // Plays noise
 			notifyUser.notify(notifyID, notificationBuild.build()); // Builds and displays notification
-		}
-		
+			
 	}
 
 }

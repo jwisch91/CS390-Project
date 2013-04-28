@@ -23,9 +23,9 @@ public class Settings extends Activity{
 	public static final String PREFS_NAME = "winFitPref";
 	public boolean measure;
 	public boolean grain;
-	public static boolean alarm; //Bryan made this static so he could use it in AlarmBroadcastReceiver.java
-	public static boolean calendar;
-	public static boolean notification;
+	public boolean alarm;
+	public boolean calendar;
+	public boolean notification;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -55,7 +55,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 			        .setContentTitle("UHHHHH...I WORK OUT")
 			        .setContentText("Check to see if you have a workout today!")
 			        .setAutoCancel(true)
-					.setLights(-16776961/*blue*/, 250, 350)
+					.setLights(-16776961, 250, 350)
 					.setSound(notifyNoise)
 					.setVibrate(vpattern)
 					.setContentIntent(openAPP);

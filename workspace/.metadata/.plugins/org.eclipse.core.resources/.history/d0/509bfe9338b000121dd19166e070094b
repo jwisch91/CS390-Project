@@ -21,7 +21,6 @@ import android.widget.Toast;
 public class Select_Workout_Days extends Activity{
 		private CheckBox mon, tues, wed, thurs, fri, sat, sun; //Variables for the checkboxes
 	    private String REPEATDAYS= "BYDAY=";
-	    private int ADAY = 1000*60*60*24; //24hrs
 
 	    private final long BETADAYDELAY = 8300;// The delay we want for beta day.  This should be 6 seconds or so.  
  
@@ -61,38 +60,38 @@ public class Select_Workout_Days extends Activity{
 		final int thisMonth = objCalendar.get(Calendar.MONTH);
 		final int thisWeek = objCalendar.get(Calendar.WEEK_OF_MONTH);
 		final int today = objCalendar.get(Calendar.DAY_OF_WEEK);
-
+		final int thisHour = objCalendar.get(Calendar.HOUR_OF_DAY);
+		final int thisMinute = objCalendar.get(Calendar.MINUTE);
+		final int thisSecond = objCalendar.get(Calendar.SECOND);
 		
 		objCalendar.set(Calendar.YEAR, thisYear); 
 		objCalendar.set(Calendar.MONTH, thisMonth);
 		objCalendar.set(Calendar.WEEK_OF_MONTH, thisWeek); 
 		objCalendar.set(Calendar.DAY_OF_WEEK, today);
-		objCalendar.set(Calendar.HOUR_OF_DAY, 11); 
-		objCalendar.set(Calendar.MINUTE, 0); 
-		objCalendar.set(Calendar.SECOND, 0);
-		objCalendar.set(Calendar.MILLISECOND, 0);
+		objCalendar.set(Calendar.HOUR_OF_DAY, thisHour); 
+		objCalendar.set(Calendar.MINUTE, thisMinute); 
+		objCalendar.set(Calendar.SECOND, thisSecond);
 		//objCalendar.set(Calendar.MILLISECOND, 0);
 		
 		
 		submit.setOnClickListener(new OnClickListener() {
 			
 			/*
-			This is a little trippy.  What this has changed into is a scheduler with a repeating alarm
-			and notification.  It's a default notification that goes off every 24hrs starting with the
-			day you create your workout.  It gives the user the option to click the notification to go into
-			the app and view their workout.  It will only fill in the calendar on the days you select.  To emphaisze,
-			the alarm and notification will go off every day.  See code for the spots that define these actions. 
+			This is a little trippy.  Basically, you create an alarm intent based on the days you pick.  This alarm is a notification noise
+			and it is set to go off on the day at 10AM for any checkbox that was selected.  When that broadcast is recieved, it now knows
+			to put a notification with the alarm noise when it is received and hence we will have a notification with a noise pop up
+			at these times.  This connects the notification and alarms intricately.  
 			 */
 			 
 			  @Override
 			  public void onClick(View v) {
-				// Start checking for day selection.       
+		             
 				  if (mon.isChecked()){
 					  if (REPEATDAYS == "BYDAY=")
 					  	  REPEATDAYS = REPEATDAYS + "MO";
 					  else
 						  REPEATDAYS = REPEATDAYS + ",MO";
-
+					  	// probably have to set the alarm to know that it is suppose to go off on Mondays at 10AM here. Should also do Alarm.setRepeat(...)
 				  }
 				  if (tues.isChecked()){
 					  if (REPEATDAYS == "BYDAY=")
@@ -130,51 +129,45 @@ public class Select_Workout_Days extends Activity{
 					  else
 						    REPEATDAYS = REPEATDAYS + ",SU";
 				  }
-				  // end checking for day selection
 				  
 				  if(com.example.testing.Select_Workout.loseWeight == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
-					    // set the calendar if the settings permit it
-					    if (com.example.testing.Settings.calendar =  true){
-					       calIntent.putExtra(Events.TITLE, "Run Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
-				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
-				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
-				           startActivity(calIntent); 
-					    }
-					    // schedule the repeating alarm
-					    myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); 
-				  
+					  calIntent.putExtra(Events.TITLE, "Run Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent); // for some reason we can't ge the calendar to pop up now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
+						
+		
+					  
 				  }
 				  else if (com.example.testing.Select_Workout.gainMuscle == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
-					    if(com.example.testing.Select_Workout.loseWeight == true){
-					       calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
-				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
-				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
-				           startActivity(calIntent);
-					    }
-					    myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); // Alarm is set for start time of event
+					  calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent);// for some reason we get an error b/c of the manifest with this right now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
 						
 					  
 				  }
 				  else if (com.example.testing.Select_Workout.both == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
-					    if(com.example.testing.Select_Workout.loseWeight == true){
-					       calIntent.putExtra(Events.TITLE, "Special Run Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
-				           calIntent.putExtra(Events.ALL_DAY, 1); 
-				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
-				           startActivity(calIntent);
-					    }
-				        myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); 
+					  calIntent.putExtra(Events.TITLE, "Special Run Today"); 
+				        calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
+				        calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
+				        calIntent.putExtra(Events.VISIBLE, 1);
+				        calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				        startActivity(calIntent);// for some reason we get an error b/c of the manifest with this right now.
+						myAlarm.set(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis() + BETADAYDELAY, pIntent); // Alarm is set for start time of event
+						
 					  
 				  }
 				  else{
