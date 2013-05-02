@@ -4,14 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     <TextView
-        android:id="@+id/Test"
+        android:id="@+id/DateLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
-        android:text="Test"
+        android:text="Today's Date:"
         android:textColor="#000000"
         android:textSize="30dip" />
+    
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000000"
+        android:textSize="30dip" />
+    
+    <TextView
+        android:id="@+id/WorkoutLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Today's Workout:"
+        android:textColor="#000000"
+        android:textSize="30dip" />
+    
+    <TextView
+        android:id="@+id/Workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:lines = "5"
+        android:textColor="#000000"
+        android:textSize="20dip" />
 
 </LinearLayout>
