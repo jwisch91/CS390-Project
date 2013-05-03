@@ -31,19 +31,19 @@ public class View_Workout extends Activity {
 	    
 	    ((TextView)findViewById(R.id.Workout)).setText(name);
 	    
-	    if (name.contains("Jordan"))
+	    if (name.contains("ChestTriceps"))
 		    ((TextView)findViewById(R.id.Workout)).setText("Dumbbell Bench Press: 3x10\n" +
 		    		"Incline Bench Press: 3x10\n" +
 		    		"Tricep Dips: 3x10\n" +
 		    		"Lying Tricep Extension: 3x10\n" +
 		    		"Russian Twists: 3x10");
-	    else if (name == "BackWorkout")
+	    else if (name.contains("BackCore"))
 	    	((TextView)findViewById(R.id.Workout)).setText("One Arm Dumbbell Row: 3x10 ea. arm\n" +
 	    			"Dumbbell Reverse Fly: 3x10\n" +
 	    			"Dumbbell Curl: 3x10\n" +
 	    			"Hammer Curl: 3x10" +
 	    			"Plank: 3x60 seconds");
-	    else if (name == "LegWorkout")
+	    else if (name.contains("LegsShoulders"))
 	    	((TextView)findViewById(R.id.Workout)).setText("Dumbbell Squat: 3x10\n" +
 	    			"Dumbbell Lunge: 3x10\n" +
 	    			"Dumbbell Shoulder Press: 3x10\n" +
