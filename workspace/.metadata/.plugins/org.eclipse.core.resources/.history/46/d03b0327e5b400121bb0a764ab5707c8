@@ -1,11 +1,7 @@
 package com.example.testing;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
-import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -19,7 +15,6 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.CheckBox;
 import android.preference.*;
-import android.provider.CalendarContract.Events;
 import android.widget.TextView;
 
 
@@ -103,17 +98,16 @@ public class Settings extends Activity{
         				SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
         	      	    Editor edit = prefs.edit();  
         	            edit.putBoolean("workoutInProgress", false);
-        	            
-        	             
         	            /*
-        	             * Deleting event explanation:  The eventID you see below comes from the class where I create the events.  I assign them an ID so that when we go to delete them, only those events are deleted. 
-        	             * I defined the events as part of the CONTENT_URI so they can be accessed in this way.  
-        	             */
-      	                //ContentResolver cr = getContentResolver(); I can't decide if we even need to define these.  It doesn't seem like we use them. It was on the android website. I C & P'd it.  
-                        // ContentValues values = new ContentValues();
-                           Uri deleteUri = ContentUris.withAppendedId(Events.CONTENT_URI, com.example.testing.Select_Workout_Days.eventID);
-                           int rows = getContentResolver().delete(deleteUri, null, null); //
+        	             * 
+        	               ContentResolver cr = getContentResolver();
+                           ContentValues values = new ContentValues();
+                           Uri deleteUri = null;
+                           deleteUri = ContentUris.withAppendedId(Events.CONTENT_URI, eventID);
+                           int rows = getContentResolver().delete(deleteUri, null, null);
 
+        	             * 
+        	             */
         	            edit.commit();
         	            Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
         		        startActivity(nextScreen);

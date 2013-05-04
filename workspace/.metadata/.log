@@ -10464,3 +10464,27 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 1 org.eclipse.core.resources 4 274 2013-04-28 14:36:14.782
 !MESSAGE Resource is out of sync with the file system: '/testing/src/com/example/testing/View_Workout.java'.
+!SESSION 2013-05-04 12:09:18.170 -----------------------------------------------
+eclipse.buildId=v21.1.0-569685
+java.version=1.6.0_43
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/its_admin/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/its_admin/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-05-04 12:09:22.882
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2013-05-04 12:09:24.197
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.ddms 4 0 2013-05-04 12:09:33.674
+!MESSAGE DDMS files not found: /Users/its_admin/Desktop/adt-bundle-mac-x86_64-20130219/eclipse/Eclipse.app/Contents/MacOS/C:\Users\Grace\Desktop\adt-bundle-windows-x86\adt-bundle-windows-x86\sdk/platform-tools/adb /Users/its_admin/Desktop/adt-bundle-mac-x86_64-20130219/eclipse/Eclipse.app/Contents/MacOS/C:\Users\Grace\Desktop\adt-bundle-windows-x86\adt-bundle-windows-x86\sdk/tools/hprof-conv /Users/its_admin/Desktop/adt-bundle-mac-x86_64-20130219/eclipse/Eclipse.app/Contents/MacOS/C:\Users\Grace\Desktop\adt-bundle-windows-x86\adt-bundle-windows-x86\sdk/tools/traceview 
+
+!ENTRY org.eclipse.egit.ui 2 0 2013-05-04 12:09:35.866
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
