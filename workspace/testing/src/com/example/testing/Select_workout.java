@@ -2,6 +2,8 @@ package com.example.testing;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -24,6 +26,11 @@ public class Select_Workout extends Activity{
 
 			public void onClick(View arg0) {
 				loseWeight = true;
+				SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+				Editor edit = prefs.edit();
+				edit.putString("workout", "LoseWeight");
+				edit.commit();
+				
 		        //Starting a new Intent
 		            Intent nextScreen = new Intent(getApplicationContext(), Select_Workout_Days.class);
 			    // TODO Auto-generated method stub
@@ -38,6 +45,10 @@ public class Select_Workout extends Activity{
 
 			public void onClick(View arg0) {
 				gainMuscle = true;
+				SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+				Editor edit = prefs.edit();
+				edit.putString("workout", "BuildMuscle");
+				edit.commit();
 		        //Starting a new Intent
 		            Intent nextScreen = new Intent(getApplicationContext(), Select_Workout_Days.class);
 			    // TODO Auto-generated method stub
@@ -53,6 +64,10 @@ public class Select_Workout extends Activity{
 
 		public void onClick(View arg0) {
 			both = true;
+			SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+			Editor edit = prefs.edit();
+			edit.putString("workout", "Mixed");
+			edit.commit();
 	        //Starting a new Intent
 	            Intent nextScreen = new Intent(getApplicationContext(), Select_Workout_Days.class);
 		    // TODO Auto-generated method stub
