@@ -25,7 +25,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 	vpattern[0] = 300;
 	vpattern[1] = 300;
 	vpattern[2] = 300;
-	vpattern[3] = 400; }
+	vpattern[3] = 800; }
 	@Override
 	public void onReceive(Context context, Intent intent) { 
 		Intent openIntent = new Intent(context, View_Workout.class);

@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract.Events;
@@ -19,10 +21,11 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class Select_Workout_Days extends Activity{
-	    public static long eventID = 420;
+	    public static long eventID = 42;
 		private CheckBox mon, tues, wed, thurs, fri, sat, sun; //Variables for the checkboxes
 	    private String REPEATDAYS= "BYDAY=";
 	    private int ADAY = 1000*60*60*24; //24hrs
+	    String[] wktdays = new String[3];
 
  	    
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +83,14 @@ public class Select_Workout_Days extends Activity{
 			 
 			  @Override
 			  public void onClick(View v) {
-				// Start checking for day selection.       
+				// Start checking for day selection.
+				  
+				  int count = 0;
+				  
 				  if (mon.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Monday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 					  	  REPEATDAYS = REPEATDAYS + "MO";
 					  else
@@ -89,36 +98,53 @@ public class Select_Workout_Days extends Activity{
 
 				  }
 				  if (tues.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Tuesday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "TU";
 					  else
 						    REPEATDAYS = REPEATDAYS + ",TU";
 				  }
 				  if (wed.isChecked()){
+					  count++;if(count < 3)
+						  wktdays[count] = "Wednesday";
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "WE";
 					  else
 						    REPEATDAYS = REPEATDAYS + ",WE";
 				  }
 				  if (thurs.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Thursday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "TH";
 					  else
 						    REPEATDAYS = REPEATDAYS + ",TH";
 				  }
 				  if (fri.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Friday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "FR";
 					  else
 						    REPEATDAYS = REPEATDAYS + ",FR";
 				  }
 				  if (sat.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Saturday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "SA";
 					  else
 						    REPEATDAYS = REPEATDAYS + ",SA";
 				  }
 				  if (sun.isChecked()){
+					  if(count < 3)
+						  wktdays[count] = "Sunday";
+					  count++;
 					  if (REPEATDAYS == "BYDAY=")
 						  	REPEATDAYS = REPEATDAYS + "SU";
 					  else
@@ -126,52 +152,63 @@ public class Select_Workout_Days extends Activity{
 				  }
 				  // end checking for day selection
 				  
+				  if(count > 3){
+					  //TODO Put a toast showing ERROR, use less days
+					  REPEATDAYS = "BYDAY=";
+				  }
+				  else{
+				  
+				  	count = count*3;
+				  	String events = String.valueOf(count);
+				  	SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
+				  	boolean useCalendar = prefs.getBoolean("Use Calendar", true);
+				  	Editor edit = prefs.edit();
+				  	edit.putString("day1", wktdays[0]);
+				  	edit.putString("day2", wktdays[1]);
+				  	edit.putString("day3", wktdays[2]);
+				  	edit.commit();
+				  
+				  	
 				  if(com.example.testing.Select_Workout.loseWeight == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
 					    // set the calendar if the settings permit it
-					    if (com.example.testing.Settings.calendar =  true){
-					       calIntent.setData(Events.CONTENT_URI);
+					    if (useCalendar){
 						   calIntent.putExtra(Events._ID, eventID);
 					       calIntent.putExtra(Events.TITLE, "Run Today"); 
 				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
 				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS); 
 				           startActivity(calIntent); 
 					    }
 					    // schedule the repeating alarm.  Need Ryan to show me what we talked about Friday at class. 
 					    myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); 
-				  
 				  }
 				  else if (com.example.testing.Select_Workout.gainMuscle == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
-					    if(com.example.testing.Select_Workout.loseWeight == true){
-					       calIntent.setData(Events.CONTENT_URI);
+					    if(useCalendar){
 					       calIntent.putExtra(Events._ID, eventID);
 					       calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
 				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
 				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS);  
 				           startActivity(calIntent);
 					    }
 					    myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); // Alarm is set for start time of event
-						
-					  
 				  }
 				  else if (com.example.testing.Select_Workout.both == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
-					    if(com.example.testing.Select_Workout.loseWeight == true){
-					       calIntent.setData(Events.CONTENT_URI);
+					    if(useCalendar){
 						   calIntent.putExtra(Events._ID, eventID);
 					       calIntent.putExtra(Events.TITLE, "Special Run Today"); 
 				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); 
 				           calIntent.putExtra(Events.VISIBLE, 1);
-				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT=2;WKST=SU;" + REPEATDAYS); 
+				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS);
 				           startActivity(calIntent);
 					    }
 				        myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); 
@@ -183,6 +220,7 @@ public class Select_Workout_Days extends Activity{
 				
 				
 				}
+			  }
 
 			  });
 

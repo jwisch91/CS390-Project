@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:fillViewport="true"
+  android:id="@+id/Main_menu">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="0.80"
+    android:background="#ffffff" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -43,5 +57,48 @@
         android:lines = "5"
         android:textColor="#000000"
         android:textSize="20dip" />
-
+    
 </LinearLayout>
+
+    <Button
+        android:id="@+id/CompleteYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="Yes"
+        android:textSize="25dip" />
+
+    <Button
+        android:id="@+id/CompleteNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/blue"
+        android:padding="10dip"
+        android:text="No"
+        android:textSize="25dip" />
+    
+    <TextView
+        android:id="@+id/CompleteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CompleteYes"
+        android:layout_centerHorizontal="true"
+        android:text="Did you complete your workout?"
+        android:textColor="#000000"
+        android:textSize="20dip"
+        android:layout_marginBottom="55dp" />
+    
+    </RelativeLayout>
+    
+</ScrollView>
+
+    
