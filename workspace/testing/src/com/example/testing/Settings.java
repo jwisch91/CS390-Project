@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.NotificationManager;
+import android.os.Bundle;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -32,6 +37,53 @@ public class Settings extends Activity{
 	public static boolean calendar;
 	public static boolean notification;
 	
+	public Dialog reregisterDialog(Bundle savedInstanceState) {
+		// Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to reregister?")
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                	    SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+       	      	    	Editor edit = prefs.edit();  
+       	      	    	edit.putBoolean("firstTime", true);
+       	      	    	edit.commit();
+       	      	    	Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
+       	      	    	startActivity(nextScreen);
+                   }
+               })
+               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // User cancelled the dialog
+                   }
+               });
+        // Create the AlertDialog object and return it
+        return builder.create();
+	}
+	
+	public Dialog clearWorkoutDialog(Bundle savedInstanceState) {
+		// Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to clear your workout?")
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                	   SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+                	   Editor edit = prefs.edit();  
+                	   edit.putBoolean("workoutInProgress", false);
+                	   edit.commit();
+                	   Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
+                	   startActivity(nextScreen);
+                   }
+               })
+               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // User cancelled the dialog
+                   }
+               });
+        // Create the AlertDialog object and return it
+        return builder.create();
+	}
+
+	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
@@ -47,40 +99,14 @@ public class Settings extends Activity{
         CheckBox boxNotification = (CheckBox)findViewById(R.id.UseNotification);
         
         
+        
         final Button btnReRegister = (Button)findViewById(R.id.Reregister);
         btnReRegister.setOnClickListener(new Button.OnClickListener(){
 
         	@Override
         	public void onClick(View arg0) {
-        		LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
-        		View popupView = layoutInflater.inflate(R.layout.confirmation_popup, null);
-        		final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT,  LayoutParams.WRAP_CONTENT);  
-        		popupWindow.showAtLocation(findViewById(R.id.Settings_page), Gravity.CENTER_HORIZONTAL, 0, 0);
-        		
-        		Button btnYes = (Button)popupView.findViewById(R.id.yes);
-        		btnYes.setOnClickListener(new Button.OnClickListener(){
-        			@Override
-        			public void onClick(View v) {
-        				// TODO Auto-generated method stub
-        				popupWindow.dismiss();
-        				SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-        	      	    Editor edit = prefs.edit();  
-        	            edit.clear();
-        	            edit.commit();
-        	            Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
-        		        startActivity(nextScreen);
-        			}
-        		});
-        		
-        		Button btnNo = (Button)popupView.findViewById(R.id.no);
-        		btnNo.setOnClickListener(new Button.OnClickListener(){
-        			@Override
-        			public void onClick(View v) {
-        				// TODO Auto-generated method stub
-        				popupWindow.dismiss();
-        			}
-        		});
-        		popupWindow.showAsDropDown(btnReRegister, 50, -30);
+        		Dialog confirm = reregisterDialog(null);
+    			confirm.show();
         	}
         });
         
@@ -89,6 +115,7 @@ public class Settings extends Activity{
 
         	@Override
         	public void onClick(View arg0) {
+
         		LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
         		View popupView = layoutInflater.inflate(R.layout.confirmation_popup, null);
         		final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT,  LayoutParams.WRAP_CONTENT);  
@@ -129,28 +156,11 @@ public class Settings extends Activity{
         			}
         		});
         		popupWindow.showAsDropDown(btnClearWorkout, 50, -30);
+        		Dialog confirm = clearWorkoutDialog(null);
+    			confirm.show();
         	}
         });
 
-        
-        
-        
-        /*
-        Button btnSecondScreen = (Button) findViewById(R.id.ClearPrefs);
-
-      //Listening to button event;
-
-      //Listening to button event
-      btnSecondScreen.setOnClickListener(new View.OnClickListener() {
-
-      	public void onClick(View arg0) {
-      		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-      	    Editor edit = prefs.edit();  
-            edit.clear();
-            Intent nextScreen = new Intent(getApplicationContext(), LoginActivity.class);
-	        startActivity(nextScreen);
-      	}
-      });*/
         
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);

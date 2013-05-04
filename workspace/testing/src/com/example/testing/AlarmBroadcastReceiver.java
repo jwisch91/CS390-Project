@@ -33,27 +33,16 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 		// If we were to make multiple notifications, notifyID can be incremented and we would have unique IDs.  Remeber: this stuff only
 		// happens when the intent is received.  The intent is only received at the time specified by objCalendar (from Select_Workout_Days.java)
 		
-			//start alarm make
+	    // Set the Uri and get a noise for the .setSound method when creating the notification. 
 		Uri notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-		Ringtone r = RingtoneManager.getRingtone(null, null);// this makes the ringtone silent.  The only way to get a sound is to have alarm checked in the settings.  
-	
-		if(com.example.testing.Settings.alarm = true){
-			notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-			r = RingtoneManager.getRingtone(context, notifyNoise);
-		}
-	
 		
-			
-			//end alarm make
-		
-			
 			// start notification make
 		if (com.example.testing.Settings.notification =  true){
 			NotificationCompat.Builder notificationBuild =
 			        new NotificationCompat.Builder(context)
 			        .setSmallIcon(R.drawable.icon)
-			        .setContentTitle("UHHHHH...I WORK OUT")
-			        .setContentText("Check to see if you have a workout today!")
+			        .setContentTitle("You have a workout!")
+			        .setContentText("Click to enter WinFit and view the details.")
 			        .setAutoCancel(true)
 					.setLights(-16776961/*blue*/, 250, 350)
 					.setSound(notifyNoise)
