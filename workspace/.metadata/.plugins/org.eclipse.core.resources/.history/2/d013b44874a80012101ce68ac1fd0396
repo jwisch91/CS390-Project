@@ -1,8 +1,0 @@
-package com.example.testing;
-
-public class View_Workout {
-	public void onCreate(Bundle savedInstanceState) {
-		
-	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.view_workout);
-}

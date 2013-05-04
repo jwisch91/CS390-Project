@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.example.testing.Select_workout.java&apos; to &apos;Select_Workout.java&apos;&#x0D;&#x0A;- Original project: &apos;testing&apos;&#x0D;&#x0A;- Original element: &apos;com.example.testing.Select_workout.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.testing.Select_Workout.java&apos;" description="Rename compilation unit &apos;Select_workout.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.example.testing{Select_workout.java" name="Select_Workout.java" references="false" stamp="1366659574187" version="1.0"/>
+</session>
