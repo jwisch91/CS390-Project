@@ -4,11 +4,15 @@ import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -26,7 +30,7 @@ import android.widget.Toast;
 
 public class Main_Menu extends Activity {
 	public static final String PREFS_NAME = "winFitPref";
-	
+	SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
 	/** Called when the activity is first created. */
 	@Override
 	public void onBackPressed() {
@@ -35,12 +39,65 @@ public class Main_Menu extends Activity {
 		startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(startMain);
 	}
+	
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		// Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to exit?")
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                   }
+               })
+               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // User cancelled the dialog
+                   }
+               });
+        // Create the AlertDialog object and return it
+        return builder.create();
+	}
+	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main_menu);
 	    
+	    
 	    TextView Welcome = (TextView)findViewById(R.id.Welcome);
-	    SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+	    final SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+	    
+	    boolean weightUpdated = prefs.getBoolean("weightUpdated", false);
+	    Calendar rightNow = Calendar.getInstance();
+	    if (rightNow.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY){
+	       if (weightUpdated == false){
+	    	   AlertDialog.Builder weightDialog = new AlertDialog.Builder(this);
+	    	   
+	    	   weightDialog.setMessage("Enter your weight");
+	    	   
+	    	   final EditText input = new EditText(this);
+	    	   weightDialog.setView(input);
+	    	   weightDialog.setPositiveButton("Sumbit", new DialogInterface.OnClickListener() {
+
+	    		   @Override
+	    		   public void onClick(DialogInterface dialog, int which) {
+	    			   String weight = input.getText().toString();
+	    			   Editor edit = prefs.edit();
+	    			   edit.putString("weight", weight);
+	    			   edit.putBoolean("weightUpdated", true);
+	    			   edit.commit();
+	    		   }
+	    		   
+	    	   });
+	    	   weightDialog.setNegativeButton("Cancel", new OnClickListener() {
+	    		   @Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						
+					}
+	    	   });
+	    	   weightDialog.create();
+	       }
+	    }
+	    
 	    String name = prefs.getString("userName", "Guest");
 	    Welcome.setText("Welcome " + name+"!");
 	    

@@ -36,14 +36,22 @@ Goals for the third sprint -
     -shows what workouts you have completed
   -Look into actual workout/fitness plans
   
-Workout Ideas
-  -Train for marathon
-  -Train for 5K
+Minisprint 5-25
 
-Targetted Users Ideas
-  -Average Lazy User
-  -Atheletes
-    -Runners
-    -Swimmers
-    -Sports
-  -Above average weight user
+  -Bryan
+    -Get multiple days on calender
+    -Variables within calender event descripts
+    -Settings page, alarm tied to notification need to fix
+      -Sneak in description
+  
+  -Jordan
+    -View workout page
+  
+  -Michael
+    -2 pages for confirmation
+  
+  -Ryan
+    -Weekly checkups on weight
+    -Weekly increments on workout numbers
+    -Popups on certain settings
+
