@@ -4,14 +4,17 @@ import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,9 +49,35 @@ public class Main_Menu extends Activity {
 	    Calendar rightNow = Calendar.getInstance();
 	    if (rightNow.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY){
 	       if (weightUpdated == false){
-	    	   //popup
+	    	   AlertDialog.Builder weightDialog = new AlertDialog.Builder(this);
 	    	   
-	    	   weightUpdated = true;
+	    	   weightDialog.setMessage("Enter your weight");
+	    	   
+	    	   final EditText input = new EditText(this);
+	    	   input.setInputType(InputType.TYPE_CLASS_NUMBER);
+	    	   weightDialog.setView(input);
+	    	   weightDialog.setPositiveButton("Sumbit", new DialogInterface.OnClickListener() {
+
+	    		   @Override
+	    		   public void onClick(DialogInterface dialog, int which) {
+	    			   SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
+	    			   String weight = input.getText().toString();
+	    			   Editor edit = prefs.edit();
+	    			   edit.putString("weight", weight);
+	    			   edit.putBoolean("weightUpdated", true);
+	    			   edit.commit();
+	    		   }
+	    		   
+	    	   });
+	    	   weightDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	    		   @Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						
+					}
+	    	   });
+	    	   weightDialog.create();
+	    	   weightDialog.show();
 	       }
 	    }
 	    
