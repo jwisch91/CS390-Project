@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class Select_Workout extends Activity{
+public class Select_workout extends Activity{
 		static boolean loseWeight = false;
 	    static boolean gainMuscle = false;
 	    static boolean both = false;

@@ -109,7 +109,7 @@ public class Select_Workout_Days extends Activity{
 					  	REPEATDAYS = REPEATDAYS + "SU";
 				  }
 				  
-				  if(com.example.testing.Select_Workout.loseWeight == true){
+				  if(com.example.testing.Select_workout.loseWeight == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Run Today"); 
@@ -123,7 +123,7 @@ public class Select_Workout_Days extends Activity{
 		
 					  
 				  }
-				  else if (com.example.testing.Select_Workout.gainMuscle == true){
+				  else if (com.example.testing.Select_workout.gainMuscle == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
@@ -136,7 +136,7 @@ public class Select_Workout_Days extends Activity{
 						
 					  
 				  }
-				  else if (com.example.testing.Select_Workout.both == true){
+				  else if (com.example.testing.Select_workout.both == true){
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
 					  calIntent.putExtra(Events.TITLE, "Special Run Today"); 
