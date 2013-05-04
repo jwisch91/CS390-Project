@@ -16,7 +16,7 @@ import android.widget.Toast;
  * Anytime the repeat alarm intends to go off, all of this code runs.  This is how I get the 
  * notifications and noises to play together.  It is seperate from the calendar.  If we want
  * to try to change this to only go off on the days you are supposed to workout, a little more
- * research and work will need to be done.  
+ * research and work will need to be done.
  */
 
 public class AlarmBroadcastReceiver extends BroadcastReceiver {
@@ -33,18 +33,31 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 		// If we were to make multiple notifications, notifyID can be incremented and we would have unique IDs.  Remeber: this stuff only
 		// happens when the intent is received.  The intent is only received at the time specified by objCalendar (from Select_Workout_Days.java)
 		
-	    // Set the Uri and get a noise for the .setSound method when creating the notification. 
+			//start alarm make
 		Uri notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		Ringtone r = RingtoneManager.getRingtone(null, null);// this makes the ringtone silent.  The only way to get a sound is to have alarm checked in the settings.  
+	
+		if(com.example.testing.Settings.alarm = true && com.example.testing.Settings.notification = true){
+			notifyNoise = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+			r = RingtoneManager.getRingtone(context, notifyNoise);
+		}
+		else{
+			Toast.makeText(context, "You have chosen not have reminder noises.", Toast.LENGTH_SHORT).show();
+		}
 		
+			
+			//end alarm make
+		
+			
 			// start notification make
 		if (com.example.testing.Settings.notification =  true){
 			NotificationCompat.Builder notificationBuild =
 			        new NotificationCompat.Builder(context)
 			        .setSmallIcon(R.drawable.icon)
-			        .setContentTitle("You have a workout!")
-			        .setContentText("Click to enter WinFit and view the details.")
+			        .setContentTitle("UHHHHH...I WORK OUT")
+			        .setContentText("Check to see if you have a workout today!")
 			        .setAutoCancel(true)
-					.setLights(-16776961/*blue*/, 250, 350)
+					.setLights(-16776961, 250, 350)
 					.setSound(notifyNoise)
 					.setVibrate(vpattern)
 					.setContentIntent(openAPP);
@@ -52,7 +65,9 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 			// end notification make
 			notifyUser.notify(notifyID, notificationBuild.build()); // Builds and displays notification
 		}
-		
+		else{
+			Toast.makeText(context, "You have chosen not have reminders.", Toast.LENGTH_SHORT).show();
+		}
 	}
 
 }

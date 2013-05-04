@@ -30,6 +30,8 @@ public final class R {
         public static final int About_Us=0x7f08001c;
         public static final int About_Us2=0x7f080024;
         public static final int Clear_Workout=0x7f08003f;
+        public static final int Date=0x7f080041;
+        public static final int DateLbl=0x7f080040;
         public static final int Friday=0x7f08002c;
         public static final int GPS_Button=0x7f08001d;
         public static final int GPS_Button2=0x7f080025;
@@ -51,7 +53,6 @@ public final class R {
         public static final int Settings_page=0x7f080032;
         public static final int SubmitDays=0x7f080031;
         public static final int Sunday=0x7f080030;
-        public static final int Test=0x7f080040;
         public static final int Thursday=0x7f08002a;
         public static final int Treadmill=0x7f080011;
         public static final int TreadmillButton=0x7f080012;
@@ -61,14 +62,16 @@ public final class R {
         public static final int UseNotification=0x7f08003d;
         public static final int Weather=0x7f08001e;
         public static final int Weather2=0x7f080026;
-        public static final int Weather_Submit=0x7f080042;
+        public static final int Weather_Submit=0x7f080045;
         public static final int Wednesday=0x7f08002b;
         public static final int Weight=0x7f080016;
         public static final int Welcome=0x7f080019;
         public static final int Welcome2=0x7f080021;
+        public static final int Workout=0x7f080043;
+        public static final int WorkoutLbl=0x7f080042;
         public static final int Workout_Button=0x7f08001a;
         public static final int Workout_Button2=0x7f080022;
-        public static final int Zip_Code=0x7f080041;
+        public static final int Zip_Code=0x7f080044;
         public static final int btnLogin=0x7f080017;
         public static final int button1=0x7f080002;
         public static final int confirmation_text=0x7f080008;
@@ -77,7 +80,7 @@ public final class R {
         public static final int header=0x7f080014;
         public static final int header2=0x7f080020;
         public static final int label_distance=0x7f08000b;
-        public static final int menu_settings=0x7f080043;
+        public static final int menu_settings=0x7f080046;
         public static final int message=0x7f08003a;
         public static final int no=0x7f080009;
         public static final int radio0=0x7f080004;

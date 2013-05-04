@@ -16,9 +16,9 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="98" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="32" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="32" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -50,6 +50,7 @@
 <part id="10"/>
 <part id="11"/>
 <part id="12"/>
+<part id="13"/>
 </presentation>
 </folder>
 </info>
@@ -75,19 +76,15 @@
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="testing Manifest" path="/Users/Michael/CS390-Project/workspace/testing/AndroidManifest.xml" title="testing Manifest" tooltip="testing/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/AndroidManifest.xml"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_workout.java" partName="Select_workout.java" path="/Users/Michael/CS390-Project/workspace/testing/src/com/example/testing/Select_workout.java" title="Select_workout.java" tooltip="testing/src/com/example/testing/Select_workout.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Select_workout.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="220" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main_Menu.java" partName="Main_Menu.java" path="/Users/Michael/CS390-Project/workspace/testing/src/com/example/testing/Main_Menu.java" title="Main_Menu.java" tooltip="testing/src/com/example/testing/Main_Menu.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Main_Menu.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2734" selectionTopPixel="648"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4192" selectionTopPixel="12"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_Workout_Days.java" partName="Select_Workout_Days.java" path="/Users/Michael/CS390-Project/workspace/testing/src/com/example/testing/Select_Workout_Days.java" title="Select_Workout_Days.java" tooltip="testing/src/com/example/testing/Select_Workout_Days.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5176" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4555" selectionTopPixel="1373"/>
 </editor>
-<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="check_run.xml" partName="check_run.xml" path="/Users/Michael/CS390-Project/workspace/testing/res/layout/check_run.xml" title="check_run.xml" tooltip="testing/res/layout/check_run.xml" workbook="DefaultEditorWorkbook">
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="check_run.xml" partName="check_run.xml" path="/Users/Michael/CS390-Project/workspace/testing/res/layout/check_run.xml" title="check_run.xml" tooltip="testing/res/layout/check_run.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/res/layout/check_run.xml"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="check_weight.xml" partName="check_weight.xml" path="/Users/Michael/CS390-Project/workspace/testing/res/layout/check_weight.xml" title="check_weight.xml" tooltip="testing/res/layout/check_weight.xml" workbook="DefaultEditorWorkbook">
@@ -99,6 +96,10 @@
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Settings.java" partName="Settings.java" path="/Users/Michael/CS390-Project/workspace/testing/src/com/example/testing/Settings.java" title="Settings.java" tooltip="testing/src/com/example/testing/Settings.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Settings.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_Workout.java" partName="Select_Workout.java" path="/Users/Michael/CS390-Project/workspace/testing/src/com/example/testing/Select_Workout.java" title="Select_Workout.java" tooltip="testing/src/com/example/testing/Select_Workout.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testing/src/com/example/testing/Select_Workout.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="621" selectionTopPixel="447"/>
 </editor>
 </editors>
 <views>
@@ -116,7 +117,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (45 items)"/>
+<category IMemento.internal.id="Warnings (68 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="476"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -161,7 +162,7 @@
 <view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="com.android.ide.eclipse.editors.CommonXmlEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
 <descriptor class="com.android.ide.eclipse.ddms.Perspective" id="com.android.ide.eclipse.ddms.Perspective" label="DDMS"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -315,9 +316,9 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.18394248" ratioLeft="307" ratioRight="1362" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.15698023" ratioLeft="262" ratioRight="1407" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.66327685" ratioLeft="587" ratioRight="298" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -353,8 +354,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Main_Menu_2.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/settings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/main_menu_2.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/View_Workout.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/testing/res/layout/view_workout.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Login.java"/>
@@ -375,113 +374,131 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/testing/project.properties"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/testing/proguard-project.txt"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_Workout_Days.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_workout.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Select_Workout.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testing/src/com/example/testing/Main_Menu.java"/>
 </editors>
-<item historyLabel="settings.xml" index="1"/>
-<item historyLabel="main_menu_2.xml" index="2"/>
-<item historyLabel="View_Workout.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="view_workout.xml" index="4"/>
-<item historyLabel="View_Workout.java" index="3">
-<position info="not_deleted" x="191" y="0"/>
-</item>
-<item historyLabel="view_workout.xml" index="4"/>
-<item historyLabel="View_Workout.java" index="3">
-<position info="not_deleted" x="191" y="0"/>
-</item>
-<item historyLabel="main_menu_2.xml" index="2"/>
-<item historyLabel="view_workout.xml" index="4"/>
-<item historyLabel="View_Workout.java" index="3">
-<position info="not_deleted" x="278" y="0"/>
-</item>
-<item historyLabel="main_menu_2.xml" index="2"/>
 <item historyLabel="Main_Menu_2.java" index="0">
 <position info="not_deleted" x="1061" y="17"/>
 </item>
-<item historyLabel="Login.java" index="5">
+<item historyLabel="Login.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="view_workout.xml" index="4"/>
-<item historyLabel="View_Workout.java" index="3">
+<item historyLabel="view_workout.xml" index="2"/>
+<item historyLabel="View_Workout.java" index="1">
 <position info="not_deleted" x="278" y="0"/>
 </item>
-<item historyLabel="Login.java" index="5">
+<item historyLabel="Login.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="View_Workout.java" index="3">
+<item historyLabel="View_Workout.java" index="1">
 <position info="not_deleted" x="278" y="0"/>
 </item>
-<item historyLabel="testing Manifest" index="6">
+<item historyLabel="testing Manifest" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Select_workout.java" index="7">
+<item historyLabel="Select_workout.java" index="5">
 <position info="not_deleted" x="220" y="0"/>
 </item>
-<item historyLabel="Main_Menu.java" index="8">
+<item historyLabel="Main_Menu.java" index="6">
 <position info="not_deleted" x="2734" y="0"/>
 </item>
-<item historyLabel="Select_Workout_Days.java" index="9">
+<item historyLabel="Select_Workout_Days.java" index="7">
 <position info="not_deleted" x="6080" y="0"/>
 </item>
-<item historyLabel="Main_Menu.java" index="8">
+<item historyLabel="Main_Menu.java" index="6">
 <position info="not_deleted" x="2734" y="0"/>
 </item>
-<item historyLabel="Select_Workout_Days.java" index="9">
+<item historyLabel="Select_Workout_Days.java" index="7">
 <position info="not_deleted" x="5176" y="0"/>
 </item>
-<item historyLabel="check_run.xml" index="10">
+<item historyLabel="check_run.xml" index="8">
 <position info="not_deleted" x="573" y="0"/>
 </item>
-<item historyLabel="check_run.xml" index="11">
+<item historyLabel="check_run.xml" index="9">
 <position info="not_deleted" x="977" y="0"/>
 </item>
-<item historyLabel="check_weight.xml" index="12">
+<item historyLabel="check_weight.xml" index="10">
 <position info="not_deleted" x="202" y="388"/>
 </item>
-<item historyLabel="check_weight.xml" index="13">
+<item historyLabel="check_weight.xml" index="11">
 <position info="not_deleted" x="869" y="0"/>
 </item>
-<item historyLabel="main_menu_2.xml" index="14"/>
-<item historyLabel="check_run.xml" index="15"/>
-<item historyLabel="check_weight.xml" index="12"/>
-<item historyLabel="login.xml" index="16"/>
-<item historyLabel="Login.java" index="17">
+<item historyLabel="main_menu_2.xml" index="12"/>
+<item historyLabel="check_run.xml" index="13"/>
+<item historyLabel="check_weight.xml" index="10"/>
+<item historyLabel="login.xml" index="14"/>
+<item historyLabel="Login.java" index="15">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="testing Manifest" index="18"/>
-<item historyLabel="Settings.java" index="19">
+<item historyLabel="testing Manifest" index="16"/>
+<item historyLabel="Settings.java" index="17">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="project.properties" index="20">
+<item historyLabel="project.properties" index="18">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Settings.java" index="19">
+<item historyLabel="Settings.java" index="17">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="proguard-project.txt" index="21">
+<item historyLabel="proguard-project.txt" index="19">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Settings.java" index="19">
+<item historyLabel="Settings.java" index="17">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="check_weight.xml" index="12"/>
-<item historyLabel="check_run.xml" index="15"/>
-<item historyLabel="Select_Workout_Days.java" index="22">
+<item historyLabel="check_weight.xml" index="10"/>
+<item historyLabel="check_run.xml" index="13"/>
+<item historyLabel="Select_Workout_Days.java" index="20">
 <position info="not_deleted" x="5176" y="0"/>
 </item>
-<item historyLabel="check_weight.xml" index="12"/>
-<item historyLabel="Select_Workout_Days.java" index="22">
+<item historyLabel="check_weight.xml" index="10"/>
+<item historyLabel="Select_Workout_Days.java" index="20">
 <position info="not_deleted" x="5176" y="0"/>
 </item>
-<item historyLabel="check_weight.xml" index="12"/>
-<item historyLabel="check_run.xml" index="15"/>
-<item historyLabel="Select_Workout_Days.java" index="22">
+<item historyLabel="check_weight.xml" index="10"/>
+<item historyLabel="check_run.xml" index="13"/>
+<item historyLabel="Select_Workout_Days.java" index="20">
 <position info="not_deleted" x="5176" y="0"/>
 </item>
-<item historyLabel="check_run.xml" index="15"/>
-<item historyLabel="main_menu_2.xml" index="14"/>
-<item historyLabel="check_weight.xml" index="12"/>
-<item active="true" historyLabel="check_run.xml" index="15"/>
+<item historyLabel="check_run.xml" index="13"/>
+<item historyLabel="main_menu_2.xml" index="12"/>
+<item historyLabel="check_weight.xml" index="10"/>
+<item historyLabel="check_run.xml" index="13"/>
+<item historyLabel="Select_Workout_Days.java" index="21">
+<position info="not_deleted" x="8053" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Select_workout.java" index="22">
+<position info="not_deleted" x="220" y="0"/>
+</item>
+<item historyLabel="Select_Workout.java" index="23">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Select_workout.java" index="22">
+<position/>
+</item>
+<item historyLabel="Select_Workout.java" index="23">
+<position info="not_deleted" x="621" y="0"/>
+</item>
+<item historyLabel="Select_Workout_Days.java" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Main_Menu.java" index="24">
+<position info="not_deleted" x="4192" y="0"/>
+</item>
+<item historyLabel="Select_workout.java" index="22">
+<position/>
+</item>
+<item historyLabel="Select_Workout.java" index="23">
+<position info="not_deleted" x="621" y="0"/>
+</item>
+<item active="true" historyLabel="Select_workout.java" index="22">
+<position/>
+</item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -500,6 +517,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Select_Workout.java" tooltip="testing/src/com/example/testing/Select_Workout.java">
+<persistable path="/testing/src/com/example/testing/Select_Workout.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="proguard-project.txt" tooltip="testing/proguard-project.txt">
 <persistable path="/testing/proguard-project.txt"/>
 </file>
@@ -541,9 +561,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="main_menu_2.xml" tooltip="testing/res/layout/main_menu_2.xml">
 <persistable path="/testing/res/layout/main_menu_2.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="settings.xml" tooltip="testing/res/layout/settings.xml">
-<persistable path="/testing/res/layout/settings.xml"/>
 </file>
 </mruList>
 </workbench>

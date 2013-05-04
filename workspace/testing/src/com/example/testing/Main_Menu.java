@@ -116,7 +116,7 @@ public class Main_Menu extends Activity {
 
 			public void onClick(View arg0) {
 		        //Starting a new Intent
-		            Intent thirdScreen = new Intent(getApplicationContext(), Select_workout.class);
+		            Intent thirdScreen = new Intent(getApplicationContext(), Select_Workout.class);
 			    // TODO Auto-generated method stub
 		            startActivity(thirdScreen);
 			}
