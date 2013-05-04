@@ -1,0 +1,15 @@
+What worked:
+Weekly meetings, knowing where everyone stood
+Short goal ideas kept us goal oriented
+
+
+What didn't work:
+Git directory issues
+Lot of new material to learn right away
+Too segregated on work, had to wait for one person to finish his functionality.
+Breaks, vacations, sick days, other projects/tests
+
+
+Actions to improve:
+Spend more time early learning system
+Learn system together
