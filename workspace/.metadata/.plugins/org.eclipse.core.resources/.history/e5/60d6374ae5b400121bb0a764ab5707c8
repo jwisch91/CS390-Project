@@ -32,7 +32,7 @@ public class Select_Workout_Days extends Activity{
     }
 	
 	
-
+	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH) // Ok this will only work with any version after Ice Cream Sandwich
 	public void addListenerOnSubmit(){
 		// same thing with as with the checkbox listener, except I have the button here. 
 		mon = (CheckBox) findViewById(R.id.Monday);
