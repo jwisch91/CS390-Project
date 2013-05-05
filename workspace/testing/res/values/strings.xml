@@ -22,7 +22,7 @@
     <string name="enable_gps_dialog">GPS provider not enabled. Would you like to enable it?</string>
     <string name="latlng">Lat/Long:</string>
     <string name="unknown">--Unknown--</string>
-    <string name="not_support_gps">GPS provider not supported</string>
+    <string name="not_support_gps">Your GPS provider is not enabled</string>
     <string name="not_support_network">Network provider not supported</string>
     <string name="use_fine_provider">Fine-grain provider</string>
     <string name="use_both_providers">Both providers</string>
@@ -32,7 +32,6 @@
     <string name="not_started">--NOT STARTED--</string>
     <string name="link_to_register">Register</string>
     <string name="link_to_login">Login</string>
-    <string name="select_GPS">--SELECT GPS PROVIDER FIRST!--</string>
     <string name="locate_sat">--LOCATING SATELLITES!--</string>
     <string name="Workout_Button">Create Workout</string>
     <string name="Lose_Weight_Button">Lose Weight</string>
@@ -42,8 +41,9 @@
     <string name="English">English</string>
     <string name="Metric">Metric</string>
     <string name="location_provider">Location Provider: </string>
-    <string name="fine_grain">GPS (Fine)</string>
-    <string name="coarse_grain">WiFi (Coarse)</string>
+    <string name="fine_grain">GPS (Fine but slow)</string>
+    <string name="coarse_grain">WiFi and GPS (Coarse but fast)</string>
     <color name="red">#FF0000</color>
     <string name="Clear">Clear</string>
+    <string name="wifi_only"> GPS Disabled. Using WiFi only.</string>
 </resources>
