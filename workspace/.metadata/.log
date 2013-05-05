@@ -11680,3 +11680,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.
 
 !ENTRY org.eclipse.core.net 1 0 2013-05-04 13:46:34.147
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-05-05 13:43:59.702
+!MESSAGE congrats.xml: "dp" in attribute "layout_marginTop" is not a valid format.

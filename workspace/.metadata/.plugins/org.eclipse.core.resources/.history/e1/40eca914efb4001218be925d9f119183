@@ -50,6 +50,13 @@
         android:layout_alignLeft="@+id/radio2"
         android:layout_below="@+id/radio2" />
 
+    <RadioButton
+        android:id="@+id/radio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RadioButton01"
+        android:layout_below="@+id/radio3" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -59,12 +66,5 @@
         android:layout_marginBottom="16dp"
         android:layout_toLeftOf="@+id/radioGroup1"
         android:text="Submit" />
-
-    <RadioButton
-        android:id="@+id/radio4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radio3"
-        android:layout_below="@+id/radio3" />
 
 </RelativeLayout>
