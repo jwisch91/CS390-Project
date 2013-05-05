@@ -3,6 +3,7 @@
     <issue id="NewApi">
         <ignore path="src/com/example/testing/Select_Workout_Days.java" />
         <ignore path="src/com/example/testing/Settings.java" />
+        <ignore path="src\com\example\testing\Select_Workout_Days.java" />
     </issue>
     <issue id="ResourceAsColor" severity="ignore" />
 </lint>
