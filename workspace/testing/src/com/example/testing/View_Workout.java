@@ -5,9 +5,11 @@ import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -32,6 +34,33 @@ public class View_Workout extends Activity {
 	    
 	    ((TextView)findViewById(R.id.Workout)).setText(name);
 	    
+	    
+	    Button btnYes = (Button) findViewById(R.id.CompleteYes);
+	    
+        //Listening to button event
+        btnYes.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent nextScreen = new Intent(getApplicationContext(), Congrats.class);
+			    // TODO Auto-generated method stub
+		            startActivity(nextScreen);
+			}
+        });
+        
+	    Button btnNo = (Button) findViewById(R.id.CompleteNo);
+	    
+        //Listening to button event
+        btnNo.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View arg0) {
+		        //Starting a new Intent
+		            Intent nextScreen = new Intent(getApplicationContext(), Sorry.class);
+			    // TODO Auto-generated method stub
+		            startActivity(nextScreen);
+			}
+        });
+
 	    final String workoutname = prefs.getString("workout", "Error");
 	    final String day1 = prefs.getString("day1", "Error");
 	    final String day2 = prefs.getString("day2", "Error");
@@ -80,5 +109,6 @@ public class View_Workout extends Activity {
 	    	nope.setVisibility(View.GONE);
 	    	
 	    }
+
 	}
 }

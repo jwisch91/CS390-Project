@@ -53,6 +53,8 @@
         <receiver android:name="com.example.testing.AlarmBroadcastReceiver"></receiver>
         <activity android:name="com.example.testing.About_Us"></activity>
         <activity android:name="com.example.testing.Weather"></activity>
+        <activity android:name="com.example.testing.Congrats"></activity>
+        <activity android:name="com.example.testing.Sorry"></activity>
         <activity
             android:name="com.example.testing.DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
