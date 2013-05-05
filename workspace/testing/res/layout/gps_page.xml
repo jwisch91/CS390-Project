@@ -78,20 +78,6 @@
 
 </LinearLayout>
 
-<CheckBox
-        android:id="@+id/Treadmill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:paddingBottom="10dip"
-        android:paddingLeft="45dip"
-        android:text="Treadmill"
-        android:onClick="onTreadmillChecked"
-        android:textSize="25dip" />
-
 <ImageButton 
     	android:id="@+id/TreadmillButton" 
     	android:layout_width="100dip"

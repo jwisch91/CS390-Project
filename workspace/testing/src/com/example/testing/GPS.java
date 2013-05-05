@@ -36,8 +36,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
 import android.preference.*;
-//import android.support.v4.app.DialogFragment;
-//import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
@@ -52,7 +52,7 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GPS extends Activity {
+public class GPS extends FragmentActivity {
     private TextView mDistance;
     private LocationManager mLocationManager;
     private Handler mHandler;
@@ -172,15 +172,17 @@ public class GPS extends Activity {
         LocationManager locationManager =
                 (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         final boolean gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        final boolean wifiEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
-/**        if (!gpsEnabled) {
+
+        if (!gpsEnabled && (mUseFine || !wifiEnabled)) {
             // Build an alert dialog here that requests that the user enable
             // the location services, then when the user clicks the "OK" button,
             // call enableLocationSettings()
             new EnableGpsDialogFragment().show(getSupportFragmentManager(), "enableGpsDialog");
         }	
         
-        */
+ 
         
         setup();
     }
@@ -221,7 +223,7 @@ public class GPS extends Activity {
             // Get coarse and fine location updates.
             // Request updates from both fine (gps) and coarse (network) providers.
             gpsLocation = requestUpdatesFromProvider(
-                    LocationManager.GPS_PROVIDER, R.string.not_support_gps);
+                    LocationManager.GPS_PROVIDER, R.string.wifi_only);
             networkLocation = requestUpdatesFromProvider(
                     LocationManager.NETWORK_PROVIDER, R.string.not_support_network);
 
@@ -400,7 +402,7 @@ public class GPS extends Activity {
     /**
      * Dialog to prompt users to enable GPS on the device.
      */
-    /**
+    
     private class EnableGpsDialogFragment extends DialogFragment {
 
         @Override
@@ -417,12 +419,12 @@ public class GPS extends Activity {
                     .create();
         }
     }
-	*/
+
 
     public void startDistanceAdder(View v){
-    	if (!(mUseFine || mUseBoth))
+    /**	if (!(mUseFine || mUseBoth))
     		mDistance.setText(R.string.select_GPS);    	
-    	else{
+    	else{	*/
     		if (!treadmill){
     			
     	mDistanceAdd = true;
@@ -466,7 +468,7 @@ public class GPS extends Activity {
     	
     	
     	}
-    }
+    //}
     
     public void stopDistanceAdder(View v){
     	mDistanceAdd = false;
@@ -518,7 +520,8 @@ public class GPS extends Activity {
     		start = System.currentTimeMillis() - elapsed;
     	else
     	*/
-    		start = System.currentTimeMillis();
+    		
+    	start = System.currentTimeMillis();
     	
     	timeHandler.removeCallbacks(startTimer);
     	timeHandler.postDelayed(startTimer, 0);
@@ -541,29 +544,19 @@ public class GPS extends Activity {
     	}
     	else{
     		TreadmillOn.setVisibility(View.VISIBLE);
-    		TreadmillOff.setVisibility(View.GONE);    		
+    		TreadmillOff.setVisibility(View.GONE);
+    		if(UseEnglish){
+    			totalDistance = totalDistance/1609;
+    			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " miles").sendToTarget();
+    		}
+    		else{
+    			totalDistance = totalDistance/1000;
+    			Message.obtain(mHandler,UPDATE_DISTANCE,totalDistance + " km").sendToTarget();
+    		}
     	}
     	treadmill = (!treadmill);
     }
     
-    public void onTreadmillChecked(View view) {
-        // Is the button now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.Treadmill:
-                if (checked){
-                	treadmill = true;
-                	mDistance.setText("--TREADMILL MODE--");
-                }
-                else{
-                	treadmill = false;
-                	mDistance.setText(R.string.not_started);
-                }
-                break;
-        }
-    }
 
     
     }
