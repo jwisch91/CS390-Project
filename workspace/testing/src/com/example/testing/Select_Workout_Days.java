@@ -158,7 +158,7 @@ public class Select_Workout_Days extends Activity{
 				  }
 				  else{
 				  
-				  	count = count*3;
+				  	count = count*6;
 				  	String events = String.valueOf(count);
 				  	SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
 				  	boolean useCalendar = prefs.getBoolean("Use Calendar", true);
