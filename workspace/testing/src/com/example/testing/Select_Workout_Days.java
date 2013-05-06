@@ -166,6 +166,7 @@ public class Select_Workout_Days extends Activity{
 				  	edit.putString("day1", wktdays[0]);
 				  	edit.putString("day2", wktdays[1]);
 				  	edit.putString("day3", wktdays[2]);
+				  	edit.putBoolean("workoutInProgress", true);
 				  	edit.commit();
 				  
 				  	
@@ -212,7 +213,6 @@ public class Select_Workout_Days extends Activity{
 				           startActivity(calIntent);
 					    }
 				        myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, objCalendar.getTimeInMillis(), ADAY, pIntent); 
-					  
 				  }
 				  else{
 					  //ERROR we should never get here without some type of workout being selected. 
