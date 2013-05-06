@@ -115,53 +115,12 @@ public class Settings extends Activity{
 
         	@Override
         	public void onClick(View arg0) {
-
-        		LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
-        		View popupView = layoutInflater.inflate(R.layout.confirmation_popup, null);
-        		final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT,  LayoutParams.WRAP_CONTENT);  
-        		popupWindow.showAtLocation(findViewById(R.id.Settings_page), Gravity.CENTER_HORIZONTAL, 0, 0);
-        		
-        		Button btnYes = (Button)popupView.findViewById(R.id.yes);
-        		btnYes.setOnClickListener(new Button.OnClickListener(){
-        			@Override
-        			public void onClick(View v) {
-        				// TODO Auto-generated method stub
-        				popupWindow.dismiss();
-        				SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-        	      	    Editor edit = prefs.edit();  
-        	            edit.putBoolean("workoutInProgress", false);
-        	            
-        	             
-        	            /*
-        	             * Deleting event explanation:  The eventID you see below comes from the class where I create the events.  I assign them an ID so that when we go to delete them, only those events are deleted. 
-        	             * I defined the events as part of the CONTENT_URI so they can be accessed in this way.  
-        	             */
-      	                //ContentResolver cr = getContentResolver(); I can't decide if we even need to define these.  It doesn't seem like we use them. It was on the android website. I C & P'd it.  
-                        // ContentValues values = new ContentValues();
-                           Uri deleteUri = ContentUris.withAppendedId(Events.CONTENT_URI, com.example.testing.Select_Workout_Days.eventID);
-                           int rows = getContentResolver().delete(deleteUri, null, null); //
-
-        	            edit.commit();
-        	            Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
-        		        startActivity(nextScreen);
-        			}
-        		});
-        		
-        		Button btnNo = (Button)popupView.findViewById(R.id.no);
-        		btnNo.setOnClickListener(new Button.OnClickListener(){
-        			@Override
-        			public void onClick(View v) {
-        				// TODO Auto-generated method stub
-        				popupWindow.dismiss();
-        			}
-        		});
-        		popupWindow.showAsDropDown(btnClearWorkout, 50, -30);
         		Dialog confirm = clearWorkoutDialog(null);
     			confirm.show();
         	}
         });
-
         
+       
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);
         calendar = prefs.getBoolean("Use Calendar", true);
