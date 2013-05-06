@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView1S"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -14,13 +14,73 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
    
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView2S"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/textView1S"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
         android:text="You can try harder next time"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/SuccessesTextS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:text="Completed Workouts: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/AttemptedTextS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
+        android:text="Workouts Attempted: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/PercentTextS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Percent Successful: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/InitialWeightS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="215dp"
+        android:text="Initial Weight: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/LastWeightS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="Last Weight Measured: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/WeightChangeS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1S"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="285dp"
+        android:text="Weight Change: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
