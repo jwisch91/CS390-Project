@@ -111,21 +111,23 @@ public class View_Workout extends Activity {
 	    	else if(workoutname.equals("LoseWeight"))
 	    		((TextView)findViewById(R.id.Workout)).setText("Run 3 Miles");
 	    	else
-	    		((TextView)findViewById(R.id.Workout)).setText("Do a Cardio Workout.");
+	    		((TextView)findViewById(R.id.Workout)).setText(R.string.mixed1);
 	    else if (todayDay.equals(day2))
 	    	if (workoutname.equals("BuildMuscle"))
 		    	((TextView)findViewById(R.id.Workout)).setText(R.string.muscle2);
 	    	else if(workoutname.equals("LoseWeight"))
 	    		((TextView)findViewById(R.id.Workout)).setText("Run 4 Miles");
 	    	else
-	    		((TextView)findViewById(R.id.Workout)).setText("Play Basketball");
+	    		((TextView)findViewById(R.id.Workout)).setText("Run 30 minutes\n" + 
+	    														"or\n" + 
+	    														"Bike 60 minutes\n");
 	    else if (todayDay.equals(day3))
 	    	if (workoutname.equals("BuildMuscle"))
 		    	((TextView)findViewById(R.id.Workout)).setText(R.string.muscle3);
 	    	else if(workoutname.equals("LoseWeight"))
 	    		((TextView)findViewById(R.id.Workout)).setText("Run 6 Miles");
 	    	else
-	    		((TextView)findViewById(R.id.Workout)).setText("Go Running.");
+	    		((TextView)findViewById(R.id.Workout)).setText(R.string.mixed3);
 	    else{
 	    	((TextView)findViewById(R.id.Workout)).setText("You have no workout today");
 	    	View text = findViewById(R.id.CompleteText);

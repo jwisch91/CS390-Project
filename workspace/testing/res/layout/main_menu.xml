@@ -92,7 +92,7 @@
         android:layout_marginTop="14dp"
         android:background="@drawable/blue"
         android:padding="10dip"
-        android:text="GPS"
+        android:text="Run Tracker"
         android:textSize="25dip" />
 
     <Button

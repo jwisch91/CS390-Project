@@ -48,8 +48,12 @@ public class Settings extends Activity{
        	      	    	Editor edit = prefs.edit();  
        	      	    	edit.putBoolean("firstTime", true);
        	      	    	edit.commit();
-       	      	    	Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
-       	      	    	startActivity(nextScreen);
+       	      	   Uri eventsUri = Uri.parse("content://com.android.calendar/events");
+            	   getApplicationContext().getContentResolver().delete(eventsUri,"title=?",new String[] 
+            			      { String.valueOf("WinFit Workout")});
+            	   
+            	   Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
+            	   startActivity(nextScreen);
                    }
                })
                .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -71,6 +75,10 @@ public class Settings extends Activity{
                 	   Editor edit = prefs.edit();  
                 	   edit.putBoolean("workoutInProgress", false);
                 	   edit.commit();
+                	   Uri eventsUri = Uri.parse("content://com.android.calendar/events");
+                	   getApplicationContext().getContentResolver().delete(eventsUri,"title=?",new String[] 
+                			      { String.valueOf("WinFit Workout")});
+                	   
                 	   Intent nextScreen = new Intent(getApplicationContext(), Initiator.class);
                 	   startActivity(nextScreen);
                    }

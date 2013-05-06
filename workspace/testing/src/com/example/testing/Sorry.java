@@ -61,5 +61,11 @@ public void onCreate(Bundle savedInstanceState) {
 	   }.start();
 	}
 
+	@Override
+	public void onBackPressed(){
+	}
+
+
 }
+
 

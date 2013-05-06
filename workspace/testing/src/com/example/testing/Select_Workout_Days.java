@@ -176,8 +176,8 @@ public class Select_Workout_Days extends Activity{
 					    // set the calendar if the settings permit it
 					    if (useCalendar){
 						   calIntent.putExtra(Events._ID, eventID);
-					       calIntent.putExtra(Events.TITLE, "Run Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  Run a mile today.  Do it.");    
+					       calIntent.putExtra(Events.TITLE, "WinFit Workout"); 
+				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight.  See WinFIt for details.");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
 				           calIntent.putExtra(Events.VISIBLE, 1);
 				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS); 
@@ -190,9 +190,10 @@ public class Select_Workout_Days extends Activity{
 					    Intent settingsScreen = new Intent(getApplicationContext(), Main_Menu_2.class);
 					    startActivity(settingsScreen);
 					    if(useCalendar){
+					       calIntent.setData(Events.CONTENT_URI);
 					       calIntent.putExtra(Events._ID, eventID);
-					       calIntent.putExtra(Events.TITLE, "Lift Weights Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  Life weights.  Do it.");    
+					       calIntent.putExtra(Events.TITLE, "WinFit Workout"); 
+				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to beef up.  See WinFit for details.");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); //Heres the all day event thing.  This can always be changed.
 				           calIntent.putExtra(Events.VISIBLE, 1);
 				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS);  
@@ -205,8 +206,8 @@ public class Select_Workout_Days extends Activity{
 					    startActivity(settingsScreen);
 					    if(useCalendar){
 						   calIntent.putExtra(Events._ID, eventID);
-					       calIntent.putExtra(Events.TITLE, "Special Run Today"); 
-				           calIntent.putExtra(Events.DESCRIPTION, "You are trying to lose weight and gain muscl.  Run a mile today while curling small weights.  Do it.");    
+					       calIntent.putExtra(Events.TITLE, "WinFit Workout"); 
+				           calIntent.putExtra(Events.DESCRIPTION, "You are doing a mix of workouts.  See WinFit for details. ");    
 				           calIntent.putExtra(Events.ALL_DAY, 1); 
 				           calIntent.putExtra(Events.VISIBLE, 1);
 				           calIntent.putExtra(Events.RRULE, "FREQ=WEEKLY;COUNT="+events+";WKST=SU;"+REPEATDAYS);

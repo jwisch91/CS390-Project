@@ -46,21 +46,31 @@
     <color name="red">#FF0000</color>
     <string name="Clear">Clear</string>
     <string name="wifi_only"> GPS Disabled. Using WiFi only.</string>
-    <string name="muscle1">Dumbbell Bench Press: 3x10\n
+    <string name="muscle1"> Dumbbell Bench Press: 3x10\n
 			    		Incline Bench Press: 3x10\n
 			    		Tricep Dips: 3x10\n
 			    		Lying Tricep Extension: 3x10\n
 			    		Russian Twists: 3x10 </string>
-	<string name="muscle2">One Arm Dumbbell Row: 3x10 ea. arm\n
+	<string name="muscle2"> One Arm Dumbbell Row: 3x10 ea. arm\n
 		    			Dumbbell Reverse Fly: 3x10\n
 		    			Dumbbell Curl: 3x10\n
 		    			Hammer Curl: 3x10\n
 		    			Plank: 3x60 seconds</string>	    			
-	<string name="muscle3">Dumbbell Squat: 3x10\n
-		    			Dumbbell Lunge: 3x10\n
+	<string name="muscle3"> Dumbbell Squat: 3x10\n
+		    			Dumbbell Lunge: 3x10 ea. leg\n
 		    			Dumbbell Shoulder Press: 3x10\n
 		    			Dumbbell Lateral Raise: 3x10\n
-		    			Toe Touches: 3x10</string>	    			
+		    			Toe Touches: 3x10</string>	  	    			
+	<string name= "mixed1"> Dumbbell Bench Press: 3x8\n
+	    				Tricep Dips: 3x8\n
+	    				One Arm Dumbbell Row: 3x8 ea. arm\n
+	    				Dumbbell Curl: 3x8\n
+	    				Push Ups: 50 Total\n</string>
+	<string name="mixed3"> Dumbbell Squat: 3x8\n
+		    			Dumbbell Shoulder Press: 3x8\n
+		    			Dumbbell Lateral Raise: 3x8\n
+		    			Box Jumps: 3x5 increasing heights\n
+		    			Crunches: 75 Total</string>
 	<string name= "choose3days">You can only choose 3 days</string>
 	<string name= "selectdays">Select 3 workout days</string>
 </resources>
