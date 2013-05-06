@@ -153,7 +153,6 @@ public class Select_Workout_Days extends Activity{
 				  // end checking for day selection
 				  
 				  if(count != 3){
-					  //TODO Put a toast showing ERROR, use less days
 					  Toaster(R.string.choose3days);
 					  REPEATDAYS = "BYDAY=";
 				  }
