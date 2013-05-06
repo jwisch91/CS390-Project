@@ -163,6 +163,7 @@ public final class R {
         public static final int address=0x7f04000c;
         public static final int app_name=0x7f040000;
         public static final int button_send=0x7f040003;
+        public static final int choose3days=0x7f04002b;
         public static final int coarse_grain=0x7f040025;
         public static final int distance=0x7f040016;
         public static final int edit_message=0x7f040002;
@@ -182,6 +183,7 @@ public final class R {
         public static final int not_started=0x7f040018;
         public static final int not_support_gps=0x7f040011;
         public static final int not_support_network=0x7f040012;
+        public static final int selectdays=0x7f04002c;
         public static final int start_run=0x7f040015;
         public static final int stop_run=0x7f040017;
         public static final int title_activity_display_message=0x7f040007;

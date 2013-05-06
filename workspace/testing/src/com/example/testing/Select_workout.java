@@ -29,6 +29,9 @@ public class Select_Workout extends Activity{
 				SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
 				Editor edit = prefs.edit();
 				edit.putString("workout", "LoseWeight");
+				edit.putBoolean("passfail", false);
+				edit.putInt("workouts", 0);
+				edit.putInt("successes", 0);
 				edit.commit();
 				
 		        //Starting a new Intent
@@ -48,6 +51,9 @@ public class Select_Workout extends Activity{
 				SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
 				Editor edit = prefs.edit();
 				edit.putString("workout", "BuildMuscle");
+				edit.putBoolean("passfail", false);
+				edit.putInt("workouts", 0);
+				edit.putInt("successes", 0);
 				edit.commit();
 		        //Starting a new Intent
 		            Intent nextScreen = new Intent(getApplicationContext(), Select_Workout_Days.class);
@@ -67,6 +73,9 @@ public class Select_Workout extends Activity{
 			SharedPreferences prefs = getSharedPreferences("winFitPref", 0);
 			Editor edit = prefs.edit();
 			edit.putString("workout", "Mixed");
+			edit.putBoolean("passfail", false);
+			edit.putInt("workouts", 0);
+			edit.putInt("successes", 0);
 			edit.commit();
 	        //Starting a new Intent
 	            Intent nextScreen = new Intent(getApplicationContext(), Select_Workout_Days.class);
