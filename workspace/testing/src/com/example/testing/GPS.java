@@ -362,47 +362,8 @@ public class GPS extends FragmentActivity {
         return provider1.equals(provider2);
     }
 
-    // AsyncTask encapsulating the reverse-geocoding API.  Since the geocoder API is blocked,
-    // we do not want to invoke it from the UI thread.
-    private class ReverseGeocodingTask extends AsyncTask<Location, Void, Void> {
-        Context mContext;
 
-        public ReverseGeocodingTask(Context context) {
-            super();
-            mContext = context;
-        }
-
-        @Override
-        protected Void doInBackground(Location... params) {
-            Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
-
-            Location loc = params[0];
-            List<Address> addresses = null;
-            try {
-                addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Update address field with the exception.
-                Message.obtain(mHandler, UPDATE_ADDRESS, e.toString()).sendToTarget();
-            }
-            if (addresses != null && addresses.size() > 0) {
-                Address address = addresses.get(0);
-                // Format the first line of address (if available), city, and country name.
-                String addressText = String.format("%s, %s, %s",
-                        address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
-                        address.getLocality(),
-                        address.getCountryName());
-                // Update address field on UI.
-                Message.obtain(mHandler, UPDATE_ADDRESS, addressText).sendToTarget();
-            }
-            return null;
-        }
-    }
-
-    /**
-     * Dialog to prompt users to enable GPS on the device.
-     */
-    
+    // Dialog to prompt users to enable GPS on the device.
     private class EnableGpsDialogFragment extends DialogFragment {
 
         @Override
@@ -468,7 +429,7 @@ public class GPS extends FragmentActivity {
     	
     	
     	}
-    //}
+
     
     public void stopDistanceAdder(View v){
     	mDistanceAdd = false;

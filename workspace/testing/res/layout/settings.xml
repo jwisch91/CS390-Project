@@ -110,14 +110,6 @@
 		        android:orientation="vertical" >
 		
 		        <CheckBox
-		            android:id="@+id/UseAlarm"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-	            	android:text="Alarm"
-		        	android:onClick="onAnnounceChecked"
-		        	android:textColor="#000000" />
-		
-		        <CheckBox
 		            android:id="@+id/UseCalendar"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"

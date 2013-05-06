@@ -63,7 +63,7 @@ public class Main_Menu extends Activity {
 	    			   SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
 	    			   String weight = input.getText().toString();
 	    			   Editor edit = prefs.edit();
-	    			   edit.putString("weight", weight);
+	    			   edit.putString("new weight", weight);
 	    			   edit.putBoolean("weightUpdated", true);
 	    			   edit.commit();
 	    		   }

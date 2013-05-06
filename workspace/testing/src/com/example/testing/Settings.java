@@ -1,5 +1,6 @@
 package com.example.testing;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,12 +29,12 @@ import android.provider.CalendarContract.Events;
 import android.widget.TextView;
 
 
+@SuppressLint("NewApi")
 public class Settings extends Activity{
 	
 	public static final String PREFS_NAME = "winFitPref";
 	public boolean measure;
 	public boolean grain;
-	public static boolean alarm; //Bryan made this static so he could use it in AlarmBroadcastReceiver.java
 	public static boolean calendar;
 	public static boolean notification;
 	
@@ -94,7 +95,6 @@ public class Settings extends Activity{
         RadioButton btnMetric = (RadioButton)findViewById(R.id.radioMetric);
         RadioButton btnFine = (RadioButton)findViewById(R.id.radioFineGrain);
         RadioButton btnCoarse = (RadioButton)findViewById(R.id.radioCoarseGrain);
-        CheckBox boxAlarm = (CheckBox)findViewById(R.id.UseAlarm);
         CheckBox boxCalendar = (CheckBox)findViewById(R.id.UseCalendar);
         CheckBox boxNotification = (CheckBox)findViewById(R.id.UseNotification);
         
@@ -164,7 +164,6 @@ public class Settings extends Activity{
         
         measure = prefs.getBoolean("English", true);
         grain = prefs.getBoolean("Grain", true);
-        alarm = prefs.getBoolean("Use Alarm", false);
         calendar = prefs.getBoolean("Use Calendar", true);
         notification = prefs.getBoolean("Use Notification", true);
         
@@ -177,9 +176,7 @@ public class Settings extends Activity{
         	btnFine.setChecked(true);
         else
         	btnCoarse.setChecked(true);
-        
-        if (alarm)
-        	boxAlarm.setChecked(true);
+
         if (calendar)
         	boxCalendar.setChecked(true);
         if (notification)
@@ -243,12 +240,6 @@ public void onAnnounceChecked(View view) {
     
     // Check which radio button was clicked
     switch(view.getId()) {
-        case R.id.UseAlarm:
-            if (checked)
-            	alarm = true;
-            else
-            	alarm = false;
-            break;
         case R.id.UseCalendar:
         	if (checked)
         		calendar = true;
@@ -274,7 +265,6 @@ protected void onStop() {
     Editor edit = prefs.edit();   
     edit.putBoolean("English", measure);
     edit.putBoolean("Grain", grain);
-    edit.putBoolean("Use Alarm", alarm);
     edit.putBoolean("Use Calendar", calendar);
     edit.putBoolean("Use Notification", notification);
     edit.commit();
