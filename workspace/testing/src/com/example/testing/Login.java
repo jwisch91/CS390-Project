@@ -40,12 +40,6 @@ public class Login extends Activity {
 				Intent i = new Intent(getApplicationContext(), Main_Menu.class);
 				
 				if (name.length()>0 && weight.length()>0){
-					if (name.contains("mike")||name.contains("michael")){
-						name="Farty Boy";
-					}
-					if (name.contains("kps")){
-						name="professor";
-					}					
 					
 					String upperName = name.substring(0,1).toUpperCase() + name.substring(1);
 					SharedPreferences prefs = getSharedPreferences("winFitPref", 0);

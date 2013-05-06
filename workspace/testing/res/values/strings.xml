@@ -60,5 +60,7 @@
 		    			Dumbbell Lunge: 3x10\n
 		    			Dumbbell Shoulder Press: 3x10\n
 		    			Dumbbell Lateral Raise: 3x10\n
-		    			Toe Touches: 3x10</string>
+		    			Toe Touches: 3x10</string>	    			
+	<string name= "choose3days">You can only choose 3 days</string>
+	<string name= "selectdays">Select 3 workout days</string>
 </resources>

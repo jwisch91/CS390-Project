@@ -152,8 +152,9 @@ public class Select_Workout_Days extends Activity{
 				  }
 				  // end checking for day selection
 				  
-				  if(count > 3){
+				  if(count != 3){
 					  //TODO Put a toast showing ERROR, use less days
+					  Toaster(R.string.choose3days);
 					  REPEATDAYS = "BYDAY=";
 				  }
 				  else{
@@ -225,7 +226,10 @@ public class Select_Workout_Days extends Activity{
 			  });
 
 	}
-		
+	
+	private void Toaster(int ErrorResId){
+		Toast.makeText(this, ErrorResId, Toast.LENGTH_LONG).show();
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
